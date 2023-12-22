@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>ARTMEE</title>
+	<link rel="icon" type="image/x-icon" href="assets/ARTMEE_PAGELOGO.png" />
+
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+		rel="stylesheet" />
+
+	<!-- Bootstrap core JS-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+
+	<!-- JQuery 자바스크립트-->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+	<!-- CSS -->
+	<link href="css/styles.css" rel="stylesheet" />
+
+	<!-- Carousel 자바스크립트-->
+	<script src='https://www.gmarwaha.com/script/lib/jquery-1.11.1.js'></script>
+	<script src="https://www.gmarwaha.com/script/lib/jquery.easing-1.3.js"></script>
+	<script src="https://www.gmarwaha.com/script/lib/jquery.easing.compatibility.js"></script>
+	<script src="https://www.gmarwaha.com/script/lib/jquery.mousewheel-3.1.12.js"></script>
+	<script src="https://www.gmarwaha.com/jquery/jcarousellite/script/jquery.jcarousellite.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			// enroll_second, enroll_third, enroll_forth, enroll_fifth 숨김
+			$("#enroll_second, #enroll_third, #enroll_forth, #enroll_fifth").hide();
+
+			function scrollToTop() {
+				window.scrollTo(0, 0);
+			}
+
+			$("#first_nextButton").click(function () {
+				if ($("#name").val() && $("#email").val() && $("#phone").val() && $("#agree").is(":checked")) {
+					$("#enroll_first").hide();
+					$("#enroll_second").show();
+					scrollToTop();
+				} else {
+					alert("필수 부분을 작성해 주세요");
+				}
+			});
+
+			$("#second_nextButton").click(function () {
+				if ($("#exhibition_name").val() && $("#exhibition_place").val() && $("#exhibition_start").val() && $("#exhibition_end").val() && $("#exhibition_time").val()) {
+					$("#enroll_second").hide();
+					$("#enroll_third").show();
+					scrollToTop();
+				} else {
+					alert("필수 부분을 작성해 주세요");
+				}
+			});
+
+			$("#third_nextButton").click(function () {
+				$("#enroll_third").hide();
+				$("#enroll_forth").show();
+				scrollToTop();
+			});
+
+			$("#forth_nextButton").click(function () {
+				$("#enroll_forth").hide();
+				$("#enroll_fifth").show();
+				scrollToTop();
+			});
+
+			$("#re_check").click(function () {
+				$("#enroll_forth").hide();
+				$("#enroll_first").show();
+				scrollToTop();
+			});
+
+			$("#come_back").click(function () {
+				window.location.href = 'index.html';
+			});
+		});
+	</script>
+
+
+	<style>
+		#jcl-demo {
+			text-align: center;
+		}
+
+		.custom-container.main,
+		.custom-container.main1,
+		.custom-container.main2 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.prev,
+		.next,
+		.prev1,
+		.next1,
+		.prev2,
+		.next2 {
+			margin: 0 10px;
+		}
+
+		.carousel ul li,
+		.carousel1 ul li {
+			margin-right: 10px;
+		}
+
+		.carousel ul li:last-child,
+		.carousel1 ul li:last-child {
+			margin-right: 0;
+		}
+
+		.carousel img,
+		.carousel1 img {
+			max-width: 100%;
+		}
+
+		section#scroll *,
+		section#scroll *::before,
+		section#scroll *::after {
+			box-sizing: content-box;
+		}
+
+		.filebox .upload-name {
+			display: inline-block;
+			height: 40px;
+			padding: 0 10px;
+			vertical-align: middle;
+			border: 1px solid #dddddd;
+			width: 78%;
+			color: #999999;
+			width: 300px;
+		}
+
+		.filebox label {
+			display: inline-block;
+			padding: 10px 20px;
+			color: #fff;
+			vertical-align: middle;
+			background-color: #999999;
+			cursor: pointer;
+			height: 40px;
+			margin-left: 10px;
+		}
+
+		.filebox input[type="file"] {
+			position: absolute;
+			width: 0;
+			height: 0;
+			padding: 0;
+			overflow: hidden;
+			border: 0;
+		}
+	</style>
+
+</head>
+
+<body id="page-top">
+	<!-- 메뉴바 -->
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+		<div class="container px-5">
+			<a class="navbar-brand" href="index.html"><img src="assets/img/ARTMEE.png"
+					style="width: 160px; height: 60px;" /></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 50px;">공지사항</a>
+					</li>
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 20px;">전시회</a>
+					</li>
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 20px;">전시회 이벤트</a>
+					</li>
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 20px;">이용후기</a>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item mr-5" style="margin-right: 60px; margin-top: 5px;">
+						<form class="d-flex">
+							<input class="form-control me-2" type="search" placeholder="검색" aria-label="Search">
+							<button class="btn btn-outline-light" type="submit">
+								<img src="assets/img/search.png" alt="Search" style="width: 20px; height: 20px;">
+							</button>
+						</form>
+					</li>
+
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!"><img src="assets/img/cart.png"
+								style="width: 30px; height: 30px; margin-right: 30px;" /></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#!">로그인</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<!--등록 페이지 1 ~ 5 단계-->
+	<form action="#" method="post"> <!--폼 여기서 열었음!!!!!!!!!!!!!!!!!!!!!-->
+		<section style="margin-top: 150px;" id="enroll_first">
+			<center>
+				<img src="./assets/img/ARTMEE.png" alt="아트미 로고" style="width: 200px; height: 110px;" />
+				<br /><br />
+				<h6>전시회 등록을 환영합니다!</h6>
+				<h6>아트미 전시회 등록은 검토를 거쳐 아트미 웹페이지에 게시됩니다.</h6>
+				<br /><br />
+				<img src="./assets/img/enroll_firstimg.png" alt="등록 첫번째" style="width: 400px; height: 90px;" />
+				<br /><br />
+				<div style="width: 600px; height: 700px; border: 1px solid lightgray; border-radius: 5%;">
+
+					<b style="float: left; margin-left: 40px; margin-top: 50px; font-size: 30px;">1. 신청인 정보</b>
+
+
+					<div class="form-group" style="margin-top: 140px;">
+						<label for="name" style="width: 100px; display: inline-block;">이름</label>
+						<input id="name" name="name" type="text" style="width: 300px;" />
+					</div>
+					<div class="form-group" style="margin-top: 30px;">
+						<label for="email" style="width: 100px; display: inline-block;">이메일</label>
+						<input id="email" name="email" type="email" style="width: 300px;" />
+					</div>
+					<div class="form-group" style="margin-top: 30px;">
+						<label for="phone" style="width: 100px; display: inline-block;">휴대폰 번호</label>
+						<input id="phone" name="phone" type="tel" style="width: 300px;" />
+					</div>
+
+					<b style="float: left; margin-left: 40px; margin-top: 50px; font-size: 20px;">1-2. 약관 동의</b>
+
+					<br /><br /><br /><br /><br />
+					<a>견적 제공을 위해 약관을 동의해 주세요! <a style="margin-left: 30px; color: blue; cursor: pointer;"
+							data-bs-toggle="modal" data-bs-target="#termsModal">약관 확인</a></a>
+					<br /><br /><br />
+
+					<div class="form-check">
+						<input type="checkbox" id="agree" style="width: 17px; height: 17px; margin-right: 15px;"
+							required />
+						<label for="agree">개인정보 취급 방침에 동의합니다.</label>
+					</div>
+
+					<div style="margin-top: 90px;">
+						<button type="button" style="width: 400px; border: 0.5px solid lightgray;" id="first_nextButton"
+							class="btn btn-light">다음</button>
+					</div>
+
+				</div>
+			</center>
+		</section>
+
+		<script>		// 개인정보 동의 안할시 버튼 활성화 x
+			$(document).ready(function () {
+				$("#first_nextButton").prop('disabled', true);
+
+				$("#agree").change(function () {
+					if (this.checked) {
+						$("#first_nextButton").prop('disabled', false);
+					} else {
+						$("#first_nextButton").prop('disabled', true);
+					}
+				});
+			});
+		</script>
+
+
+
+		<section style="margin-top: 150px;" id="enroll_second">
+			<center>
+				<img src="./assets/img/ARTMEE.png" alt="아트미 로고" style="width: 200px; height: 110px;" />
+				<br /><br />
+				<img src="./assets/img/enroll_secondimg.png" alt="등록 두번째" style="width: 400px; height: 90px;" />
+				<br /><br />
+				<div style="width: 600px; height: 600px; border: 1px solid lightgray; border-radius: 5%;">
+
+					<b style="float: left; margin-left: 40px; margin-top: 50px; font-size: 30px;">2. 전시회 등록</b>
+
+					<div class="form-group" style="margin-top: 140px;">
+						<label for="exhibition_name" style="width: 100px; display: inline-block;">전시명</label>
+						<input id="exhibition_name" name="exhibition_name" type="text" style="width: 300px;" />
+					</div>
+					<div class="form-group" style="margin-top: 30px;">
+						<label for="exhibition_place" style="width: 100px; display: inline-block;">전시관</label>
+						<input id="exhibition_place" name="exhibition_place" type="text" style="width: 300px;"
+							required />
+					</div>
+					<div class="form-group" style="margin-top: 30px;">
+						<label for="exhibition_start" style="width: 100px; display: inline-block;">전시기간</label>
+						<input id="exhibition_start" name="exhibition_start" type="date"
+							style="width: 130px; margin-right: 10px;" required /> ~
+						<input id="exhibition_end" name="exhibition_end" type="date"
+							style="width: 130px; margin-left: 10px;" required />
+					</div>
+					<div class="form-group" style="margin-top: 30px;">
+						<label for="exhibition_time" style="width: 100px; display: inline-block;">운영시간</label>
+						<input id="exhibition_time" name="exhibition_time" type="text" style="width: 300px;"
+							placeholder="00:00 ~ 00:00" required />
+					</div>
+					<div class="form-group" style="margin-top: 30px;">
+						<label for="exhibition_author" style="width: 100px; display: inline-block;">작가</label>
+						<input id="exhibition_author" name="exhibition_author" type="text" style="width: 300px;" />
+					</div>
+
+					<div style="margin-top: 90px;">
+						<button type="button" style="width: 400px; border: 0.5px solid lightgray;"
+							id="second_nextButton" class="btn btn-light">다음</button>
+					</div>
+				</div>
+			</center>
+		</section>
+
+
+		<section style="margin-top: 150px;" id="enroll_third">
+			<center>
+				<img src="./assets/img/ARTMEE.png" alt="아트미 로고" style="width: 200px; height: 110px;" />
+				<br /><br />
+				<img src="./assets/img/enroll_thirdimg.png" alt="등록 세번째" style="width: 400px; height: 90px;" />
+				<br /><br />
+				<div style="width: 600px; height: 400px; border: 1px solid lightgray; border-radius: 5%;">
+
+					<b style="float: left; margin-left: 40px; margin-top: 50px; font-size: 30px;">3. 첨부파일 업로드</b>
+					<br /><br /><br /><br />
+					<b style="float: left; margin-left: 40px; margin-top: 30px; font-size: 15px;">[첨부파일] (zip파일로
+						올려주세요!)</b>
+					<br /><br /><br /><br />
+
+					<div class="filebox">
+						<input class="upload-name" value="첨부파일" placeholder="첨부파일">
+						<label for="file">파일찾기</label>
+						<input type="file" id="file" name="file">
+					</div>
+
+					<div style="margin-top: 90px;">
+						<button type="button" style="width: 400px; border: 0.5px solid lightgray;" id="third_nextButton"
+							class="btn btn-light">다음</button>
+					</div>
+				</div>
+			</center>
+		</section>
+
+		<script>
+			$("#file").on('change', function () {
+				var fileName = $("#file").val();
+				$(".upload-name").val(fileName);
+			});
+		</script>
+
+
+		<section style="margin-top: 150px;" id="enroll_forth">
+			<center>
+				<img src="./assets/img/ARTMEE.png" alt="아트미 로고" style="width: 200px; height: 110px;" />
+				<br /><br />
+				<img src="./assets/img/enroll_forthimg.png" alt="등록 네번째" style="width: 400px; height: 90px;" />
+				<br /><br />
+				<div style="width: 600px; height: 400px; border: 1px solid lightgray; border-radius: 5%;">
+
+					<b style="float: left; margin-left: 40px; margin-top: 50px; font-size: 30px;">4. 확인</b>
+					<br /><br /><br /><br /><br /><br />
+					<b style=" margin-top: 400px; font-size: 25px;">입력하신 정보로 전시회가 등록됩니다</b>
+
+					<div style="margin-top: 70px;">
+						<button type="button" style="width: 400px; border: 0.5px solid lightgray;" id="re_check"
+							class="btn btn-light">한번 더 확인해 볼게요</button>
+					</div>
+
+					<div style="margin-top: 40px;">
+						<button type="submit" style="width: 400px; border: 0.5px solid lightgray;" id="forth_nextButton"
+							class="btn btn-light">등록</button>
+					</div>
+				</div>
+			</center>
+		</section>
+	</form> <!--폼여기서 닫았음!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+	<section style="margin-top: 150px;" id="enroll_fifth">
+		<center>
+			<img src="./assets/img/ARTMEE.png" alt="아트미 로고" style="width: 200px; height: 110px;" />
+			<br /><br />
+			<img src="./assets/img/enroll_fifthimg.png" alt="등록 다섯번째" style="width: 400px; height: 90px;" />
+			<br /><br />
+			<div style="width: 600px; height: 400px; border: 1px solid lightgray; border-radius: 5%;">
+				<b style="float: left; margin-left: 40px; margin-top: 50px; font-size: 30px;">5. 완료</b>
+				<br /><br /><br /><br /><br /><br />
+				<b style=" margin-top: 300px; font-size: 25px;">전시회 등록이 완료되었습니다!</b>
+
+				<div style="margin-top: 70px;">
+					<button type="button" style="width: 400px; border: 0.5px solid lightgray;" id="come_back" onclick=""
+						class="btn btn-light">홈</button>
+				</div>
+			</div>
+		</center>
+	</section>
+
+
+	<footer class="py-5 navbar-custom" style="margin-top: 150px; background-color: navbar-color;">
+		<div class="container px-5">
+			<div class="row">
+				<div class="col-lg-3">
+					<!-- Left side content -->
+					<img src="assets/img/ARTMEE.png" alt="Artmee Logo"
+						style="max-width: 80%; height: auto; margin-bottom: 5px;">
+				</div>
+				<div class="col-lg-6">
+					<!-- Right side content -->
+					<p class="text-white small" style="margin-top: 5px;">
+						아트미 <br>
+						전화번호: 123-456-7890<br>
+						주소: 서울시 종로구 종로12길 15, 8층 801호<br>
+						이메일: info@artmee.com<br>
+						Copyright &copy; 2023 개발해드림 ALL RIGHTS RESERVED
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- 모달 창 -->
+	<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="termsModalLabel">개인정보 취급 방침</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					1. 개인정보 취급 내용 <br />
+					2. 개인정보 취급 내용 <br />
+					3. 개인정보 취급 내용 <br />
+					4. 개인정보 취급 내용 <br />
+					5. 개인정보 취급 내용
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
