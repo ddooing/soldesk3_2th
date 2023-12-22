@@ -11,6 +11,25 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ 
+ @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+    @font-face {
+    font-family: 'se';
+    src: url('../assets/fonts/SejonghospitalBold.otf') format('otf');
+    }
+    
+    @font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 :root {
 	--bs-blue: #0d6efd;
 	--bs-indigo: #6610f2;
@@ -58,7 +77,8 @@
 	--bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	--bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-	--bs-body-font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+	--bs-body-font-family: 'GmarketSansMedium', 'se','SDSamliphopangche_Outline', Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
 	--bs-body-font-size: 1rem;
 	--bs-body-font-weight: 400;
 	--bs-body-line-height: 1.5;
@@ -80,6 +100,10 @@
 	--bs-highlight-bg: #fff3cd;
 }
 
+*{
+	font-family: var(--bs-body-font-family) !important;
+}
+
 *,
 *::before,
 *::after {
@@ -93,8 +117,10 @@
 }
 
 body {
+
+  
 	margin: 0;
-	font-family: var(--bs-body-font-family);
+	
 	font-size: var(--bs-body-font-size);
 	font-weight: var(--bs-body-font-weight);
 	line-height: var(--bs-body-line-height);
@@ -2337,9 +2363,9 @@ progress {
 .form-control:focus {
 	color: #212529;
 	background-color: #fff;
-	border-color: #f784bc;
+	border-color: #212529;
 	outline: 0;
-	box-shadow: 0 0 0 0.25rem rgba(238, 9, 121, 0.25);
+	box-shadow: 0 0 0 0.25rem rgb(0, 0, 0);
 }
 
 .form-control::-webkit-date-and-time-value {
@@ -12637,8 +12663,8 @@ html {
 
 .navbar-custom .navbar-nav .nav-item .nav-link {
 	text-transform: uppercase;
-	font-size: 1rem;
-	font-weight: 700;
+	font-size: 1.2rem;
+
 	letter-spacing: 0.1rem;
 }
 
