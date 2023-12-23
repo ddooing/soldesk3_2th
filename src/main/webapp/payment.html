@@ -10,6 +10,8 @@
 	
 	<link rel="icon" type="image/x-icon" href="assets/ARTMEE_PAGELOGO.png" />
 
+
+
 	<!-- Font Awesome icons (free version)-->
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
@@ -42,9 +44,26 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 	<style>
-	
-	</style>
+	 input[type="radio"] {
+        display: none; /* 라디오 버튼 숨기기 */
+    }
 
+    input[type="radio"] + label {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid #000;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    input[type="radio"]:checked + label {
+        border-color: #000;
+        background-color: #000;
+        color: #fff;
+    }
+	</style>
+	
 </head>
 
 <body id="page-top">
@@ -213,11 +232,78 @@
 				</div>
 			</div>
 			
+	<!--아임포트 결제 자바스크립트-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
+    <script>
+        var IMP = window.IMP; 
+        IMP.init("imp02486446"); 
+        
+        function requestPay() {
+        var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+        if (paymentMethod === 'card') {
+            requestcardPay();
+        } else if (paymentMethod === 'kakao') {
+            requestkakaoPay();
+        }
+    }
+
+    function requestcardPay() {
+    	 IMP.request_pay({
+                pg : 'html5_inicis', //카카오페이 : kakaopay.TC0ONETIME , nhn kcp : kcp 
+                pay_method : 'card',
+                merchant_uid: "57008833-330034", 
+                name : '전시회 티켓',
+                amount : 20000,
+                buyer_email : 'Iamport@chai.finance',
+                buyer_name : '포트원 기술지원팀',
+                buyer_tel : '010-1234-5678',
+                buyer_addr : '서울특별시 강남구 삼성동',
+                buyer_postcode : '123-456'
+            }, function (rsp) { // callback
+                //rsp.imp_uid 값으로 결제 단건조회 API를 호출하여 결제결과를 판단합니다.
+            });
+    }
+
+    function requestkakaoPay() {
+         IMP.request_pay({
+                pg : 'kakaopay.TC0ONETIME', //카카오페이 : kakaopay.TC0ONETIME , nhn kcp : kcp 
+                pay_method : 'card',
+                merchant_uid: "57008833-330034", 
+                name : '전시회 티켓',
+                amount : 20000,
+                buyer_email : 'Iamport@chai.finance',
+                buyer_name : '포트원 기술지원팀',
+                buyer_tel : '010-1234-5678',
+                buyer_addr : '서울특별시 강남구 삼성동',
+                buyer_postcode : '123-456'
+            }, function (rsp) { // callback
+                //rsp.imp_uid 값으로 결제 단건조회 API를 호출하여 결제결과를 판단합니다.
+            });
+    }   
+    </script>
+			
+			
 			<!--결제 부분-->
 			<hr style="margin:auto; margin-top: 50px; width: 1000px;"/>
 			<div>
-				<h3 style="margin-left: 180px; margin-top: 50px;">결제</h3>
+				<h3 style="margin-left: 180px; margin-top: 50px;">결제 방법</h3>
 			</div>
+			<div style="display: flex; align-items: center; margin-top: 50px; margin-left: 300px;">
+				<div>
+    				<input type="radio" id="cardPayment" name="paymentMethod" value="card" hidden>
+    				<label for="cardPayment">카드 결제</label>
+				</div>
+
+				<div style="margin-left: 30px;">
+    				<input type="radio" id="kakaoPayment" name="paymentMethod" value="kakao" hidden>
+    				<label for="kakaoPayment">카카오페이</label>
+				</div>
+			</div>
+			
 			<div style="display: flex; align-items: baseline; margin-top: 50px; margin-left: 800px;">
 				<h3 >총 결제 금액 : </h3>
 				<a style="font-size: 30px; margin-left: 10px;">20,000 원</a>
@@ -225,7 +311,7 @@
 			
 			<div style="display: flex; align-items: baseline; margin-top: 80px; margin-left: 850px;">
 				<button class="btn btn-dark" style="margin-left: 30px; width: 100px; height: 50px;">돌아가기</button>
-				<button class="btn btn-dark" style="margin-left: 30px; width: 100px; height: 50px;">결제하기</button>
+				<button onclick="requestPay()" class="btn btn-dark"  style="margin-left: 30px; width: 100px; height: 50px;">결제하기</button>
 			</div>
 		</div>
 	</section>
