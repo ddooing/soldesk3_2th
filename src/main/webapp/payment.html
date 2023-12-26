@@ -168,9 +168,58 @@
 					</div>
 				</div>
 			</div>
+			<hr style="margin:auto; margin-top: 50px; width: 1000px;" />
+			
+			<div>
+				<h3 style="margin-left: 180px; margin-top: 50px;">전시회 정보2</h3>
+			</div>
+			<div style="display: flex; align-items: center; flex-direction: row;">
+				<img src="assets/img/poster1.png" alt="예약포스터"
+					style="width: 200px; height: 280px; margin-left: 300px; margin-top: 40px;" />
+
+				<div style="margin-left: 200px;">
+					<h3>ex)한국의 기하학적 추상미술</h3>
+
+					<div style="display: flex; margin-top: 40px;">
+						<div style="margin-right: 10px; width: 200px;">
+							<a style="font-size: 20px;">예약 날짜</a>
+						</div>
+						<div style="margin-left: auto;">
+							<a style="font-size: 20px; ">ex)2023.12.23</a>
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 10px;">
+						<div style="margin-right: 10px;  width: 200px;">
+							<a style="font-size: 20px;">관람 시간</a>
+						</div>
+						<div style="margin-left: auto;">
+							<a style="font-size: 20px;">ex)10:00 ~ 19:20</a>
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 10px;">
+						<div style="margin-right: 10px;  width: 200px;">
+							<a style="font-size: 20px;">티켓 수량</a style="font-size: 20px;">
+						</div>
+						<div style="margin-left: auto;">
+							<a style="font-size: 20px;">ex)2매</a style="font-size: 20px;">
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 10px;">
+						<div style="margin-right: 10px;  width: 200px;">
+							<a style="font-size: 20px;">결제 금액</a>
+						</div>
+						<div style="margin-left: auto;">
+							<a style="font-size: 20px;">ex)20,000원</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr style="margin:auto; margin-top: 50px; width: 1000px;" />
 
 			<!--주문자 정보 부분-->
-			<hr style="margin:auto; margin-top: 50px; width: 1000px;" />
 			<div>
 				<h3 style="margin-left: 180px; margin-top: 50px;">주문자 정보</h3>
 			</div>
@@ -260,16 +309,33 @@
 					IMP.request_pay({
 						pg: 'html5_inicis', //카카오페이 : kakaopay.TC0ONETIME , nhn kcp : kcp 
 						pay_method: 'card',
-						merchant_uid: "57008833-330034",
+						merchant_uid: "57008833-3234344",
 						name: '전시회 티켓',
-						amount: 20000,
+						amount: 12,
 						buyer_email: 'Iamport@chai.finance',
 						buyer_name: '포트원 기술지원팀',
 						buyer_tel: '010-1234-5678',
 						buyer_addr: '서울특별시 강남구 삼성동',
 						buyer_postcode: '123-456'
-					}, function (rsp) { // callback
-						//rsp.imp_uid 값으로 결제 단건조회 API를 호출하여 결제결과를 판단합니다.
+					}, function (rsp) {
+						if (rsp.success) {
+							// 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+							// jQuery로 HTTP 요청
+							jQuery.ajax({
+								url: "localhost:8080/example/payment_complete.html",
+								method: "POST",
+								headers: {"Content-Type": "application/json"},
+								data: {
+									imp_uid: rsp.imp_uid,            // 결제 고유번호
+									merchant_uid: rsp.merchant_uid   // 주문번호
+								}
+							}).done(function (data) {
+								// 가맹점 서버 결제 API 성공시 로직
+							})
+							location.href = "http://localhost:8080/example/payment_complete.html"
+						} else {
+							alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
+						}
 					});
 				}
 
@@ -277,16 +343,33 @@
 					IMP.request_pay({
 						pg: 'kakaopay.TC0ONETIME', //카카오페이 : kakaopay.TC0ONETIME , nhn kcp : kcp 
 						pay_method: 'card',
-						merchant_uid: "57008833-330034",
+						merchant_uid: "570676543-33234124",
 						name: '전시회 티켓',
-						amount: 20000,
+						amount: 12,
 						buyer_email: 'Iamport@chai.finance',
 						buyer_name: '포트원 기술지원팀',
 						buyer_tel: '010-1234-5678',
 						buyer_addr: '서울특별시 강남구 삼성동',
 						buyer_postcode: '123-456'
-					}, function (rsp) { // callback
-						//rsp.imp_uid 값으로 결제 단건조회 API를 호출하여 결제결과를 판단합니다.
+					}, function (rsp) {
+						if (rsp.success) {
+							// 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+							// jQuery로 HTTP 요청
+							jQuery.ajax({
+								url: "localhost:8080/example/payment_complete.html",
+								method: "POST",
+								headers: {"Content-Type": "application/json"},
+								data: {
+									imp_uid: rsp.imp_uid,            // 결제 고유번호
+									merchant_uid: rsp.merchant_uid   // 주문번호
+								}
+							}).done(function (data) {
+								// 가맹점 서버 결제 API 성공시 로직
+							})
+							location.href = "http://localhost:8080/example/payment_complete.html"
+						} else {
+							alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
+						}
 					});
 				}   
 			</script>
@@ -316,11 +399,28 @@
 
 			<div style="display: flex; align-items: baseline; margin-top: 80px; margin-left: 850px;">
 				<button class="btn btn-dark" style="margin-left: 30px; width: 100px; height: 50px;">돌아가기</button>
-				<button onclick="requestPay()" class="btn btn-dark"
+				<button onclick="validatePaymentMethod()" class="btn btn-dark"
 					style="margin-left: 30px; width: 100px; height: 50px;">결제하기</button>
+
 			</div>
 		</div>
 	</section>
+
+	<script>
+		function validatePaymentMethod() {
+			var cardPayment = document.getElementById('cardPayment').checked;
+			var kakaoPayment = document.getElementById('kakaoPayment').checked;
+
+			if (!cardPayment && !kakaoPayment) {
+				alert('결제 방법을 선택해주세요!');
+				return false;
+			}
+
+			requestPay();
+			return true;
+		}
+	</script>
+
 
 	<!-- 푸터-->
 	<footer class="py-5 navbar-custom" style="margin-top: 150px; background-color: navbar-color;">
