@@ -20,27 +20,15 @@
     
     
 }
-/*
-#index_wrap #leftToRight {display: block; margin-bottom: 50px; position: absolute;
-            
-}
-#index_wrap #leftToRight #upMenu {position: relative; display: inline-block; margin: 0 60px; height: 40px; text-align: center; line-height: 30px; cursor: pointer; }
-#index_wrap #leftToRight #upMenu div { text-decoration: none; font-size: 2.5em;}
-#leftToRight #upMenu::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0;}
-#leftToRight #upMenu:hover::after {width: 100%; left: 0; right: auto;}
 
-
-
-#leftToRight .submenu { margin-bottom: 50px; display:flex; padding-top:40px;}
-#leftToRight .submenu li {position: relative; display: inline-block; margin: 0 30px; height: 40px; text-align: center; line-height: 30px; cursor: pointer;text-align: center;  }
-#leftToRight ul li a {color: gray; text-decoration: none; font-size: 2em;}
-#mypageMenu li::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0;}
-
-*/
 
 #index_wrap #leftToRight {display: block; margin-bottom: 50px; position: absolute;
-            
-}
+
+
+margin-top: 5vh;
+
+    left: 0;
+    top: 0;}
 #index_wrap #leftToRight .upMenu {position: relative; display: inline-block; margin: 0 60px; height: 40px; text-align: center; line-height: 30px; cursor: pointer; }
 #index_wrap #leftToRight .upMenu div { text-decoration: none; font-size: 2.5em; opacity:0.5;}
 #leftToRight .upMenu::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0; margin-top:10px;}
@@ -65,6 +53,10 @@ text-align: center; font-size: 1.5em; color: gray;}
 	.menu .submenu.visible {
           display: block ;
       }	
-      
-        
+      .content div{
+      display: none ;
+      }
+    .content div.contentshow{
+    display: block ;
+    }  
         

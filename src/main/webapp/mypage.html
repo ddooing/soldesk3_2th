@@ -146,7 +146,9 @@
 		
 		
 		<!-- 메뉴바 -->
-		<div id="index_wrap" style="width:80%; margin:auto; justify-content: center; display: flex;  padding-top: calc(1.5rem + 40px);">
+		<div id="index_wrap" style="width:80%; margin:auto; justify-content: center; display: flex; 
+
+		position: relative; padding-top: calc(1.5rem + 40px);">
 			<ul id ="leftToRight" class="menu ">
 			   <li class="upMenu">
 		        <div id="mypageLink" class="selected" >Mypage</div>
@@ -196,6 +198,26 @@
 		
 		
 		<!-- 내용 -->
+		<div style="display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    padding-top: calc(3rem + 40px);"  class="content">
+		
+		
+			<div class="reservationList contentshow"> a</div>
+			
+			<div class="promotionList"> b</div>
+			
+			<div class="poinList"> c</div>
+			
+			<div class="postList"> d</div>
+			
+			<div class="faq"> e</div>
+			
+			<div class="qna"> f</div>
+		
+		</div>
 		
 	</div>
 	
@@ -214,10 +236,7 @@
 	    
 	    divElements.forEach(function (divElement) 
 	    {
-
-	        divElement.addEventListener("click", function () {
-	        	
-	        	
+	        divElement.addEventListener("click", function () {  	
 	        	divElements.forEach(function (otherItem) {
 	                otherItem.classList.remove("selected");
 	            });
@@ -243,7 +262,7 @@
 	        
 	    });
 	     
-	    
+	    var contentElements = document.querySelectorAll(".content > div");
 	    liElements.forEach(function (liElement) {
 	    	console.log(liElement.id);
 	    	liElement.addEventListener("click", function () {
@@ -252,14 +271,35 @@
 	    		liElements.forEach(function (otherItem) {
 	                otherItem.classList.remove("sel");  
 	            });
+	    		contentElements.forEach(function (contentElement) {
+	    			contentElement.classList.remove("contentshow");
+	    		})
+	    		
 	    		liElement.classList.add("sel");
-
+	    		
+	    		
+	    		var contentName= liElement.id;
+	    		console.log(contentName);
+	        	document.querySelector("."+contentName).classList.add("contentshow");
+	        		
+        		
+        		
+            	
 	        });
 		});
+	    
+	    
 	});
 
 
-	
+	document.addEventListener("DOMContentLoaded", function () {
+        // #leftToRight의 높이를 가져옴
+        var leftToRightHeight = document.getElementById('leftToRight').offsetHeight;
+        
+        var mypageMenutHeight = document.getElementById('mypageMenu').offsetHeight;
+        // #index_wrap의 높이를 설정
+        document.getElementById('index_wrap').style.height = leftToRightHeight +mypageMenutHeight+ 'px';
+    });
     
      
    
