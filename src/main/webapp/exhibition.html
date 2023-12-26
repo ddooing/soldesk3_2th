@@ -38,7 +38,7 @@
 
 	<!--네이버 지도 스크립트-->
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=3pt81hiu97"></script>
-	
+
 
 </head>
 
@@ -58,7 +58,8 @@
 						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 50px;">공지사항</a>
 					</li>
 					<li class="nav-item mr-5">
-						<a class="nav-link" href="exhibition.html" style="margin-right: 20px; margin-left: 20px;">전시회</a>
+						<a class="nav-link" href="exhibition.html"
+							style="margin-right: 20px; margin-left: 20px;">전시회</a>
 					</li>
 					<li class="nav-item mr-5">
 						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 20px;">이용후기</a>
@@ -94,361 +95,456 @@
 	<!--전시회 부분-->
 	<section class="vh-60">
 		<div class="text-center mb-4" style="margin-top: 180px;">
-		<h2>전시회</h2>
-		<hr style="width: 900px; margin: auto; margin-top: 30px;"/>
+			<h2>전시회</h2>
+			<hr style="width: 900px; margin: auto; margin-top: 30px;" />
 		</div>
-	
-	<div style="margin-top: 30px; text-align: center; margin-right: 340px;">
-			<button id="popularbtn" style="color: black; font-size: 25px; text-decoration: none; border: none; background-color: transparent;">인기</buttonid>
-			<button id="recentbtn" style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">최신</button>
-			<button id="freebtn" style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">무료</button>
-			<button id="soonendbtn" style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">곧종료</button>
-			<button id="nearbtn" style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">가까운순</button>
-			<button id="regionbtn" style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">지역별</button>
-	</div>
-	</section>
-	
-	<section class="vh-100" id="인기">
-		<div class="text-center mb-4" style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
-	
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		</div>
-		
-		<!--페이징 부분-->
-		<div style="display: flex; justify-content: center; align-items: center;">
-    		<nav aria-label="Page navigation example">
-        		<ul class="pagination">
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Previous">
-                    		<span aria-hidden="true">«</span>
-                		</a>
-            		</li>
-            		<li class="page-item"><a class="page-link" href="#">1</a></li>
-            		<li class="page-item"><a class="page-link" href="#">2</a></li>
-            		<li class="page-item"><a class="page-link" href="#">3</a></li>
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Next">
-                    		<span aria-hidden="true">»</span>
-                		</a>
-            		</li>
-        		</ul>
-    		</nav>
+
+		<div style="margin-top: 30px; text-align: center; margin-right: 340px;">
+			<button id="popularbtn"
+				style="color: black; font-size: 25px; text-decoration: none; border: none; background-color: transparent;">인기
+				</buttonid>
+				<button id="recentbtn"
+					style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">최신</button>
+				<button id="freebtn"
+					style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">무료</button>
+				<button id="soonendbtn"
+					style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">곧종료</button>
+				<button id="nearbtn"
+					style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">가까운순</button>
+				<button id="regionbtn"
+					style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 15px;">지역별</button>
 		</div>
 	</section>
-	
-	<section class="vh-100" id="최신">
-		<div class="text-center mb-4" style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster2.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster1.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
+
+	<section id="인기">
+		<div class="text-center mb-4"
+			style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
 		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		</div>
-		
+
 		<!--페이징 부분-->
 		<div style="display: flex; justify-content: center; align-items: center;">
-    		<nav aria-label="Page navigation example">
-        		<ul class="pagination">
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Previous">
-                    		<span aria-hidden="true">«</span>
-                		</a>
-            		</li>
-            		<li class="page-item"><a class="page-link" href="#">1</a></li>
-            		<li class="page-item"><a class="page-link" href="#">2</a></li>
-            		<li class="page-item"><a class="page-link" href="#">3</a></li>
-            		<li class="page-item"><a class="page-link" href="#">4</a></li>
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Next">
-                    		<span aria-hidden="true">»</span>
-                		</a>
-            		</li>
-        		</ul>
-    		</nav>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<section id="최신">
+		<div class="text-center mb-4"
+			style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster2.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster1.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+		</div>
+
+		<!--페이징 부분-->
+		<div style="display: flex; justify-content: center; align-items: center;">
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">4</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</section>
 
 
-	<section class="vh-100" id="무료">
-		<div class="text-center mb-4" style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
+	<section id="무료">
+		<div class="text-center mb-4"
+			style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
 
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster3.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster1.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster3.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster1.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
 		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		</div>
-		
+
 		<!--페이징 부분-->
 		<div style="display: flex; justify-content: center; align-items: center;">
-    		<nav aria-label="Page navigation example">
-        		<ul class="pagination">
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Previous">
-                    		<span aria-hidden="true">«</span>
-                		</a>
-            		</li>
-            		<li class="page-item"><a class="page-link" href="#">1</a></li>
-            		<li class="page-item"><a class="page-link" href="#">2</a></li>
-            		<li class="page-item"><a class="page-link" href="#">3</a></li>
-            		<li class="page-item"><a class="page-link" href="#">4</a></li>
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Next">
-                    		<span aria-hidden="true">»</span>
-                		</a>
-            		</li>
-        		</ul>
-    		</nav>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">4</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</section>
-	
-	
-	<section class="vh-100" id="곧종료">
-		<div class="text-center mb-4" style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
-	
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster4.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster1.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
+
+
+	<section id="곧종료">
+		<div class="text-center mb-4"
+			style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1200px;">
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster4.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster1.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
+
+			<div style="margin-top: 50px;">
+				<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+						style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+				<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+						style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+			</div>
 		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-		</div>
-		
+
 		<!--페이징 부분-->
 		<div style="display: flex; justify-content: center; align-items: center;">
-    		<nav aria-label="Page navigation example">
-        		<ul class="pagination">
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Previous">
-                    		<span aria-hidden="true">«</span>
-                		</a>
-            		</li>
-            		<li class="page-item"><a class="page-link" href="#">1</a></li>
-            		<li class="page-item"><a class="page-link" href="#">2</a></li>
-            		<li class="page-item"><a class="page-link" href="#">3</a></li>
-            		<li class="page-item"><a class="page-link" href="#">4</a></li>
-            		<li class="page-item">
-                		<a class="page-link" href="#" aria-label="Next">
-                    		<span aria-hidden="true">»</span>
-                		</a>
-            		</li>
-        		</ul>
-    		</nav>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">4</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</section>
-	
-	
-	
+
+
+
 
 	<!--지도!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-	<section class="vh-100" id="가까운순">
-		<div class="text-center mb-4" style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 750px;">
-			<div class="text-left"><h4 style="margin-right: 750px; margin-top: 30px;">지도</h4></div>
-			<div id="map" style="width:800px; height:600px; margin:auto; margin-top: 30px; border: 1px black solid;"></div>
+	<section id="가까운순">
+		<div class="text-center mb-4"
+			style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 750px;">
+			<div class="text-left">
+				<h4 style="margin-right: 750px; margin-top: 30px;">지도</h4>
+			</div>
+			<div id="map" style="width:800px; height:600px; margin:auto; margin-top: 30px; border: 1px black solid;">
+			</div>
 		</div>
-		
+
 	</section>
-	
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7b2cf06203fb94dc8e07b3948ec6405a&libraries=services"></script>
+
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7b2cf06203fb94dc8e07b3948ec6405a&libraries=services"></script>
 	<script>
 		// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
-var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+		var infowindow = new kakao.maps.InfoWindow({zIndex: 1});
 
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 4 // 지도의 확대 레벨
-    };  
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = {
+				center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+				level: 4 // 지도의 확대 레벨
+			};
 
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
+		// 지도를 생성합니다    
+		var map = new kakao.maps.Map(mapContainer, mapOption);
 
-// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-if (navigator.geolocation) {
-    
-    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-    navigator.geolocation.getCurrentPosition(function(position) {
-        
-        var lat = position.coords.latitude, // 위도
-            lon = position.coords.longitude; // 경도
-        
-        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-            message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-        
-        // 마커와 인포윈도우를 표시합니다
-        displayMarker1(locPosition, message);
-            
-      });
-    
-} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-    
-    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
-        message = 'geolocation을 사용할수 없어요..'
-        
-    displayMarker1(locPosition, message);
-}
+		// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+		if (navigator.geolocation) {
 
-// 지도에 마커와 인포윈도우를 표시하는 함수입니다
-function displayMarker1(locPosition, message) {
+			// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+			navigator.geolocation.getCurrentPosition(function (position) {
 
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({  
-        map: map, 
-        position: locPosition
-    }); 
-    
-    // 지도 중심좌표를 접속위치로 변경합니다
-    map.setCenter(locPosition);      
-}    
+				var lat = position.coords.latitude, // 위도
+					lon = position.coords.longitude; // 경도
+
+				var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+					message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+
+				// 마커와 인포윈도우를 표시합니다
+				displayMarker1(locPosition, message);
+
+			});
+
+		} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+
+			var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
+				message = 'geolocation을 사용할수 없어요..'
+
+			displayMarker1(locPosition, message);
+		}
+
+		// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+		function displayMarker1(locPosition, message) {
+
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+				map: map,
+				position: locPosition
+			});
+
+			// 지도 중심좌표를 접속위치로 변경합니다
+			map.setCenter(locPosition);
+		}
 
 
 
-// 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places(map); 
+		// 장소 검색 객체를 생성합니다
+		var ps = new kakao.maps.services.Places(map);
 
-// 카테고리로 은행을 검색합니다
-ps.categorySearch('CT1', placesSearchCB, {useMapBounds:true}); 
+		// 카테고리로 은행을 검색합니다
+		ps.categorySearch('CT1', placesSearchCB, {useMapBounds: true});
 
-// 키워드 검색 완료 시 호출되는 콜백함수 입니다
-function placesSearchCB (data, status, pagination) {
-    if (status === kakao.maps.services.Status.OK) {
-        for (var i=0; i<data.length; i++) {
-            displayMarker(data[i]);    
-        }       
-    }
-}
+		// 키워드 검색 완료 시 호출되는 콜백함수 입니다
+		function placesSearchCB(data, status, pagination) {
+			if (status === kakao.maps.services.Status.OK) {
+				for (var i = 0; i < data.length; i++) {
+					displayMarker(data[i]);
+				}
+			}
+		}
 
-// 지도에 마커를 표시하는 함수입니다
-function displayMarker(place) {
-    // 마커를 생성하고 지도에 표시합니다
-    var marker = new kakao.maps.Marker({
-        map: map,
-        position: new kakao.maps.LatLng(place.y, place.x) 
-    });
+		// 지도에 마커를 표시하는 함수입니다
+		function displayMarker(place) {
+			// 마커를 생성하고 지도에 표시합니다
+			var marker = new kakao.maps.Marker({
+				map: map,
+				position: new kakao.maps.LatLng(place.y, place.x)
+			});
 
-    // 마커에 클릭이벤트를 등록합니다
-    kakao.maps.event.addListener(marker, 'click', function() {
-        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-        infowindow.open(map, marker);
-    });
-}
+			// 마커에 클릭이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'click', function () {
+				// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+				infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+				infowindow.open(map, marker);
+			});
+		}
 	</script>
-	
-	
-	
-	
-	
-	
-	 
-	<section class="vh-100" id="지역별">
-		<div class="text-center mb-4" style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1300px;">
+
+
+
+
+
+
+
+	<section id="지역별" style="margin-bottom: 150px;">
+		<div class="text-center mb-4"
+			style="margin:auto; margin-top: 30px; border: 0.3px rgb(199, 200, 201) solid; width: 900px; height: 1300px;">
 			<div class="container mt-4">
-  <div class="row" style="margin-top: 50px;">
-    <div class="col-md-2 text-center" style="align-self: center;" >
-      <a style="align-items:center; margin-top: 10px; font-size: 20px;">지역</a>
-    </div>
-    <div class="col-md-8">
-      <select class="form-control" id="exampleCombobox">
-        <option value="option1">서울</option>
-        <option value="option2">부산</option> 
-        <option value="option3">대전</option>
-      </select>
-    </div>
-    <div class="col-md-2">
-		<button class="btn btn-dark">검색</button>
-	</div>
-  </div>
-  <div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
+				<div class="row" style="margin-top: 50px;">
+					<div class="col-md-2 text-center" style="align-self: center;">
+						<a style="align-items:center; margin-top: 10px; font-size: 20px;">지역</a>
+					</div>
+					<div class="col-md-8">
+						<select class="form-control" id="exampleCombobox">
+							<option value="option1">서울</option>
+							<option value="option2">부산</option>
+							<option value="option3">대전</option>
+						</select>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-dark">검색</button>
+					</div>
+				</div>
+				<div style="margin-top: 50px;">
+					<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+							style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+				</div>
+
+				<div style="margin-top: 50px;">
+					<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+							style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+				</div>
+
+				<div style="margin-top: 50px;">
+					<a href=""><img src="assets/img/poster1.png" alt="포스터1"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster2.png" alt="포스터2"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster3.png" alt="포스터3"
+							style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;" /></a>
+					<a href=""><img src="assets/img/poster4.png" alt="포스터4"
+							style="width: 200px; height: 300px; margin-bottom: 30px" /></a>
+				</div>
+
+			</div>
 		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
+		<div style="display: flex; justify-content: center; align-items: center;">
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">»</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
-		
-		<div style="margin-top: 50px;">
-			<a href=""><img src="assets/img/poster1.png" alt="포스터1" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster2.png" alt="포스터2" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster3.png" alt="포스터3" style="width: 200px; height: 300px; margin-right: 20px; margin-bottom: 30px;"/></a>
-            <a href=""><img src="assets/img/poster4.png" alt="포스터4" style="width: 200px; height: 300px; margin-bottom: 30px"/></a>
-		</div>
-  
-</div>
-		</div>
-		<!--??????????????????????-->
 	</section>
-	
+
 
 
 	<!-- 푸터-->
@@ -461,10 +557,10 @@ function displayMarker(place) {
 				</div>
 				<div class="col-lg-6">
 					<p class="text-white small" style="margin-top: 5px;">
-						아트미 <br>
-						전화번호: 123-456-7890<br>
-						주소: 서울시 종로구 종로12길 15, 8층 801호<br>
-						이메일: info@artmee.com<br>
+						아트미 <br />
+						전화번호: 123-456-7890<br />
+						주소: 서울시 종로구 종로12길 15, 8층 801호<br />
+						이메일: info@artmee.com<br />
 						Copyright &copy; 2023 개발해드림 ALL RIGHTS RESERVED
 					</p>
 				</div>
@@ -473,42 +569,42 @@ function displayMarker(place) {
 	</footer>
 
 
-<script>
-    $(document).ready(function () {
-		$('#최신, #무료, #곧종료, #가까운순, #지역별').hide();
-        $('#popularbtn').css('color', 'black');
+	<script>
+		$(document).ready(function () {
+			$('#최신, #무료, #곧종료, #가까운순, #지역별').hide();
+			$('#popularbtn').css('color', 'black');
 
-        $('#popularbtn, #recentbtn, #freebtn, #soonendbtn, #nearbtn, #regionbtn').click(function () {
-            $('#popularbtn, #recentbtn, #freebtn, #soonendbtn, #nearbtn, #regionbtn').css('color', 'lightgray');
-            $(this).css('color', 'black');
-        });
+			$('#popularbtn, #recentbtn, #freebtn, #soonendbtn, #nearbtn, #regionbtn').click(function () {
+				$('#popularbtn, #recentbtn, #freebtn, #soonendbtn, #nearbtn, #regionbtn').css('color', 'lightgray');
+				$(this).css('color', 'black');
+			});
 
-        $('#popularbtn').click(function () {
-            $('#최신, #무료, #곧종료, #가까운순, #지역별').hide();
-            $('#인기').show();
-        });
-        $('#recentbtn').click(function () {
-            $('#인기, #무료, #곧종료, #가까운순, #지역별').hide();
-            $('#최신').show();
-        });
-        $('#freebtn').click(function () {
-            $('#인기, #최신, #곧종료, #가까운순, #지역별').hide();
-            $('#무료').show();
-        });
-        $('#soonendbtn').click(function () {
-            $('#인기, #최신, #무료, #가까운순, #지역별').hide();
-            $('#곧종료').show();
-        });
-        $('#nearbtn').click(function () {
-            $('#인기, #최신, #무료, #곧종료, #지역별').hide();
-            $('#가까운순').show();
-        });
-        $('#regionbtn').click(function () {
-            $('#인기, #최신, #무료, #곧종료, #가까운순').hide();
-            $('#지역별').show();
-        });
-    });
-</script>
+			$('#popularbtn').click(function () {
+				$('#최신, #무료, #곧종료, #가까운순, #지역별').hide();
+				$('#인기').show();
+			});
+			$('#recentbtn').click(function () {
+				$('#인기, #무료, #곧종료, #가까운순, #지역별').hide();
+				$('#최신').show();
+			});
+			$('#freebtn').click(function () {
+				$('#인기, #최신, #곧종료, #가까운순, #지역별').hide();
+				$('#무료').show();
+			});
+			$('#soonendbtn').click(function () {
+				$('#인기, #최신, #무료, #가까운순, #지역별').hide();
+				$('#곧종료').show();
+			});
+			$('#nearbtn').click(function () {
+				$('#인기, #최신, #무료, #곧종료, #지역별').hide();
+				$('#가까운순').show();
+			});
+			$('#regionbtn').click(function () {
+				$('#인기, #최신, #무료, #곧종료, #가까운순').hide();
+				$('#지역별').show();
+			});
+		});
+	</script>
 
 
 
