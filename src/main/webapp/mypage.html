@@ -233,7 +233,7 @@
 	    var divElements = document.querySelectorAll(".upMenu > div");
 	    var ulElements = document.querySelectorAll(".menu > ul ");
 	    var liElements = document.querySelectorAll(".menu > ul > li ");
-	    
+	    var contentElements = document.querySelectorAll(".content > div");
 	    divElements.forEach(function (divElement) 
 	    {
 	        divElement.addEventListener("click", function () {  	
@@ -244,25 +244,31 @@
 	        	ulElements.forEach(function (otherItem) {
 	                otherItem.classList.remove("visible");
 	            });
-	        	
+	        	contentElements.forEach(function (contentElement) {
+	    			contentElement.classList.remove("contentshow");
+	    		})
 	        	
 	        	divElement.classList.add("selected");
 	        	if(divElement.id==='mypageLink')
         		{
 	        		document.getElementById("mypageMenu").classList.add("visible");
 	        		document.getElementById("reservationList").classList.add("sel");
+	        		document.querySelector(".reservationList").classList.add("contentshow");
+		        	
         		}
         		else if(divElement.id==='crm')
         		{
         			document.getElementById("crmMenu").classList.add("visible");
         			document.getElementById("faq").classList.add("sel");
+        			document.querySelector(".faq").classList.add("contentshow");
+    	        	
             	}
 	
 	        });
 	        
 	    });
 	     
-	    var contentElements = document.querySelectorAll(".content > div");
+	    
 	    liElements.forEach(function (liElement) {
 	    	console.log(liElement.id);
 	    	liElement.addEventListener("click", function () {
