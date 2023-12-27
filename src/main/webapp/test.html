@@ -44,42 +44,59 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <title>Insert title here</title>
 <style>
-.selected{
-color:Red;}
+ .wrap{
+    position: relative; 
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+  .box{
+    width: 150px; 
+    background: #242F9B; 
+    padding: 10px; 
+    border-radius: 5px; 
+    color: #ffffff; 
+    text-align: center;
+  }
+  .tooltiptest{
+    position:absolute; 
+    left:0px; 
+    top:52px; 
+    background: #646FD4; 
+    padding: 10px; 
+    border-radius:5px; 
+    color: #fff; 
+    text-align: center; 
+    display: none;
+  }
+  .tooltiptest:after{
+    display: block; 
+    content: ''; 
+    position: absolute; 
+    top: -7px; 
+    left:15px; 
+    width: 0px; 
+    height: 0px; 
+    border-top: 8px solid none; 
+    border-left: 8psolid transparent; 
+    border-right: 8px solid transparent; 
+    border-bottom: 8px solid #646FD4;
+  } 
+  .wrap:hover .tooltiptest{display: block;}
 
-.submenu{
-display:none;
-}
-.visible
-{
-	display:block;
-}
+
 </style>
 </head>
 <body>
-	<div id="mypageLink"  >Mypage
-       <ul id="mypageMenu" class="submenu " style=" width:65vw;">
-		<li id="reservationList" class="sel">예매내역</li>
-              <li id="promotionList">견적내역</li>
-              <li id="poinList">포인트 적립/이용 내역</li>
-              <li id="postList">작성한 글</li>
-       </ul>
-     </div>
+	<div class="wrap">
+    <div class="box"> 말풍선 나와라!</div>
+    <div class="tooltiptest">말풍선 나왔다!</div>
+  </div>
+
      
      
      <script>
-     document.addEventListener("DOMContentLoaded", function () {
-         var divElements = document.getElementById("mypageLink");
-         var ulElements = document.getElementById("mypageMenu");
-
-         divElements.addEventListener("click", function () {
-        	 
-        	 console.log(divElements);
-        	 console.log(ulElements);
-             divElements.classList.add("selected");
-             ulElements.classList.add("visible");
-         });
-     });  
+       
  	
      
      </script>

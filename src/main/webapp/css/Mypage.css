@@ -22,13 +22,7 @@
 }
 
 
-#index_wrap #leftToRight {display: block; margin-bottom: 50px; position: absolute;
-
-
-margin-top: 5vh;
-
-    left: 0;
-    top: 0;}
+#index_wrap #leftToRight {display: block; margin-bottom: 50px; position: absolute;margin-top: 7vh;left: 0;top: 0;}
 #index_wrap #leftToRight .upMenu {position: relative; display: inline-block; margin: 0 60px; height: 40px; text-align: center; line-height: 30px; cursor: pointer; }
 #index_wrap #leftToRight .upMenu div { text-decoration: none; font-size: 2.5em; opacity:0.5;}
 #leftToRight .upMenu::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0; margin-top:10px;}
@@ -53,10 +47,89 @@ text-align: center; font-size: 1.5em; color: gray;}
 	.menu .submenu.visible {
           display: block ;
       }	
-      .content div{
+      .content > div{
       display: none ;
       }
     .content div.contentshow{
     display: block ;
     }  
         
+   /*   스타일 적용이안됨   
+.tooltext{
+    position:absolute; 
+    left:0px; 
+    top:52px; 
+    background: #646FD4; 
+    padding: 10px; 
+    border-radius:5px; 
+    color: #fff; 
+    text-align: center; 
+    display: none;
+  }
+  .tooltext:after{
+    display: block; 
+    content: ''; 
+    position: absolute; 
+    top: -7px; 
+    left:15px; 
+    width: 0px; 
+    height: 0px; 
+    border-top: 8px solid none; 
+    border-left: 8psolid transparent; 
+    border-right: 8px solid transparent; 
+    border-bottom: 8px solid #646FD4;
+  } 
+  .toolWrap:hover .tooltext{display: block;}
+
+   */ 
+   .reservationList{
+   padding-top: calc(3rem + 40px);
+   width: 100%;
+			 justify-content: center; padding:30px; 
+			 flex-direction: column;
+   }
+   .contentpadding{
+   padding-top: calc(3rem + 40px);}
+    .reservationList >div{ margin: 0px auto 30px;}
+   .reserinfo p{font-size:1.5em;}
+   
+   .reserCancel{	
+   	position:relative; border: none !important; left:300px; border-radius:30px;
+   	background:lightgray;padding: 10px 15px 10px 15px; top:-5px;
+   }
+   .reserCancel:hover{ background:gray; box-shadow: inset 5px 5px rgb(0, 0, 0, 0.1);}
+   
+   .bookmark{
+   width: 100%;
+			 justify-content: center; padding:30px; 
+			 flex-direction: column;
+   }
+   .board-table th,tr, td { font-size:1.2em;}
+   .board-table th {
+            background: #eee;
+            border-top: 2px solid gray;
+            padding: 5px;
+        }
+        .board-table thead >  tr > th{
+            text-align:center;
+        }
+        .board-table thead{
+            height:70px;
+        }
+		.board-table tbody {
+		            height:55px;
+		        }
+        .board-table td {
+            border-bottom: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .board-table td {
+            text-align: center;
+        }
+
+        .board-table td:nth-child(3) {
+            text-align: left;
+        }
+   
+    
