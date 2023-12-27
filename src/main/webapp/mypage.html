@@ -199,12 +199,12 @@
 		
 		<!-- 내용 -->
 		<div style="display: flex;
-    justify-content: center;
-    width: 80%;
-    margin: auto;
-    padding-top: calc(3rem + 40px);"  class="content">
-		
-		
+		    justify-content: center;
+		    width: 80%;
+		    margin: auto;
+		    padding-top: calc(3rem + 40px);"  class="content">
+				
+				
 			<div class="reservationList contentshow"> a</div>
 			
 			<div class="promotionList"> b</div>
@@ -243,6 +243,9 @@
 	        	
 	        	ulElements.forEach(function (otherItem) {
 	                otherItem.classList.remove("visible");
+	            });
+	        	liElements.forEach(function (otherItem) {
+	                otherItem.classList.remove("sel");  
 	            });
 	        	contentElements.forEach(function (contentElement) {
 	    			contentElement.classList.remove("contentshow");
