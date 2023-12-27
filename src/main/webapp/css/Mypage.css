@@ -89,7 +89,7 @@ text-align: center; font-size: 1.5em; color: gray;}
 			 flex-direction: column;
    }
    .contentpadding{
-   padding-top: calc(3rem + 40px);}
+   padding-top: calc(1.5rem + 40px);}
     .reservationList >div{ margin: 0px auto 30px;}
    .reserinfo p{font-size:1.5em;}
    
@@ -106,30 +106,97 @@ text-align: center; font-size: 1.5em; color: gray;}
    }
    .board-table th,tr, td { font-size:1.2em;}
    .board-table th {
-            background: #eee;
-            border-top: 2px solid gray;
-            padding: 5px;
+       background: #eee;
+       border-top: 2px solid gray;
+       padding: 5px;
+   }
+   .board-table thead >  tr > th{
+       text-align:center;
+   }
+   .board-table thead{
+       height:70px;
+   }
+	.board-table tbody {
+            height:55px;
         }
-        .board-table thead >  tr > th{
-            text-align:center;
-        }
-        .board-table thead{
-            height:70px;
-        }
-		.board-table tbody {
-		            height:55px;
-		        }
-        .board-table td {
-            border-bottom: 1px solid #ccc;
-            padding: 5px;
-        }
+      .board-table td {
+          border-bottom: 1px solid #ccc;
+          padding: 5px;
+      }
 
-        .board-table td {
-            text-align: center;
-        }
+      .board-table td {
+          text-align: center;
+      }
 
-        .board-table td:nth-child(3) {
-            text-align: left;
+      .board-table td:nth-child(3) {
+          text-align: left;
+      }
+      
+      
+      
+      .post-tableth,tr, td { font-size:1.2em;}
+ 		.post-table th {
+          background: #eee;
+          border-top: 2px solid gray;
+          padding: 5px;
+      }
+      .post-table thead >  tr > th{
+          text-align:center;
+      }
+      .post-table thead{
+          height:70px;
+      }
+	.post-table tbody {
+            height:55px;
         }
-   
+      .post-table td {
+          border-bottom: 1px solid #ccc;
+          padding: 5px;
+      }
+
+      .post-table td {
+          text-align: center;
+      }
+	 
+      .post-table td:nth-child(2) {
+          text-align: left;
+      }
+ 		
+ 		
+ 		
+ 		
+	   .point-table td {
+          border-bottom: 1px solid #ccc;
+          padding: 5px;
+          font-size:1.2em;
+      }
+
+      .point-table td {
+          text-align: center;
+      }
+	 
+      .post-table td:nth-child(2) {
+          text-align: left;
+      }
+ 		
+ 	.point-table tr:first-child {
+        border-top: 1px solid #ccc;
+    }
+    .bookmarkgrid >div{
+        display: flex;
+    padding: 10px;
+    justify-content: center;
+    }
+    .bookmarkgrid >div >img{
+        cursor: pointer;
+    }
     
+    .archivegrid >div{
+        display: flex;
+    padding: 10px;
+    justify-content: center;
+    }
+    .archivegrid >div >img{
+        cursor: pointer;
+    }
+  
