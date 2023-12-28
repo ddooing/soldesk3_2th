@@ -232,60 +232,64 @@
 
 
 
-				<div
-					style="margin-top: 50px; display: flex; text-align: center; justify-content: center;">
-
+				<div style="margin-top: 50px; display: flex; text-align: center; justify-content: center;">
 					<div class="image-container">
-						<a href=""> <img src="assets/img/poster1.png" alt="포스터1"
-							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg id="fill_heart"
-								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
-								fill="currentColor" class="bi bi-heart heart-icon"
-								viewBox="0 0 16 16">
-            <path
-									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-        </svg>
-        <svg id="empty_herty" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon" viewBox="0 0 16 16" style="fill: red;">
-  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-</svg>
+						<div class="heart-toggle">
+							<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon fill_heart" viewBox="0 0 16 16" style="fill: red;">
+  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+        					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon empty_heart" viewBox="0 0 16 16" style="fill: white;">
+  									<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+						</div>
+						<a href="#">
+							<img src="assets/img/poster1.png" alt="포스터1" style="width: 260px; height: 360px; margin-bottom: 30px;" />
 						</a>
 						<p style="font-size: 20px; text-align: left;">포스터1제목</p>
 					</div>
 
+
 					<div class="image-container">
-						<a href=""> <img src="assets/img/poster2.png" alt="포스터2"
-							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg
-								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
-								fill="currentColor" class="bi bi-heart heart-icon"
-								viewBox="0 0 16 16">
-            <path
-									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-        </svg>
-						</a>
+						<div class="heart-toggle">
+							<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon fill_heart" viewBox="0 0 16 16" style="fill: red;">
+  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+        					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon empty_heart" viewBox="0 0 16 16" style="fill: white;">
+  									<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+						</div>
+							<a href="#">
+								<img src="assets/img/poster2.png" alt="포스터2" style="width: 260px; height: 360px; margin-bottom: 30px;" />
+							</a>
 						<p style="font-size: 20px; text-align: left;">포스터2제목</p>
 					</div>
 
 					<div class="image-container">
-						<a href=""> <img src="assets/img/poster3.png" alt="포스터3"
-							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg
-								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
-								fill="currentColor" class="bi bi-heart heart-icon"
-								viewBox="0 0 16 16">
-            <path
-									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-        </svg>
+						<div class="heart-toggle">
+							<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon fill_heart" viewBox="0 0 16 16" style="fill: red;">
+  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+        					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon empty_heart" viewBox="0 0 16 16" style="fill: white;">
+  									<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+						</div>
+						<a href="#">
+							<img src="assets/img/poster3.png" alt="포스터3"	style="width: 260px; height: 360px; margin-bottom: 30px;" />
 						</a>
 						<p style="font-size: 20px; text-align: left;">포스터3제목</p>
 					</div>
 
 					<div class="image-container">
-						<a href=""> <img src="assets/img/poster4.png" alt="포스터4"
-							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg
-								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
-								fill="currentColor" class="bi bi-heart heart-icon"
-								viewBox="0 0 16 16">
-            <path
-									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-        </svg>
+						<div class="heart-toggle">
+							<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon fill_heart" viewBox="0 0 16 16" style="fill: red;">
+  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+       	 					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon empty_heart" viewBox="0 0 16 16" style="fill: white;">
+  									<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+							</svg>
+						</div>
+						<a href="#">
+							<img src="assets/img/poster4.png" alt="포스터4" style="width: 260px; height: 360px; margin-bottom: 30px;" />
 						</a>
 						<p style="font-size: 20px; text-align: left;">포스터4제목</p>
 					</div>
@@ -296,29 +300,25 @@
 				<script>
 					//  하트 토글 버튼
 					// 변수 선언
-					let isHeartFilled = false;
-					const heartButton = document.getElementById('heartButton');
-					const fillHeartIcon = document.getElementById('fill_heart');
-					const emptyHeartIcon = document
-							.getElementById('empty_heart');
+					document.querySelectorAll('.heart-toggle').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();  // 기본 동작 방지
+        event.stopPropagation(); // 이벤트 전파 중지
 
-					// 하트 버튼 클릭 시 토글 함수
-					function toggleHeart() {
-						isHeartFilled = !isHeartFilled;
+        // 이 부분은 SVG 태그에 직접 접근하기 때문에 수정이 필요합니다.
+        const fillHeartIcon = this.classList.contains('fill_heart') ? this : this.parentElement.querySelector('.fill_heart');
+        const emptyHeartIcon = this.classList.contains('empty_heart') ? this : this.parentElement.querySelector('.empty_heart');
 
-						if (isHeartFilled) {
-							// 하트가 채워진 아이콘 표시, 빈 하트 아이콘 숨김
-							fillHeartIcon.style.display = 'inline-block';
-							emptyHeartIcon.style.display = 'none';
-						} else {
-							// 빈 하트 아이콘 표시, 하트가 채워진 아이콘 숨김
-							fillHeartIcon.style.display = 'none';
-							emptyHeartIcon.style.display = 'inline-block';
-						}
-					}
-
-					// 하트 버튼에 클릭 이벤트 리스너 추가
-					heartButton.addEventListener('click', toggleHeart);
+        // 하트 토글 로직
+        if (fillHeartIcon.style.display === 'none') {
+            fillHeartIcon.style.display = 'inline-block';
+            emptyHeartIcon.style.display = 'none';
+        } else {
+            fillHeartIcon.style.display = 'none';
+            emptyHeartIcon.style.display = 'inline-block';
+        }
+    });
+});
 				</script>
 
 
