@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>ARTMEE</title>
+	<link rel="icon" type="image/x-icon" href="assets/ARTMEE_PAGELOGO.png" />
+
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+		rel="stylesheet" />
+
+	<!-- Bootstrap core JS-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+
+	<!-- JQuery 자바스크립트-->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+	<!-- CSS -->
+	<link href="css/styles.css" rel="stylesheet" />
+
+	<!-- Carousel 자바스크립트-->
+	<script src='https://www.gmarwaha.com/script/lib/jquery-1.11.1.js'></script>
+	<script src="https://www.gmarwaha.com/script/lib/jquery.easing-1.3.js"></script>
+	<script src="https://www.gmarwaha.com/script/lib/jquery.easing.compatibility.js"></script>
+	<script src="https://www.gmarwaha.com/script/lib/jquery.mousewheel-3.1.12.js"></script>
+	<script src="https://www.gmarwaha.com/jquery/jcarousellite/script/jquery.jcarousellite.js"></script>
+
+	<style>
+		#jcl-demo {
+			text-align: center;
+		}
+
+		.custom-container.main,
+		.custom-container.main1,
+		.custom-container.main2 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.prev,
+		.next,
+		.prev1,
+		.next1,
+		.prev2,
+		.next2 {
+			margin: 0 10px;
+		}
+
+		.carousel ul li,
+		.carousel1 ul li {
+			margin-right: 10px;
+		}
+
+		.carousel ul li:last-child,
+		.carousel1 ul li:last-child {
+			margin-right: 0;
+		}
+
+		.carousel img,
+		.carousel1 img {
+			max-width: 100%;
+		}
+
+		section#scroll *,
+		section#scroll *::before,
+		section#scroll *::after {
+			box-sizing: content-box;
+		}
+
+		.divider:after,
+		.divider:before {
+			content: "";
+			flex: 1;
+			height: 1px;
+			background: #eee;
+		}
+
+		.form-check-input[type="checkbox"] {
+			background-color: #fff;
+			border: 1px solid #000;
+			border-radius: 4px;
+		}
+
+		.form-check-input[type="checkbox"]:checked {
+			background-color: #000;
+			border: 1px solid #000;
+			color: #fff;
+		}
+
+		.btn_gotop {
+			display: none;
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
+			z-index: 999;
+			outline: none;
+			cursor: pointer;
+			border-radius: 100%;
+			border: none;
+			fill: black;
+		}
+	</style>
+
+
+
+</head>
+
+<body id="page-top">
+	<!-- 메뉴바 -->
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+		<div class="container px-5">
+			<a class="navbar-brand" href="index.html"><img src="assets/img/ARTMEE.png"
+					style="width: 160px; height: 60px;" /></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 50px;">공지사항</a>
+					</li>
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="exhibition.html"
+							style="margin-right: 20px; margin-left: 20px;">전시회</a>
+					</li>
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 20px;">이용후기</a>
+					</li>
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" style="margin-right: 20px; margin-left: 20px;">게시판</a>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item mr-5" style="margin-right: 60px; margin-top: 5px;">
+						<form class="d-flex">
+							<input class="form-control me-2" type="search" placeholder="검색" aria-label="Search">
+							<button class="btn btn-outline-light" type="submit">
+								<img src="assets/img/search.png" alt="Search" style="width: 20px; height: 20px;">
+							</button>
+						</form>
+					</li>
+
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!"><img src="assets/img/cart.png"
+								style="width: 30px; height: 30px; margin-right: 30px;" /></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html">로그인</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<section id="exhibition_info" style="margin-top: 200px;">
+		<div class="container mb-1">
+			<!--전시회 부분-->
+			<div style="display: flex; align-items: center; flex-direction: row;">
+				<img src="assets/img/poster1.png" alt="포스터"
+					style="width: 280px; height: 400px; margin-left: 200px; margin-top: 40px;" />
+
+				<div style="margin-left: 50px;">
+					<h1>한국의 기하학적 추상미술</h1>
+
+					<div style="display: flex; margin-top: 40px;">
+						<div style="margin-right: 20px;">
+							<a style="font-size: 25px;">롯데 뮤지엄</a>
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 10px;">
+						<div style="margin-right: 20px;">
+							<a style="font-size: 25px;">2023.9.22 - 2023.10.29</a>
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 10px;">
+						<div style="margin-right: 10px;">
+							<a style="font-size: 20px;">관람 시간</a style="font-size: 20px;">
+						</div>
+						<div style="">
+							<a style="font-size: 20px;">10:00 ~ 19:20</a>
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 10px;">
+						<div style="margin-right: 10px;">
+							<a style="font-size: 20px;">입장료</a style="font-size: 20px;">
+						</div>
+						<div style="">
+							<a style="font-size: 20px;">7000원</a>
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 10px;">
+						<div style="margin-right: 10px;">
+							<a style="font-size: 20px;">주소</a style="font-size: 20px;">
+						</div>
+						<div style="">
+							<a style="font-size: 20px;">서울시 송파구 신천동 29 /롯데월드 타워 7층 롯데뮤지엄</a>
+						</div>
+					</div>
+
+					<div style="display: flex; margin-top: 50px;">
+						<div style="margin-right: 10px;">
+							<button class="btn btn-dark">예매하기</button>
+						</div>
+						<div style="margin-left: auto;">
+							<button id="shareButton" style="background: none; border: none; margin-right: 20px;">
+								<img src="assets/img/shareicon.svg" style="width: 25px; height: 25px;" alt="공유아이콘" />
+							</button>
+							<button id="heartButton" style="background: none; border: none;">
+								<svg id="empty_heart" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+									fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+									<path
+										d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+								</svg>
+
+								<svg id="fill_heart" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+									fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16"
+									style="fill: red; display: none;">
+									<path fill-rule="evenodd"
+										d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<script> //  하트 토글 버튼
+				// 변수 선언
+				let isHeartFilled = false;
+				const heartButton = document.getElementById('heartButton');
+				const fillHeartIcon = document.getElementById('fill_heart');
+				const emptyHeartIcon = document.getElementById('empty_heart');
+
+				// 하트 버튼 클릭 시 토글 함수
+				function toggleHeart() {
+					isHeartFilled = !isHeartFilled;
+
+					if (isHeartFilled) {
+						// 하트가 채워진 아이콘 표시, 빈 하트 아이콘 숨김
+						fillHeartIcon.style.display = 'inline-block';
+						emptyHeartIcon.style.display = 'none';
+					} else {
+						// 빈 하트 아이콘 표시, 하트가 채워진 아이콘 숨김
+						fillHeartIcon.style.display = 'none';
+						emptyHeartIcon.style.display = 'inline-block';
+					}
+				}
+
+				// 하트 버튼에 클릭 이벤트 리스너 추가
+				heartButton.addEventListener('click', toggleHeart);
+			</script>
+
+
+			<hr style="margin:auto; margin-top: 50px; width: 1000px;" />
+	</section>
+
+	<section id="exhibition_navbar">
+		<div style="margin-top: 30px; text-align: center; margin-bottom: 50px;">
+			<button id="exhibition_info_button"
+				style="color: black; font-size: 25px; text-decoration: none; border: none; background-color: transparent;">전시회
+				정보</button>
+			<button id="exhibition_detail_button"
+				style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 150px;">전시회
+				상세</button>
+			<button id="exhibition_review_button"
+				style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 150px;">후기</button>
+			<button id="exhibition_map_button"
+				style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 150px;">지도</button>
+		</div>
+		<hr style="margin:auto; margin-top: 50px; width: 1000px;" />
+	</section>
+
+
+
+
+	<script>	// 버튼 클릭시 위치 변경
+
+		document.getElementById('exhibition_detail_button').addEventListener('click', function () {
+			document.getElementById('exhibition_detail').scrollIntoView({behavior: 'smooth'});
+		});
+
+		document.getElementById('exhibition_info_button').addEventListener('click', function () {
+			document.getElementById('exhibition_info').scrollIntoView({behavior: 'smooth'});
+		});
+
+		document.getElementById('exhibition_review_button').addEventListener('click', function () {
+			document.getElementById('exhibition_review').scrollIntoView({behavior: 'smooth'});
+		});
+
+		document.getElementById('exhibition_map_button').addEventListener('click', function () {
+			document.getElementById('exhibition_map').scrollIntoView({behavior: 'smooth'});
+		});
+	</script>
+
+
+
+
+	<section id="exhibition_detail">
+		<div class="text-center">
+			<img src="assets/img/exhibition_detail_img.jpg" alt="전시회 이미지" />
+		</div>
+	</section>
+
+	<section id="exhibition_review">
+
+	</section>
+
+	<section id="exhibition_map">
+
+	</section>
+
+
+
+
+
+	<!-- 푸터-->
+	<footer class="py-5 navbar-custom" style="margin-top: 100px; background-color: navbar-color;">
+		<div class="container px-5">
+			<div class="row">
+				<div class="col-lg-3">
+					<img src="assets/img/ARTMEE.png" alt="Artmee Logo"
+						style="max-width: 80%; height: auto; margin-bottom: 5px;">
+				</div>
+				<div class="col-lg-6">
+					<p class="text-white small" style="margin-top: 5px;">
+						아트미 <br>
+						전화번호: 123-456-7890<br>
+						주소: 서울시 종로구 종로12길 15, 8층 801호<br>
+						이메일: info@artmee.com<br>
+						Copyright &copy; 2023 개발해드림 ALL RIGHTS RESERVED
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="btn_gotop">
+			<a href="#doz_header">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+					class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+					<path
+						d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+				</svg>
+			</a>
+		</div>
+	</footer>
+
+	<script>
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 300) {
+				$('.btn_gotop').show();
+			} else {
+				$('.btn_gotop').hide();
+			}
+		});
+		$('.btn_gotop').click(function () {
+			$('html, body').animate({scrollTop: 0}, 400);
+			return false;
+		});
+	</script>
+
+
+</body>
+
+</html>
