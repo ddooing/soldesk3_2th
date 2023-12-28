@@ -83,10 +83,9 @@
 			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 		}
 
-		/* 모달 창 스타일링 */
+		/* 모달 창 */
 		.modal {
 			display: none;
-			/* 기본적으로 숨겨져 있음 */
 			position: fixed;
 			z-index: 1;
 			left: 0;
@@ -95,17 +94,14 @@
 			height: 100%;
 			overflow: auto;
 			background-color: rgba(0, 0, 0, 0.4);
-			/* 흐린 배경 */
 		}
 
 		.modal-content {
 			background-color: #fefefe;
 			margin: 15% auto;
-			/* 페이지 중앙에 위치 */
 			padding: 20px;
 			border: 1px solid #888;
-			width: 20%;
-			/* 모달 창의 폭 */
+			width: 15%;
 			text-align: center;
 		}
 
@@ -115,6 +111,8 @@
 			font-size: 28px;
 			font-weight: bold;
 			cursor: pointer;
+			width: 25px;
+			margin-left: 300px;
 		}
 
 		.close:hover,
@@ -259,7 +257,7 @@
 			<!-- 모달 창 -->
 			<div id="shareModal" class="modal">
 				<div class="modal-content">
-					<span class="close">&times;</span>
+					<div class="close">&times;</div>
 					<!-- 이미지를 표시하는 부분입니다 -->
 					<div style="display: flex; text-align: center; justify-content: center; margin:20px;">
 						<div style="display: inline-block; margin-right: 50px; cursor: pointer;" onclick="shareInsta()">
