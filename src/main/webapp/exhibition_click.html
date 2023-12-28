@@ -42,44 +42,6 @@
 			text-align: center;
 		}
 
-		.custom-container.main,
-		.custom-container.main1,
-		.custom-container.main2 {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.prev,
-		.next,
-		.prev1,
-		.next1,
-		.prev2,
-		.next2 {
-			margin: 0 10px;
-		}
-
-		.carousel ul li,
-		.carousel1 ul li {
-			margin-right: 10px;
-		}
-
-		.carousel ul li:last-child,
-		.carousel1 ul li:last-child {
-			margin-right: 0;
-		}
-
-		.carousel img,
-		.carousel1 img {
-			max-width: 100%;
-		}
-
-		section#scroll *,
-		section#scroll *::before,
-		section#scroll *::after {
-			box-sizing: content-box;
-		}
-
 		.divider:after,
 		.divider:before {
 			content: "";
@@ -100,7 +62,7 @@
 			color: #fff;
 		}
 
-		.btn_gotop {
+		.btn_go {
 			display: none;
 			position: fixed;
 			bottom: 30px;
@@ -110,7 +72,55 @@
 			cursor: pointer;
 			border-radius: 100%;
 			border: none;
-			fill: black;
+		}
+
+		.fixed-navbar {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+			background-color: white;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		/* 모달 창 스타일링 */
+		.modal {
+			display: none;
+			/* 기본적으로 숨겨져 있음 */
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.4);
+			/* 흐린 배경 */
+		}
+
+		.modal-content {
+			background-color: #fefefe;
+			margin: 15% auto;
+			/* 페이지 중앙에 위치 */
+			padding: 20px;
+			border: 1px solid #888;
+			width: 20%;
+			/* 모달 창의 폭 */
+			text-align: center;
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
 		}
 	</style>
 
@@ -120,7 +130,7 @@
 
 <body id="page-top">
 	<!-- 메뉴바 -->
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
 		<div class="container px-5">
 			<a class="navbar-brand" href="index.html"><img src="assets/img/ARTMEE.png"
 					style="width: 160px; height: 60px;" /></a>
@@ -169,7 +179,7 @@
 
 
 
-	<section id="exhibition_info" style="margin-top: 200px;">
+	<section id="exhibition_info" style="margin-top: 150px;">
 		<div class="container mb-1">
 			<!--전시회 부분-->
 			<div style="display: flex; align-items: center; flex-direction: row;">
@@ -246,6 +256,87 @@
 				</div>
 			</div>
 
+			<!-- 모달 창 -->
+			<div id="shareModal" class="modal">
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<!-- 이미지를 표시하는 부분입니다 -->
+					<div style="display: flex; text-align: center; justify-content: center; margin:20px;">
+						<div style="display: inline-block; margin-right: 50px; cursor: pointer;" onclick="shareInsta()">
+							<!--인스타그램 클릭 -->
+							<div>
+								<svg xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;"
+									width="30" height="30" fill="currentColor" class="bi bi-instagram"
+									viewBox="0 0 16 16">
+									<path
+										d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+								</svg>
+							</div>
+							<div style="margin-top: 10px;">
+								<p3>인스타그램</p3>
+							</div>
+						</div>
+
+						<div style="display: inline-block; cursor: pointer;" onclick="shareKakao()"> <!--카카오톡 클릭 -->
+							<div>
+								<img src="assets/img/kakao.png" alt="카카오톡" style="width: 30px; height: 30px;" />
+							</div>
+							<div style="margin-top: 10px;">
+								<p3>카카오톡</p3>
+							</div>
+						</div>
+
+					</div>
+					<!-- 복사할 링크를 표시하는 부분입니다 -->
+					<p><input type="text" id="shareLink" readonly></p>
+					<button class="btn btn-dark" style="width: 150px; height: 50px; margin: auto;"
+						onclick="copyLink()">링크 복사</button>
+				</div>
+			</div>
+
+			<script>
+				// 공유 버튼 클릭 이벤트
+				document.getElementById('shareButton').onclick = function () {
+					document.getElementById('shareModal').style.display = "block";
+				}
+
+				// 모달창 닫기 버튼 클릭 이벤트
+				document.getElementsByClassName('close')[0].onclick = function () {
+					document.getElementById('shareModal').style.display = "none";
+				}
+
+				// 모달창 외부 클릭 시 모달창 닫기
+				window.onclick = function (event) {
+					if (event.target == document.getElementById('shareModal')) {
+						document.getElementById('shareModal').style.display = "none";
+					}
+				}
+
+				// 링크 복사 버튼 클릭 이벤트
+				function copyLink() {
+					var copyText = document.getElementById("shareLink");
+					copyText.select();
+					document.execCommand("copy");
+					alert("링크가 복사되었습니다.");
+				}
+
+				function shareKakao() {
+					alert('카카오톡 공유');
+				}
+				
+				function shareInsta() {
+					alert('인스타 공유');
+				}
+
+				document.addEventListener('DOMContentLoaded', function () {			// 현재 페이지 링크 따서 공유창에 넣기
+					var currentPageUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
+					document.getElementById('shareLink').value = currentPageUrl; // input 태그의 value 속성에 URL을 설정합니다.
+				});
+
+
+
+			</script>
+
 			<script> //  하트 토글 버튼
 				// 변수 선언
 				let isHeartFilled = false;
@@ -277,21 +368,71 @@
 	</section>
 
 	<section id="exhibition_navbar">
-		<div style="margin-top: 30px; text-align: center; margin-bottom: 50px;">
+		<div style="margin-top: 30px; text-align: center; margin-bottom: 15px;">
 			<button id="exhibition_info_button"
 				style="color: black; font-size: 25px; text-decoration: none; border: none; background-color: transparent;">전시회
 				정보</button>
 			<button id="exhibition_detail_button"
 				style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 150px;">전시회
 				상세</button>
-			<button id="exhibition_review_button"
-				style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 150px;">후기</button>
 			<button id="exhibition_map_button"
 				style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 150px;">지도</button>
+			<button id="exhibition_review_button"
+				style="color: lightgray; font-size: 25px; text-decoration: none; border: none; background-color: transparent;  margin-left: 150px;">후기</button>
+
 		</div>
-		<hr style="margin:auto; margin-top: 50px; width: 1000px;" />
+
 	</section>
 
+	<script>
+		$(window).scroll(function () {
+			var scroll = $(window).scrollTop();
+			var navbar = $("#exhibition_navbar");
+			var detailSection = $("#exhibition_detail").offset().top; // #exhibition_detail의 위치
+
+			// 스크롤 위치에 따라 navbar의 스타일 변경
+			if (scroll >= detailSection) {
+				navbar.addClass('fixed-navbar');
+			} else {
+				navbar.removeClass('fixed-navbar');
+			}
+		});
+
+	</script>
+
+	<script>
+		$(window).scroll(function () {
+			var scroll = $(window).scrollTop();
+
+			var infoPosition = $('#exhibition_info').offset().top;
+			var detailPosition = $('#exhibition_detail').offset().top;
+			var mapPosition = $('#exhibition_map').offset().top;
+			var reviewPosition = $('#exhibition_review').offset().top;
+
+			// 버튼 색상 초기화 함수
+			function resetButtonColors() {
+				$('#exhibition_info_button').css('color', 'lightgray');
+				$('#exhibition_detail_button').css('color', 'lightgray');
+				$('#exhibition_map_button').css('color', 'lightgray');
+				$('#exhibition_review_button').css('color', 'lightgray');
+			}
+
+			resetButtonColors(); // 기본적으로 모든 버튼 색상을 초기화
+
+			// 스크롤 위치에 따라 각 버튼의 색상 변경
+			if (scroll >= infoPosition && scroll < detailPosition) {
+				$('#exhibition_info_button').css('color', 'black');
+			} else if (scroll >= detailPosition && scroll < mapPosition) {
+				$('#exhibition_detail_button').css('color', 'black');
+			} else if (scroll >= mapPosition && scroll < reviewPosition) {
+				$('#exhibition_map_button').css('color', 'black');
+			} else if (scroll >= reviewPosition) {
+				$('#exhibition_review_button').css('color', 'black');
+			}
+		});
+
+
+	</script>
 
 
 
@@ -317,26 +458,327 @@
 
 
 
-	<section id="exhibition_detail">
+	<section id="exhibition_detail"> <!--전시회 상세-->
+		<hr style="margin:auto; margin-top: 50px; width: 1000px;" />
 		<div class="text-center">
 			<img src="assets/img/exhibition_detail_img.jpg" alt="전시회 이미지" />
 		</div>
-	</section>
-
-	<section id="exhibition_review">
 
 	</section>
 
-	<section id="exhibition_map">
+	<section id="exhibition_map"> <!--지도-->
+		<hr style="margin:auto; margin-top: 100px; width: 1000px;" />
+		<div class="container mb-1">
+			<h3 style="margin-left: 180px; margin-top: 50px;">지도</h3>
+			<div id="map" style="width:800px; height:600px; margin:auto; margin-top: 30px; border: 1px black solid;">
+			</div>
+		</div>
+	</section>
 
+	<section id="exhibition_review"> <!--리뷰-->
+		<hr style="margin:auto; margin-top: 100px; width: 1000px;" />
+		<div class="container mb-1">
+			<h3 style="margin-left: 180px; margin-top: 50px; margin-bottom: 50px;">후기</h3>
+
+			<section class="notice"
+				style="width: 1000px; text-align: center; margin-left: auto; margin-right: auto; margin-top: 0;">
+				<div id="board-list">
+					<div style="width: 1000px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+						<div style="display: flex; justify-content: center; text-align: center; margin-top: 20px;">
+							<div style="width: 100px;">
+								<p>번호</p>
+							</div>
+							<div style="width: 700px;">
+								<p>제목</p>
+							</div>
+							<div style="width: 200px;">
+								<p>날짜</p>
+							</div>
+						</div>
+						<!--내용-->
+						<div id="review_1"
+							style="display: flex; justify-content: center;  align-items: center; text-align: center; border-top: 1px solid #e7e7e7">
+							<div style="width: 100px; padding: 14px 0px;">
+								<p1>1</p1>
+							</div>
+							<div style="width: 700px; text-align: left; padding: 14px 14px 14px 28px;">
+								<a href="#" style="color: black;">
+									<p1>첫번째리뷰입니다 확인해주세요</p1>
+								</a>
+							</div>
+							<div style="width: 200px; padding: 14px 0px;">
+								<p1>2023.12.28</p1>
+							</div>
+						</div>
+
+						<div style="display: none; width: 1000px; justify-content: center; margin-top: 70px; margin-bottom: 70px; padding-left: 50px; padding-right: 50px;"
+							id="review_1_click">
+							<p1>28일 금융감독원 금융통계정보시스템에 따르면 지난 6월 말 기준 국내 증권사들의 채무보증 총액은 42조2218억원으로 작년 12월 말(40조206억원) 대비
+								2조2012억원(5.5%) 증가한 것으로 나타났다. 레고랜드의 여파가 남아 있던 지난해 말과 대비해서도 오히려 증가했다는 얘기다.
+
+								증권사별로는 한국투자증권의 채무보증액이 5조8995억원으로 가장 컸다. 작년 말과 비교했을 때 12.07%나 증가했다. KB증권(4조8796억원, 작년 말
+								대비 16.44% 증가), 메리츠증권(4조8153억원, 5.54%증가), 신한투자증권(3조6492억원, 29.62% 증가), 하나증권(3조2428억원,
+								4.44% 증가)이 그 뒤를 이었다.
+
+								증권사는 통상 직접 대출보다 채무보증 형태로 PF 자금을 지원한다. 부동산 사업이 지연·무산돼 시행사가 PF대출을 갚지 못하면 보증을 했던 증권사가 대신 돈을
+								변제해야 한다.
+
+								PF 연체율과 대출금리가 꾸준히 상승세를 보이고 있어 막대한 채무보증 잔액이 증권사들의 부실 뇌관이 될 수 있다는 지적도 나온다. 증권사 PF 대출금리는
+								2020년 말 연 4.8%에서 작년 말 연 6.9%, 올 6월 말 연 7.1%로 상승세를 보이고 있기 때문이다.
+
+								다만 시장에서는 부동산 시장 경색에 따른 연쇄 부실을 우려하고 있다. 현재 증권사의 부동산 PF대출 규모가 은행이나 보험에 견줘서 크진 않지만, 연체율은 높은
+								편이라 우려의 목소리가 나온다. 윤창현 국민의힘 의원실과 금융감독원에 따르면 지난 9월 말 기준 금융 업계별 부동산 PF대출 잔액은 은행이
+								44조2000억원으로 가장 많고 보험(43조3000억원), 캐피털(24조원), 저축은행(9조8000억원), 증권(6조3000억원) 순으로 나타났다.
+
+								다만 증권사의 전체 부동산 PF 연체율은 13.8%로 금융업권 내에서 가장 높았다. 저축은행·여전사·상호금융이 4~5%대 연체율을 기록했으며 노출비중이 큰
+								보험은 1%대에 불과했고, 은행권도 0%대로 나타났다.
+
+								현재 당국은 태영건설의 워크아웃이 금융권 전반으로 번질 가능성은 매우 제한적이라는 입장이다. 권대영 금융위원회 상임위원은 “시간을 가지고 부동산PF를 연착륙
+								시키는데 최선을 다 할 것”이라며 “현재 태영건설 관련 금융사의 총 익스포저(위험노출 금액)는 4조5800억원으로 총 자산의 0.09%에 불과하다”고
+								강조했다.</p1>
+						</div>
+
+						<div id="review_2"
+							style="display: flex; justify-content: center;  align-items: center; text-align: center; border-top: 1px solid #e7e7e7">
+							<div style="width: 100px; padding: 14px 0px;">
+								<p1>2</p1>
+							</div>
+							<div style="width: 700px; text-align: left; padding: 14px 14px 14px 28px;">
+								<a href="#" style="color: black;">
+									<p1>2번째리뷰입니다 확인해주세요</p1>
+								</a>
+							</div>
+							<div style="width: 200px; padding: 14px 0px;">
+								<p1>2023.12.28</p1>
+							</div>
+						</div>
+
+						<div style="display: none; width: 1000px; justify-content: center; margin-top: 70px; margin-bottom: 70px; padding-left: 50px; padding-right: 50px;"
+							id="review_2_click">
+							<p1>28일 금융감독원 금융통계정보시스템에 따르면 지난 6월 말 기준 국내 증권사들의 채무보증 총액은 42조2218억원으로 작년 12월 말(40조206억원) 대비
+								2조2012억원(5.5%) 증가한 것으로 나타났다. 레고랜드의 여파가 남아 있던 지난해 말과 대비해서도 오히려 증가했다는 얘기다.
+
+								증권사별로는 한국투자증권의 채무보증액이 5조8995억원으로 가장 컸다. 작년 말과 비교했을 때 12.07%나 증가했다. KB증권(4조8796억원, 작년 말
+								대비 16.44% 증가), 메리츠증권(4조8153억원, 5.54%증가), 신한투자증권(3조6492억원, 29.62% 증가), 하나증권(3조2428억원,
+								4.44% 증가)이 그 뒤를 이었다.
+
+								증권사는 통상 직접 대출보다 채무보증 형태로 PF 자금을 지원한다. 부동산 사업이 지연·무산돼 시행사가 PF대출을 갚지 못하면 보증을 했던 증권사가 대신 돈을
+								변제해야 한다.
+
+								PF 연체율과 대출금리가 꾸준히 상승세를 보이고 있어 막대한 채무보증 잔액이 증권사들의 부실 뇌관이 될 수 있다는 지적도 나온다. 증권사 PF 대출금리는
+								2020년 말 연 4.8%에서 작년 말 연 6.9%, 올 6월 말 연 7.1%로 상승세를 보이고 있기 때문이다.
+
+								다만 시장에서는 부동산 시장 경색에 따른 연쇄 부실을 우려하고 있다. 현재 증권사의 부동산 PF대출 규모가 은행이나 보험에 견줘서 크진 않지만, 연체율은 높은
+								편이라 우려의 목소리가 나온다. 윤창현 국민의힘 의원실과 금융감독원에 따르면 지난 9월 말 기준 금융 업계별 부동산 PF대출 잔액은 은행이
+								44조2000억원으로 가장 많고 보험(43조3000억원), 캐피털(24조원), 저축은행(9조8000억원), 증권(6조3000억원) 순으로 나타났다.
+
+								다만 증권사의 전체 부동산 PF 연체율은 13.8%로 금융업권 내에서 가장 높았다. 저축은행·여전사·상호금융이 4~5%대 연체율을 기록했으며 노출비중이 큰
+								보험은 1%대에 불과했고, 은행권도 0%대로 나타났다.
+
+								현재 당국은 태영건설의 워크아웃이 금융권 전반으로 번질 가능성은 매우 제한적이라는 입장이다. 권대영 금융위원회 상임위원은 “시간을 가지고 부동산PF를 연착륙
+								시키는데 최선을 다 할 것”이라며 “현재 태영건설 관련 금융사의 총 익스포저(위험노출 금액)는 4조5800억원으로 총 자산의 0.09%에 불과하다”고
+								강조했다.</p1>
+						</div>
+
+						<div id="review_3"
+							style="display: flex; justify-content: center;  align-items: center; text-align: center; border-top: 1px solid #e7e7e7">
+							<div style="width: 100px; padding: 14px 0px;">
+								<p1>3</p1>
+							</div>
+							<div style="width: 700px; text-align: left; padding: 14px 14px 14px 28px;">
+								<a href="#" style="color: black;">
+									<p1>3번째리뷰입니다 확인해주세요</p1>
+								</a>
+							</div>
+							<div style="width: 200px; padding: 14px 0px;">
+								<p1>2023.12.28</p1>
+							</div>
+						</div>
+
+						<div style="display: none; width: 1000px; justify-content: center; margin-top: 70px; margin-bottom: 70px; padding-left: 50px; padding-right: 50px;"
+							id="review_3_click">
+							<p1>28일 금융감독원 금융통계정보시스템에 따르면 지난 6월 말 기준 국내 증권사들의 채무보증 총액은 42조2218억원으로 작년 12월 말(40조206억원) 대비
+								2조2012억원(5.5%) 증가한 것으로 나타났다. 레고랜드의 여파가 남아 있던 지난해 말과 대비해서도 오히려 증가했다는 얘기다.
+
+								증권사별로는 한국투자증권의 채무보증액이 5조8995억원으로 가장 컸다. 작년 말과 비교했을 때 12.07%나 증가했다. KB증권(4조8796억원, 작년 말
+								대비 16.44% 증가), 메리츠증권(4조8153억원, 5.54%증가), 신한투자증권(3조6492억원, 29.62% 증가), 하나증권(3조2428억원,
+								4.44% 증가)이 그 뒤를 이었다.
+
+								증권사는 통상 직접 대출보다 채무보증 형태로 PF 자금을 지원한다. 부동산 사업이 지연·무산돼 시행사가 PF대출을 갚지 못하면 보증을 했던 증권사가 대신 돈을
+								변제해야 한다.
+
+								PF 연체율과 대출금리가 꾸준히 상승세를 보이고 있어 막대한 채무보증 잔액이 증권사들의 부실 뇌관이 될 수 있다는 지적도 나온다. 증권사 PF 대출금리는
+								2020년 말 연 4.8%에서 작년 말 연 6.9%, 올 6월 말 연 7.1%로 상승세를 보이고 있기 때문이다.
+
+								다만 시장에서는 부동산 시장 경색에 따른 연쇄 부실을 우려하고 있다. 현재 증권사의 부동산 PF대출 규모가 은행이나 보험에 견줘서 크진 않지만, 연체율은 높은
+								편이라 우려의 목소리가 나온다. 윤창현 국민의힘 의원실과 금융감독원에 따르면 지난 9월 말 기준 금융 업계별 부동산 PF대출 잔액은 은행이
+								44조2000억원으로 가장 많고 보험(43조3000억원), 캐피털(24조원), 저축은행(9조8000억원), 증권(6조3000억원) 순으로 나타났다.
+
+								다만 증권사의 전체 부동산 PF 연체율은 13.8%로 금융업권 내에서 가장 높았다. 저축은행·여전사·상호금융이 4~5%대 연체율을 기록했으며 노출비중이 큰
+								보험은 1%대에 불과했고, 은행권도 0%대로 나타났다.
+
+								현재 당국은 태영건설의 워크아웃이 금융권 전반으로 번질 가능성은 매우 제한적이라는 입장이다. 권대영 금융위원회 상임위원은 “시간을 가지고 부동산PF를 연착륙
+								시키는데 최선을 다 할 것”이라며 “현재 태영건설 관련 금융사의 총 익스포저(위험노출 금액)는 4조5800억원으로 총 자산의 0.09%에 불과하다”고
+								강조했다.</p1>
+						</div>
+
+						<div id="review_4"
+							style="display: flex; justify-content: center;  align-items: center; text-align: center; border-top: 1px solid #e7e7e7">
+							<div style="width: 100px; padding: 14px 0px;">
+								<p1>4</p1>
+							</div>
+							<div style="width: 700px; text-align: left; padding: 14px 14px 14px 28px;">
+								<a href="#" style="color: black;">
+									<p1>4번째리뷰입니다 확인해주세요</p1>
+								</a>
+							</div>
+							<div style="width: 200px; padding: 14px 0px;">
+								<p1>2023.12.28</p1>
+							</div>
+						</div>
+
+						<div style="display: none; width: 1000px; justify-content: center; margin-top: 70px; margin-bottom: 70px; padding-left: 50px; padding-right: 50px;"
+							id="review_4_click">
+							<p1>28일 금융감독원 금융통계정보시스템에 따르면 지난 6월 말 기준 국내 증권사들의 채무보증 총액은 42조2218억원으로 작년 12월 말(40조206억원) 대비
+								2조2012억원(5.5%) 증가한 것으로 나타났다. 레고랜드의 여파가 남아 있던 지난해 말과 대비해서도 오히려 증가했다는 얘기다.
+
+								증권사별로는 한국투자증권의 채무보증액이 5조8995억원으로 가장 컸다. 작년 말과 비교했을 때 12.07%나 증가했다. KB증권(4조8796억원, 작년 말
+								대비 16.44% 증가), 메리츠증권(4조8153억원, 5.54%증가), 신한투자증권(3조6492억원, 29.62% 증가), 하나증권(3조2428억원,
+								4.44% 증가)이 그 뒤를 이었다.
+
+								증권사는 통상 직접 대출보다 채무보증 형태로 PF 자금을 지원한다. 부동산 사업이 지연·무산돼 시행사가 PF대출을 갚지 못하면 보증을 했던 증권사가 대신 돈을
+								변제해야 한다.
+
+								PF 연체율과 대출금리가 꾸준히 상승세를 보이고 있어 막대한 채무보증 잔액이 증권사들의 부실 뇌관이 될 수 있다는 지적도 나온다. 증권사 PF 대출금리는
+								2020년 말 연 4.8%에서 작년 말 연 6.9%, 올 6월 말 연 7.1%로 상승세를 보이고 있기 때문이다.
+
+								다만 시장에서는 부동산 시장 경색에 따른 연쇄 부실을 우려하고 있다. 현재 증권사의 부동산 PF대출 규모가 은행이나 보험에 견줘서 크진 않지만, 연체율은 높은
+								편이라 우려의 목소리가 나온다. 윤창현 국민의힘 의원실과 금융감독원에 따르면 지난 9월 말 기준 금융 업계별 부동산 PF대출 잔액은 은행이
+								44조2000억원으로 가장 많고 보험(43조3000억원), 캐피털(24조원), 저축은행(9조8000억원), 증권(6조3000억원) 순으로 나타났다.
+
+								다만 증권사의 전체 부동산 PF 연체율은 13.8%로 금융업권 내에서 가장 높았다. 저축은행·여전사·상호금융이 4~5%대 연체율을 기록했으며 노출비중이 큰
+								보험은 1%대에 불과했고, 은행권도 0%대로 나타났다.
+
+								현재 당국은 태영건설의 워크아웃이 금융권 전반으로 번질 가능성은 매우 제한적이라는 입장이다. 권대영 금융위원회 상임위원은 “시간을 가지고 부동산PF를 연착륙
+								시키는데 최선을 다 할 것”이라며 “현재 태영건설 관련 금융사의 총 익스포저(위험노출 금액)는 4조5800억원으로 총 자산의 0.09%에 불과하다”고
+								강조했다.</p1>
+						</div>
+
+						<div id="review_5"
+							style="display: flex; justify-content: center;  align-items: center; text-align: center; border-top: 1px solid #e7e7e7">
+							<div style="width: 100px; padding: 14px 0px;">
+								<p1>5</p1>
+							</div>
+							<div style="width: 700px; text-align: left; padding: 14px 14px 14px 28px;">
+								<a href="#" style="color: black;">
+									<p1>5번째리뷰입니다 확인해주세요</p1>
+								</a>
+							</div>
+							<div style="width: 200px; padding: 14px 0px;">
+								<p1>2023.12.28</p1>
+							</div>
+						</div>
+
+						<div style="display: none; width: 1000px; justify-content: center; margin-top: 70px; margin-bottom: 70px; padding-left: 50px; padding-right: 50px;"
+							id="review_5_click">
+							<p1>28일 금융감독원 금융통계정보시스템에 따르면 지난 6월 말 기준 국내 증권사들의 채무보증 총액은 42조2218억원으로 작년 12월 말(40조206억원) 대비
+								2조2012억원(5.5%) 증가한 것으로 나타났다. 레고랜드의 여파가 남아 있던 지난해 말과 대비해서도 오히려 증가했다는 얘기다.
+
+								증권사별로는 한국투자증권의 채무보증액이 5조8995억원으로 가장 컸다. 작년 말과 비교했을 때 12.07%나 증가했다. KB증권(4조8796억원, 작년 말
+								대비 16.44% 증가), 메리츠증권(4조8153억원, 5.54%증가), 신한투자증권(3조6492억원, 29.62% 증가), 하나증권(3조2428억원,
+								4.44% 증가)이 그 뒤를 이었다.
+
+								증권사는 통상 직접 대출보다 채무보증 형태로 PF 자금을 지원한다. 부동산 사업이 지연·무산돼 시행사가 PF대출을 갚지 못하면 보증을 했던 증권사가 대신 돈을
+								변제해야 한다.
+							</p1>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<script>
+				for (var i = 1; i <= 5; i++) {
+					(function (index) {
+						document.querySelector('#review_' + index + ' a').addEventListener('click', function (event) {
+							event.preventDefault(); // 기본 링크 동작 방지
+
+							// 다른 모든 리뷰의 내용을 숨깁니다.
+							for (var j = 1; j <= 5; j++) {
+								if (j !== index) {
+									document.getElementById('review_' + j + '_click').style.display = 'none';
+								}
+							}
+
+							// 클릭된 리뷰의 내용을 토글합니다.
+							var content = document.getElementById('review_' + index + '_click');
+							content.style.display = content.style.display === 'block' ? 'none' : 'block';
+						});
+					})(i);
+				}
+
+
+
+			</script>
+
+
+
+			<!--페이징처리-->
+			<div style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Previous">
+								<span aria-hidden="true">«</span>
+							</a>
+						</li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Next">
+								<span aria-hidden="true">»</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</section>
 
 
+	<!--지도api 자바스크립트 건드리지말기!-->
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7b2cf06203fb94dc8e07b3948ec6405a&libraries=services"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = {
+				center: new kakao.maps.LatLng(37.709527, 127.046083), // 지도의 중심좌표
+				level: 3 // 지도의 확대 레벨
+			};
+
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+		var iwContent = '<div style="width:180px; padding:5px;">신한대학교 1캠퍼스</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			iwPosition = new kakao.maps.LatLng(37.709527, 127.046083), //인포윈도우 표시 위치입니다
+			iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+		// 인포윈도우를 생성하고 지도에 표시합니다
+		var infowindow = new kakao.maps.InfoWindow({
+			map: map, // 인포윈도우가 표시될 지도
+			position: iwPosition,
+			content: iwContent,
+			removable: iwRemoveable
+		});
+
+// 아래 코드는 인포윈도우를 지도에서 제거합니다
+// infowindow.close();        
+	</script>
 
 
 
 	<!-- 푸터-->
-	<footer class="py-5 navbar-custom" style="margin-top: 100px; background-color: navbar-color;">
+	<footer class="py-5 navbar-custom" style="margin-top: 200px; background-color: navbar-color;">
 		<div class="container px-5">
 			<div class="row">
 				<div class="col-lg-3">
@@ -355,29 +797,48 @@
 			</div>
 		</div>
 
-		<div class="btn_gotop">
-			<a href="#doz_header">
-				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-					class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
-					<path
-						d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
-				</svg>
-			</a>
+
+		<div class="btn_go">
+			<div style="display: inline-block;">
+				<div class="btn_gotop">
+					<a href="#doz_header">
+						<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="black"
+							class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+							<path
+								d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+						</svg>
+					</a>
+				</div>
+				<div class="btn_godown" style="margin-top: 15px;">
+					<a href="#doz_header">
+						<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="black"
+							class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+						</svg>
+					</a>
+				</div>
+			</div>
 		</div>
 	</footer>
 
-	<script>
+	<script>		// 일정 부분 스크롤 할경우 우측 하단 top down 버튼 생성
 		$(window).scroll(function () {
 			if ($(this).scrollTop() > 300) {
-				$('.btn_gotop').show();
+				$('.btn_go').show();
 			} else {
-				$('.btn_gotop').hide();
+				$('.btn_go').hide();
 			}
 		});
 		$('.btn_gotop').click(function () {
-			$('html, body').animate({scrollTop: 0}, 400);
+			$('html, body').animate({scrollTop: 0}, 100);
 			return false;
 		});
+		$('.btn_godown').click(function () {
+			$('html, body').animate({scrollTop: $(document).height()}, 100);
+			return false;
+		});
+
 	</script>
 
 
