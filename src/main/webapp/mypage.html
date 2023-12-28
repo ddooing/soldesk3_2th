@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>ARTMEE</title>
+
+<link rel="icon" type="image/x-icon" href="assets/ARTMEE_PAGELOGO.png" />
+
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+	crossorigin="anonymous"></script>
+
+<!-- Google fonts-->
+<link
+	href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+	rel="stylesheet" />
+
+<!-- Bootstrap core JS-->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+<!-- 하위메뉴 hover 처리 <script src="js/mypage.js"></script>  -->
+<!-- JQuery 자바스크립트-->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+<!-- CSS -->
+<link href="css/styles.css" rel="stylesheet" />
+<link href="css/Mypage.css" rel="stylesheet" />
+<link href="css/FAQ.css" rel="stylesheet" />
+
+<!-- Carousel 자바스크립트-->
+<script src='https://www.gmarwaha.com/script/lib/jquery-1.11.1.js'></script>
+<script src="https://www.gmarwaha.com/script/lib/jquery.easing-1.3.js"></script>
+<script
+	src="https://www.gmarwaha.com/script/lib/jquery.easing.compatibility.js"></script>
+<script
+	src="https://www.gmarwaha.com/script/lib/jquery.mousewheel-3.1.12.js"></script>
+<script
+	src="https://www.gmarwaha.com/jquery/jcarousellite/script/jquery.jcarousellite.js"></script>
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+	rel="stylesheet">
+<title>Insert title here</title>
+<style>
+.menu {
+	list-style: none;
+}
+
+.image-container {
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+}
+
+.heart-icon {
+	position: absolute;
+	top: 300px;
+	right: 200px;
+	color: red; /* 하트 색상 설정 */
+}
+</style>
+
+</head>
+<body id="page-top">
+	<!-- 메뉴바 -->
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+		<div class="container px-5">
+			<a class="navbar-brand" href="index.html"><img
+				src="assets/img/ARTMEE.png" style="width: 160px; height: 60px;" /></a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item mr-5"><a class="nav-link" href="#!"
+						style="margin-right: 20px; margin-left: 50px;">공지사항</a></li>
+					<li class="nav-item mr-5"><a class="nav-link" href="#!"
+						style="margin-right: 20px; margin-left: 20px;">전시회</a></li>
+					<li class="nav-item mr-5"><a class="nav-link" href="#!"
+						style="margin-right: 20px; margin-left: 20px;">이용후기</a></li>
+					<li class="nav-item mr-5"><a class="nav-link" href="#!"
+						style="margin-right: 20px; margin-left: 20px;">게시판</a></li>
+				</ul>
+
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item mr-5"
+						style="margin-right: 60px; margin-top: 5px;">
+						<form class="d-flex">
+							<input class="form-control me-2" type="search" placeholder="검색"
+								aria-label="Search">
+							<button class="btn btn-outline-light" type="submit">
+								<img src="assets/img/search.png" alt="Search"
+									style="width: 20px; height: 20px;">
+							</button>
+						</form>
+					</li>
+
+					<li class="nav-item mr-5"><a class="nav-link" href="#!"><img
+							src="assets/img/cart.png"
+							style="width: 30px; height: 30px; margin-right: 30px;" /></a></li>
+					<li class="nav-item"><a class="nav-link" href="login.html">로그인</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- 페이지 시작 -->
+	<div
+		style="display: flex; justify-content: center; width: 80%; margin: auto; padding-top: calc(3rem + 40px); flex-direction: column;">
+		<!-- 상단 -->
+		<div
+			style="justify-content: center; width: 65%; display: flex; margin: auto;">
+
+			<!-- 이미지 -->
+			<div style="display: flex;">
+				<img src="./assets/img/profileImg.png"
+					style="width: 85px; height: 85px; border-radius: 4em; box-shadow: 5px 5px rgb(0, 0, 0, 0.1); margin: auto;" />
+			</div>
+
+			<!-- 닉네임, 게이지, 포인트  -->
+			<div style="margin-left: 3em; display: flex; flex-direction: column;">
+				<span style="font-size: 2.3em; margin-bottom: 0.2em;">닉네임</span>
+
+				<div
+					style="display: flex; flex-direction: column; align-items: center;">
+					<progress id="progress" value="162" min="0" max="300"
+						style="width: 20vw; height: 3vh; margin-bottom: 0.5em;"></progress>
+					<span style="font-size: 1em; margin-bottom: 0.5em;">LV1.
+						&nbsp;다음 레벨까지 120exp &#x26A1;</span> <span
+						style="font-size: 1.8em; margin-right: auto;"> &#x1F4B8;현재
+						적립 포인트 : 60p</span>
+				</div>
+
+				<!-- 
+					프로그레스바 다른버전
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+					</div>
+					<p style="font-size: 1.5em;">현재 적립 포인트 : 62p
+				 -->
+
+
+			</div>
+		</div>
+
+
+		<!-- 메뉴바 -->
+		<div id="index_wrap"
+			style="width: 80%; margin: auto; justify-content: center; display: flex; position: relative; padding-top: calc(1.5rem + 40px);">
+			<ul id="leftToRight" class="menu ">
+				<li class="upMenu">
+					<div id="mypageLink" class="selected">Mypage</div>
+
+
+				</li>
+				<li class="upMenu"><div id="bookmark">북마크</div></li>
+				<li class="upMenu"><div id="archive">아카이브</div></li>
+
+				<li class="upMenu">
+					<div id="crm">고객센터</div>
+
+
+				</li>
+
+				<ul id="mypageMenu" class="submenu visible" style="width: 65vw;">
+					<li id="reservationList" class="sel">예매내역</li>
+					<li id="promotionList">견적내역</li>
+					<li id="poinList">포인트 적립/이용 내역</li>
+					<li id="postList">작성한 글</li>
+				</ul>
+
+				<ul id="crmMenu" class="submenu " style="width: 65vw;">
+					<li id="faq">자주 묻는 질문</li>
+					<li id="qna">Q&A</li>
+				</ul>
+			</ul>
+			<!--  
+		  <ul id ="leftToRight" class="menu">
+		   <li>
+	        <a href="#" id="mypageLink">Mypage</a>
+		        <ul id="mypageMenu" class="submenu" style=" width:65vw;">
+					<li><a href="#" onclick="addMenuParam('예매내역')">예매내역</a></li>
+	                <li><a href="#" onclick="addMenuParam('견적내역')">견적내역</a></li>
+	                <li><a href="#" onclick="addMenuParam('포인트내역')">포인트 적립/이용 내역</a></li>
+	                <li><a href="#" onclick="addMenuParam('작성한글')">작성한 글</a></li>
+		        </ul>
+		    </li>
+		   <li><a href="#">북마크 </a></li>
+		   <li><a href="#">아카이브</a></li>
+		   <li><a href="#">고객센터</a></li>
+		 </ul>
+		 -->
+
+		</div>
+
+
+
+		<!-- 내용 -->
+		<div
+			style="display: flex; justify-content: center; width: 80%; margin: auto; padding-top: calc(3rem + 40px);"
+			class="content">
+
+
+			<div class="reservationList contentshow">a</div>
+
+			<div class="promotionList">b</div>
+
+			<div class="poinList">c</div>
+
+			<div class="postList">d</div>
+
+			<div class="bookmarkList">
+
+
+
+
+
+				<div
+					style="margin-top: 50px; display: flex; text-align: center; justify-content: center;">
+
+					<div class="image-container">
+						<a href=""> <img src="assets/img/poster1.png" alt="포스터1"
+							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg id="fill_heart"
+								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+								fill="currentColor" class="bi bi-heart heart-icon"
+								viewBox="0 0 16 16">
+            <path
+									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+        </svg>
+        <svg id="empty_herty" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-heart heart-icon" viewBox="0 0 16 16" style="fill: red;">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+</svg>
+						</a>
+						<p style="font-size: 20px; text-align: left;">포스터1제목</p>
+					</div>
+
+					<div class="image-container">
+						<a href=""> <img src="assets/img/poster2.png" alt="포스터2"
+							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg
+								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+								fill="currentColor" class="bi bi-heart heart-icon"
+								viewBox="0 0 16 16">
+            <path
+									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+        </svg>
+						</a>
+						<p style="font-size: 20px; text-align: left;">포스터2제목</p>
+					</div>
+
+					<div class="image-container">
+						<a href=""> <img src="assets/img/poster3.png" alt="포스터3"
+							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg
+								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+								fill="currentColor" class="bi bi-heart heart-icon"
+								viewBox="0 0 16 16">
+            <path
+									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+        </svg>
+						</a>
+						<p style="font-size: 20px; text-align: left;">포스터3제목</p>
+					</div>
+
+					<div class="image-container">
+						<a href=""> <img src="assets/img/poster4.png" alt="포스터4"
+							style="width: 260px; height: 360px; margin-bottom: 30px;" /> <svg
+								xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+								fill="currentColor" class="bi bi-heart heart-icon"
+								viewBox="0 0 16 16">
+            <path
+									d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+        </svg>
+						</a>
+						<p style="font-size: 20px; text-align: left;">포스터4제목</p>
+					</div>
+
+				</div>
+
+
+				<script>
+					//  하트 토글 버튼
+					// 변수 선언
+					let isHeartFilled = false;
+					const heartButton = document.getElementById('heartButton');
+					const fillHeartIcon = document.getElementById('fill_heart');
+					const emptyHeartIcon = document
+							.getElementById('empty_heart');
+
+					// 하트 버튼 클릭 시 토글 함수
+					function toggleHeart() {
+						isHeartFilled = !isHeartFilled;
+
+						if (isHeartFilled) {
+							// 하트가 채워진 아이콘 표시, 빈 하트 아이콘 숨김
+							fillHeartIcon.style.display = 'inline-block';
+							emptyHeartIcon.style.display = 'none';
+						} else {
+							// 빈 하트 아이콘 표시, 하트가 채워진 아이콘 숨김
+							fillHeartIcon.style.display = 'none';
+							emptyHeartIcon.style.display = 'inline-block';
+						}
+					}
+
+					// 하트 버튼에 클릭 이벤트 리스너 추가
+					heartButton.addEventListener('click', toggleHeart);
+				</script>
+
+
+
+
+
+
+
+			</div>
+
+			<div class="faq">
+				<section class="notice">
+					<!-- board seach area -->
+					<div id="board-search">
+						<div class="container">
+							<div class="search-window">
+								<form action="">
+									<div class="search-wrap">
+										<label for="search" class="blind">공지사항 내용 검색</label> <input
+											id="search" type="search" name="" placeholder="검색어를 입력해주세요."
+											value="">
+										<button type="submit" class="btn btn-dark">검색</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<!-- board list area -->
+					<div id="board-list">
+						<div class="container">
+							<table class="board-table">
+								<thead>
+									<tr>
+										<th scope="col" class="th-num">번호</th>
+										<th scope="col" class="th-title">제목</th>
+										<th scope="col" class="th-date">등록일</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>3</td>
+										<th><a href="#!">[공지사항] 개인정보 처리방침 변경안내처리방침</a>
+											<p>테스트</p></th>
+										<td>2017.07.13</td>
+									</tr>
+
+									<tr>
+										<td>2</td>
+										<th><a href="#!">공지사항 안내입니다. 이용해주셔서 감사합니다</a></th>
+										<td>2017.06.15</td>
+									</tr>
+
+									<tr>
+										<td>1</td>
+										<th><a href="#!">공지사항 안내입니다. 이용해주셔서 감사합니다</a></th>
+										<td>2017.06.15</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</section>
+			</div>
+
+			<div class="qna">
+				<form action="" method="post">
+					<div
+						class="container h-100 align-items-center justify-content-center">
+						<h2>QnA</h2>
+
+						<hr style="margin: auto; margin-top: 50px; width: 1000px;" />
+
+						<div class="d-flex align-items-center" style="margin-top: 20px;">
+							<div style="width: 150px; text-align: left;">
+								<label for="gender" style="font-size: 20px; text-align: left;">회원
+									여부</label>
+							</div>
+							<div style="margin-left: 20px; width: 218px;">
+								<input type="radio" name="gender" id="man"
+									style="margin-right: 20px;" /> <label for="man">회원</label> <input
+									type="radio" name="gender" id="woman"
+									style="margin-left: 50px; margin-right: 20px;" /> <label
+									for="woman">비회원</label>
+							</div>
+							<div style="margin-left: 20px; width: 100px;"></div>
+						</div>
+
+						<div class="d-flex align-items-center " style="margin-top: 50px;">
+							<div style="width: 150px; text-align: left;">
+								<label for="nickname" style="font-size: 18px;">ARTMEE
+									아이디</label>
+							</div>
+							<div style="margin-left: 20px;">
+								<input type="text" name="id" placeholder="회원일 경우만 작성" />
+							</div>
+						</div>
+
+						<div class="d-flex align-items-center" style="margin-top: 50px;">
+							<div style="width: 150px; text-align: left;">
+								<label for="name" style="font-size: 18px;">성함</label>
+							</div>
+							<div style="margin-left: 20px;">
+								<input type="text" name="id" placeholder="" />
+							</div>
+
+							<div style="width: 150px; text-align: left; margin-left: 80px;">
+								<label for="email" style="font-size: 18px;">이메일</label>
+							</div>
+							<div style="margin-left: 20px;">
+								<input type="text" name="email" placeholder="@ 포함" />
+							</div>
+						</div>
+
+						<div class="d-flex align-items-center " style="margin-top: 50px;">
+							<div style="width: 150px; text-align: left;">
+								<label for="QnAtitle" style="font-size: 18px;">제목</label>
+							</div>
+							<div style="margin-left: 20px;">
+								<input type="text" name="QnAtitle" placeholder=""
+									style="width: 700px;" />
+							</div>
+						</div>
+
+						<div class="d-flex align-items-center" style="margin-top: 50px;">
+							<div style="width: 150px; text-align: left;">
+								<label for="QnAcontent" style="font-size: 18px;">문의 내용</label>
+							</div>
+							<div style="margin-left: 20px;">
+								<textarea name="QnAcontent"
+									placeholder="정확한 상담을 위해 문의 내용을 자세히 작성해 주세요."
+									style="width: 700px; height: 400px; resize: none;"></textarea>
+							</div>
+						</div>
+						<input type="submit" value="작성 완료" />
+
+						<hr style="margin: auto; margin-top: 50px; width: 1000px;" />
+
+
+						<div class="d-flex align-items-center" style="margin-top: 50px;">
+							<div class="gain">
+								<h3>개인정보 수집 및 이용안내</h3>
+								아트맵은 문의사항 답변을 희망하는 회원을 대상으로 아래와 같이 개인정보를 수집하고 있습니다.<br> 1.
+								수집 개인정보 항목 : [필수] 회원 성함, 전화번호 이메일주소<br> 2. 개인정보의 수집 및
+								이용목적:문의 신청에 따른 본인확인 및 원활한 의사소통 경로 확보<br> <b>3. 개인정보의 보유
+									및 이용기간: 문의 사항 처리종료 시점으로부터 6개월간 보관 후 파기합니다.</b><br> 4. 동의 거부권리
+								안내 추가 : 위와 같은 개인정보 수입동의를 거부할 수있습니다.<br> 다만 동의를 거부하는 경우 문의
+								신청이 제한 됩니다.
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+
+			var divElements = document.querySelectorAll(".upMenu > div");
+			var ulElements = document.querySelectorAll(".menu > ul ");
+			var liElements = document.querySelectorAll(".menu > ul > li ");
+			var contentElements = document.querySelectorAll(".content > div");
+			divElements.forEach(function(divElement) {
+				divElement.addEventListener("click", function() {
+					divElements.forEach(function(otherItem) {
+						otherItem.classList.remove("selected");
+					});
+
+					ulElements.forEach(function(otherItem) {
+						otherItem.classList.remove("visible");
+					});
+					liElements.forEach(function(otherItem) {
+						otherItem.classList.remove("sel");
+					});
+					contentElements.forEach(function(contentElement) {
+						contentElement.classList.remove("contentshow");
+					})
+
+					divElement.classList.add("selected");
+					if (divElement.id === 'mypageLink') {
+						document.getElementById("mypageMenu").classList
+								.add("visible");
+						document.getElementById("reservationList").classList
+								.add("sel");
+						document.querySelector(".reservationList").classList
+								.add("contentshow");
+
+					} else if (divElement.id === 'crm') {
+						document.getElementById("crmMenu").classList
+								.add("visible");
+						document.getElementById("faq").classList.add("sel");
+						document.querySelector(".faq").classList
+								.add("contentshow");
+
+					} else if (divElement.id === 'bookmark') {
+						document.querySelector(".bookmarkList").classList
+								.add("contentshow");
+					}
+
+				});
+
+			});
+
+			liElements.forEach(function(liElement) {
+				console.log(liElement.id);
+				liElement.addEventListener("click", function() {
+
+					liElements.forEach(function(otherItem) {
+						otherItem.classList.remove("sel");
+					});
+					contentElements.forEach(function(contentElement) {
+						contentElement.classList.remove("contentshow");
+					})
+
+					liElement.classList.add("sel");
+
+					var contentName = liElement.id;
+					console.log(contentName);
+					document.querySelector("." + contentName).classList
+							.add("contentshow");
+
+				});
+			});
+
+		});
+
+		document
+				.addEventListener(
+						"DOMContentLoaded",
+						function() {
+							// #leftToRight의 높이를 가져옴
+							var leftToRightHeight = document
+									.getElementById('leftToRight').offsetHeight;
+
+							var mypageMenutHeight = document
+									.getElementById('mypageMenu').offsetHeight;
+							// #index_wrap의 높이를 설정
+							document.getElementById('index_wrap').style.height = leftToRightHeight
+									+ mypageMenutHeight + 'px';
+						});
+
+		function addMenuParam(menuName) {
+			// 현재 URL 가져오기
+			var currentUrl = window.location.href;
+
+			// 기존의 menu 파라미터를 제거
+			var updatedUrl = currentUrl.replace(/[\?&]menu=[^&]+/, '');
+
+			// 새로운 menu 파라미터 추가 또는 업데이트
+			updatedUrl += updatedUrl.indexOf('?') !== -1 ? '&menu='
+					+ encodeURIComponent(menuName) : '?menu='
+					+ encodeURIComponent(menuName);
+
+			// 새로운 URL로 이동
+			window.location.href = updatedUrl;
+		}
+	</script>
+
+
+</body>
+</html>
