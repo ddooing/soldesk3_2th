@@ -20,15 +20,15 @@
     
     
 }
-
+/*
 
 #index_wrap #leftToRight {display: block; margin-bottom: 50px; position: absolute;margin-top: 7vh;left: 0;top: 0;}
-#index_wrap #leftToRight .upMenu {position: relative; display: inline-block; margin: 0 60px; height: 40px; text-align: center; line-height: 30px; cursor: pointer; }
-#index_wrap #leftToRight .upMenu div { text-decoration: none; font-size: 2.5em; opacity:0.5;}
+#index_wrap #leftToRight .upMenu {position: relative; display: inline-block; margin: 0 40px; height: 40px; text-align: center; line-height: 30px; cursor: pointer; }
+#index_wrap #leftToRight .upMenu div { text-decoration: none; font-size: 35px; opacity:0.5;}
 #leftToRight .upMenu::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0; margin-top:10px;}
 #leftToRight .upMenu:hover::after {width: 100%; left: 0; right: auto;}
 
-
+*/
 
 .menu .submenu { margin-bottom: 50px; display:none; padding-top:40px; position: absolute;}
 .menu .submenu li {position: relative; display: inline-block; margin: 0 30px; height: 40px; text-align: center; line-height: 30px; cursor: pointer;
@@ -99,11 +99,9 @@ text-align: center; font-size: 1.5em; color: gray;}
    }
    .reserCancel:hover{ background:gray; box-shadow: inset 5px 5px rgb(0, 0, 0, 0.1);}
    
-   .bookmark{
-   width: 100%;
-			 justify-content: center; padding:30px; 
-			 flex-direction: column;
-   }
+   .bookmark{width: 100%;padding:30px;}
+  
+   .archive{width: 100%;padding:30px;}
    .board-table th,tr, td { font-size:1.2em;}
    .board-table th {
        background: #eee;
@@ -182,6 +180,9 @@ text-align: center; font-size: 1.5em; color: gray;}
  	.point-table tr:first-child {
         border-top: 1px solid #ccc;
     }
+    
+    
+    /*북마크 style*/
     .bookmarkgrid >div{
         display: flex;
     padding: 10px;
@@ -191,7 +192,11 @@ text-align: center; font-size: 1.5em; color: gray;}
         cursor: pointer;
     }
     
-    .archivegrid >div{
+    
+    
+    
+    
+    .archivegrid .archivediv{
         display: flex;
     padding: 10px;
     justify-content: center;
@@ -200,3 +205,75 @@ text-align: center; font-size: 1.5em; color: gray;}
         cursor: pointer;
     }
   
+  
+  /* 모달창 */
+ 
+ .modal_body{
+            position:absolute;
+            top:50%;
+        
+z-index:9999;
+            width:450px; 
+            height:600px;
+
+            padding:40px;  
+
+            text-align: center;
+
+            background-color: rgb(255,255,255); 
+            border-radius:10px; 
+            box-shadow:0 2px 3px 0 rgba(34,36,38,0.15); 
+
+            transform:translateY(-50%);
+        }
+        .modal{
+            position:absolute;
+            display:none;
+            justify-content: center;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .btn-close-modal{
+			 position: absolute;
+	        top: 10px;
+	        right: 10px;
+	        background: transparent;
+    		border: none;
+    		font-weight: 700;
+		}
+		.rating {
+   position: relative;
+   width: 180px;
+   background: transparent;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: .3em;
+   padding: 5px;
+
+}
+
+.rating__result {
+   position: absolute;
+   top: 0;
+   left: 0;
+   transform: translateY(-10px) translateX(-5px);
+   z-index: -9;
+   font: 3em Arial, Helvetica, sans-serif;
+   color: #ebebeb8e;
+   pointer-events: none;
+}
+
+.rating__star {
+   font-size: 2em;
+   cursor: pointer;
+   color: #dabd18b2;
+   transition: filter linear .3s;
+}
+
+.rating__star:hover {
+   filter: drop-shadow(1px 1px 4px gold);
+}
