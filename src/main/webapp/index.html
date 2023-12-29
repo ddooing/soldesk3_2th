@@ -92,7 +92,7 @@
 
 		#right-side-menu {
 			position: absolute;
-			top: 600px;
+			top: 500px;
 			right: 10px;
 			width: 150px;
 			transition: top 0.3s;
@@ -214,6 +214,26 @@
 					</a>
 				</div>
 			</div>
+			<hr style="margin:auto; width: 80px; color: black;" />
+			
+			<div id="sidebar_menu"
+				style="border: 1px solid #e7e7e7; border-top-right-radius: 5%; border-top-left-radius: 5%; border-bottom: none; width: 100px; height: 80px; text-align: center; align-items: center; justify-content: center; display: flex;">
+				<div  style=" justify-content: center;">
+					<a href="#" style="color: black; text-decoration: none;">
+						<p1>FAQ</p1>
+					</a>
+				</div>
+			</div>
+			<hr style="margin:auto; width: 80px; color: black;" />
+			
+			<div id="sidebar_menu"
+				style="border: 1px solid #e7e7e7; border-top-right-radius: 5%; border-top-left-radius: 5%; border-bottom: none; width: 100px; height: 80px; text-align: center; align-items: center; justify-content: center; display: flex;">
+				<div  style=" justify-content: center;">
+					<a href="#" style="color: black; text-decoration: none;">
+						<p1>Q&A</p1>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -222,7 +242,7 @@
 			var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 			var menu = document.getElementById('right-side-menu');
 
-			menu.style.top = (600 + scrollPosition) + 'px'; // 스크롤 위치에 따라 메뉴 위치 업데이트
+			menu.style.top = (500 + scrollPosition) + 'px'; // 스크롤 위치에 따라 메뉴 위치 업데이트
 		});
 	</script>
 
