@@ -22,7 +22,7 @@
 		
 		
 		
-		
+		/*
 		document.addEventListener("DOMContentLoaded", function() {
 		    const modal = document.querySelector('.modal');
 	        const btnOpenModal=document.querySelector('.archivediv.btn-open-modal');
@@ -80,4 +80,4 @@
 
 });
 
-
+*/
