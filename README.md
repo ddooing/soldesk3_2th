@@ -8,3 +8,8 @@
     QnA(문의사항) : /완성
 4. Mypage.css : .content div{} -> .content >div{}로 변경
 5. Signup.html : 프론트만 구현
+
+
+2024/01/03
+style.css : .visible{}추가
+myPage.html : FaQ 형식맞춤, QnA 모달창, Bookmark 하트표시 (style부분에 하트관련 css몇개 추가)
