@@ -22,40 +22,306 @@
 }
 
 
-#index_wrap #leftToRight {display: block; margin-bottom: 50px; position: absolute;
+/*
 
-
-margin-top: 5vh;
-
-    left: 0;
-    top: 0;}
-#index_wrap #leftToRight .upMenu {position: relative; display: inline-block; margin: 0 60px; height: 40px; text-align: center; line-height: 30px; cursor: pointer; }
-#index_wrap #leftToRight .upMenu div { text-decoration: none; font-size: 2.5em; opacity:0.5;}
+#index_wrap #leftToRight {display: block; margin-bottom: 50px; position: absolute;margin-top: 7vh;left: 0;top: 0;}
+#index_wrap #leftToRight .upMenu {position: relative; display: inline-block; margin: 0 40px; height: 40px; text-align: center; line-height: 30px; cursor: pointer; }
+#index_wrap #leftToRight .upMenu div { text-decoration: none; font-size: 35px; opacity:0.5;}
 #leftToRight .upMenu::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0; margin-top:10px;}
 #leftToRight .upMenu:hover::after {width: 100%; left: 0; right: auto;}
 
+*/
+#index_wrap #leftToRight .upMenu {position: relative; display: inline-block; margin: 0 50px; height: 40px; text-align: center; line-height: 30px; cursor: pointer;}
+#index_wrap #leftToRight .upMenu div { text-decoration: none; font-size: 35px; opacity:0.5;}
+#leftToRight .upMenu::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0; margin-top:10px;}
+#leftToRight .upMenu:hover::after {width: 100%; left: 0; right: auto;}
 
-
+/*
 .menu .submenu { margin-bottom: 50px; display:none; padding-top:40px; position: absolute;}
 .menu .submenu li {position: relative; display: inline-block; margin: 0 30px; height: 40px; text-align: center; line-height: 30px; cursor: pointer;
 text-align: center; font-size: 1.5em; color: gray;}
 .menu .submenu li a {color: gray; text-decoration: none; font-size: 2em;}
 #mypageMenu li::after {position: absolute; content:""; display: block; border-bottom: 4px solid #000; transition: width 250ms ease-out; left: auto; right: 0;  width: 0;}
+*/
+
 
 .selected {
           opacity:1 !important;
          
         }
- .menu .submenu li.sel {
-            color: black;
-        }        
 
-	.menu .submenu.visible {
+	.ullist.visible {
           display: block ;
       }	
-      .content >div{
+      
+      .submenu{
+      display: none;  align-items: center; list-style-type: none; padding: 0; margin: 0;position: relative;
+      }
+      .submenu li {display: inline-block; margin: 0 30px; height: 40px; text-align: center; line-height: 30px; cursor: pointer;
+text-align: center; font-size: 20px; color: gray;}
+      
+      
+       .submenu li.sel {
+            color: black;
+        }        
+      
+      
+   .submenu.visible {
+          display: block ;
+      }	
+      .content > div{
       display: none ;
       }
     .content div.contentshow{
     display: block ;
     }  
+      .ullist{justify-content: center;display: none; margin-left:30px ;
+      }  
+   /*   스타일 적용이안됨   
+.tooltext{
+    position:absolute; 
+    left:0px; 
+    top:52px; 
+    background: #646FD4; 
+    padding: 10px; 
+    border-radius:5px; 
+    color: #fff; 
+    text-align: center; 
+    display: none;
+  }
+  .tooltext:after{
+    display: block; 
+    content: ''; 
+    position: absolute; 
+    top: -7px; 
+    left:15px; 
+    width: 0px; 
+    height: 0px; 
+    border-top: 8px solid none; 
+    border-left: 8psolid transparent; 
+    border-right: 8px solid transparent; 
+    border-bottom: 8px solid #646FD4;
+  } 
+  .toolWrap:hover .tooltext{display: block;}
+
+   */ 
+   .reservationList{
+   padding-top: calc(3rem + 40px);
+   width: 100%;
+			 justify-content: center; padding:30px; 
+			 flex-direction: column;
+   }
+   
+    .reservationList >div{ margin: 0px auto 30px;border-radius:15px;}
+   .reserinfo p{font-size:20px;}
+   
+   .reserCancel{	
+   	position:relative; border: none !important; left:300px; border-radius:30px;
+   	background:lightgray;padding: 10px 15px 10px 15px; top:-5px;
+   }
+   .reserCancel:hover{ background:gray; box-shadow: inset 5px 5px rgb(0, 0, 0, 0.1);}
+   
+  
+   .board-table th,tr, td { font-size:20px;}
+   .board-table th {
+       background: #eee;
+       border-top: 2px solid gray;
+       padding: 5px;
+   }
+   .board-table thead >  tr > th{
+       text-align:center;
+   }
+   .board-table thead{
+       height:55px;
+   }
+	.board-table tbody {
+            height:50px;
+        }
+      .board-table td {
+          border-bottom: 1px solid #ccc;
+          padding: 5px;
+      }
+
+      .board-table td {
+          text-align: center;
+      }
+
+      .board-table td:nth-child(3) {
+          text-align: left;
+      }
+
+      
+      
+      
+      .post-table th,tr, td { font-size:20px;}
+ 		.post-table th {
+          background: #eee;
+          border-top: 2px solid gray;
+          padding: 5px;
+      }
+      .post-table thead >  tr > th{
+          text-align:center;
+      }
+      .post-table thead{
+          height:70px;
+      }
+	.post-table tbody {
+            height:55px;
+        }
+      .post-table td {
+          border-bottom: 1px solid #ccc;
+          padding: 5px;
+      }
+.post-table thead{
+       height:55px;
+   }
+	.post-table tbody {
+            height:50px;
+        }
+      .post-table td {
+          text-align: center;
+      }
+	 
+      .post-table td:nth-child(2) {
+          text-align: left;
+      }
+ 		
+ 		
+ 		
+ 		.point-table tr {
+          height:70px;
+      }
+	   .point-table td {
+          border-bottom: 1px solid #ccc;
+          padding: 5px;
+          font-size:20px;
+      }
+
+      .point-table td {
+          text-align: center;
+      }
+	 
+      .post-table td:nth-child(2) {
+          text-align: left;
+      }
+ 		
+ 	.point-table tr:first-child {
+        border-top: 1px solid #ccc;
+    }
+    
+    
+    /*북마크 style*/
+    .bookmarkgrid >div{
+        display: flex;
+    padding: 10px;
+    justify-content: center;
+    
+    }
+    
+    .bookmarkgrid >div >img{
+        cursor: pointer;
+        border-radius:15px;
+        width:240px; height:280px;
+    }
+    .bookmarkgrid >div >img:hover{
+        box-shadow: 0 5px 5px 0 rgb(34 36 38 / 77%);
+    }
+    
+    /*아카이브 style*/
+    .archivegrid >div{
+        display: flex;
+    padding: 10px;
+    justify-content: center;
+    
+    }
+    
+    .archivegrid >div >img{
+        cursor: pointer;
+        border-radius:15px;
+        width:240px; height:280px;
+    }
+    .archivegrid >div >img:hover{
+        box-shadow: 0 5px 5px 0 rgb(34 36 38 / 77%);
+    }
+    
+    
+   
+  
+  /* 모달창 */
+ 
+ .modal_body{
+            position:absolute;
+            top:50%;
+        
+z-index:9999;
+            width:450px; 
+            height:600px;
+
+            padding:40px;  
+
+            text-align: center;
+
+            background-color: rgb(255,255,255); 
+            border-radius:10px; 
+            box-shadow:0 2px 3px 0 rgba(34,36,38,0.15); 
+
+            transform:translateY(-50%);
+        }
+        .modal{
+            position:absolute;
+            display:none;
+            justify-content: center;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .btn-close-modal{
+			 position: absolute;
+	        top: 10px;
+	        right: 10px;
+	        background: transparent;
+    		border: none;
+    		font-weight: 700;
+		}
+		.rating {
+   position: relative;
+   width: 180px;
+   background: transparent;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: .3em;
+   padding: 5px;
+
+}
+
+.rating__result {
+   position: absolute;
+   top: 0;
+   left: 0;
+   transform: translateY(-10px) translateX(-5px);
+   z-index: -9;
+   font: 3em Arial, Helvetica, sans-serif;
+   color: #ebebeb8e;
+   pointer-events: none;
+}
+
+.rating__star {
+   font-size: 2em;
+   cursor: pointer;
+   color: #dabd18b2;
+   transition: filter linear .3s;
+}
+
+.rating__star:hover {
+   filter: drop-shadow(1px 1px 4px gold);
+}
+
+.heart-icon {
+	position: absolute;
+	top: 300px;
+	right: 200px;
+	color: red; /* 하트 색상 설정 */
+}
