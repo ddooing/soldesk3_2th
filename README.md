@@ -11,5 +11,5 @@
 
 
 2024/01/03
-style.css : .visible{}추가
-myPage.html : FaQ 형식맞춤, QnA 모달창, Bookmark 하트표시 (style부분에 하트관련 css몇개 추가)
+1. style.css : .visible{}추가
+2. myPage.html : FAQ 형식맞춤, QnA 모달창(제목, 문의내용 빼고 다 날림), Bookmark 하트표시 (style부분에 하트관련 css몇개 추가)
