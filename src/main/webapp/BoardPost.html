@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>게시판</title>
+<title>공지사항</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -53,41 +53,58 @@
 	rel="stylesheet">
 <style>
 .selected {
-          opacity:1 !important;
-         
-        }
-
-	.ullist.visible {
-          display: block ;
-      }	
-      
-.submenu{
-	display: none;  align-items: center; list-style-type: none; padding: 0; margin: 0;position: relative;
+	opacity: 1 !important;
 }
-.submenu li {display: inline-block; margin: 0 30px; height: 40px; text-align: center; line-height: 30px; cursor: pointer;
-text-align: center; font-size: 20px; color: gray;}
-      
-      
+
+.ullist.visible {
+	display: block;
+}
+
+.submenu {
+	display: none;
+	align-items: center;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.submenu li {
+	display: inline-block;
+	margin: 0 30px;
+	height: 40px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	font-size: 20px;
+	color: gray;
+}
+
 .submenu li.sel {
 	color: black;
-}        
-      
-      
-.submenu.visible {
-	display: block ;
-}	
-.content > div{
-      display: none ;
 }
-.content div.contentshow{
-    display: block ;
-}  
-.ullist{justify-content: center;display: none; margin-left:30px ;
-}  
+
+.submenu.visible {
+	display: block;
+}
+
+.content>div {
+	display: none;
+}
+
+.content div.contentshow {
+	display: block;
+}
+
+.ullist {
+	justify-content: center;
+	display: none;
+	margin-left: 30px;
+}
 
 button {
 	border: none;
-	font-size:20px;
+	font-size: 20px;
 	background: transparent;
 }
 
@@ -132,32 +149,14 @@ body {
 }
 
 .board_title {
-	margin-top: 7%;
+	margin-top: 12%;
 	text-align: Left;
 	margin-bottom: 3px;
 	padding-left: 200px;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 }
 
-#totallist {
-	font-size: 16px;
-	margin-bottom: 5px;
-	margin-right: 50px;
-	padding-left: 180px;
-	float: left;
-}
 
-#ExhibitionList {
-	font-size: 16px;
-	margin-bottom: 5px;
-	margin-right: 50px;
-	padding-left: 25%;
-	padding-bottom: 1%;
-}
-
-#ExhibitionList:hover {
-    color: red; /* Change to your preferred hover color */
-}
 table {
 	border-collapse: collapse;
 	max-width: 70%;
@@ -165,56 +164,64 @@ table {
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
-    border-spacing: 0
+	border-spacing: 0
 }
-thead{
-    line-height: 3;
-    letter-spacing: -0.03em;
-    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
-    font-size: 12px;
-    color: #000;
-    border-collapse: collapse;
-    border-spacing: 0;
-    text-align: center !important;
+
+thead {
+	line-height: 3;
+	letter-spacing: -0.03em;
+	font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
+	font-size: 12px;
+	color: #000;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: center !important;
 }
-tbody{
+
+tbody {
 	line-height: 1.1;
-    letter-spacing: -0.03em;
-    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
-    font-size: 12px;
-    color: #000;
-    border-collapse: collapse;
-    border-spacing: 0;
-    text-align: center !important;
+	letter-spacing: -0.03em;
+	font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
+	font-size: 12px;
+	color: #000;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: center !important;
 }
+
 th, td {
-	border-bottom: 1px solid #dee2e6;
 	padding: 10px;
 	text-align: center;
 	font-size: 13px;
 }
+
 th {
 	background-color: #f8f9fa;
 	color: #000;
 	font-size: 14px;
 }
-a {	/*링크*/
+
+a { /*링크*/
 	text-decoration: none;
 	color: #000000;
 	font-size: 12px;
 }
+
 a:hover {
-	text-decoration: underline;
+	text-decoration: none;
+	color: #000000;
 }
+
 #contents {
 	line-height: 1.1;
 	letter-spacing: -0.03em;
 	font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
 	font-size: 12px;
 	color: #000;
-	width: 1300px;
+	width: 980px;
 	margin: 0 auto;
 	padding: 50px 0 0 0;
+	margin-top:10px;
 }
 
 div {
@@ -231,8 +238,7 @@ body, input, select, textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: -30px;
-	padding-top: 30px;
+	margin-top: -20px;
 }
 
 .tab_wrap {
@@ -250,8 +256,7 @@ body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
 }
 
 .search_wrap {
-	position: relative;
-	border: 1px solid #DDDDDD;
+	position: relativergb;	border: 1px solid #DDDDDD;
 	border-radius: 4px;
 	background: #F8F8F8;
 	padding: 22px 22px;
@@ -409,52 +414,182 @@ input {
 	text-align: center;
 	vertical-align: middle;
 	background-color: #414141;
-}
-
-.boardwritebtn a {
-	text-decoration: none;
-	background-color: #000000;
-	color: #fff;
-	padding: 8px;
-	border-radius: 5px;
-	font-weight: bold;
-	width: 70%;
-	margin-bottom: 5px;
-	margin-right: 50px;
-	margin-left: 650px;
-	
+	padding:20px;
+	padding-left:40px;
+	padding-right:40px;
 }
 
 .center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-.center-content > div {
-    margin-top: 30px; /* 필요에 따라 조절 */
+.center-content>div {
+	margin-top: 30px; /* 필요에 따라 조절 */
 }
-.banner1{
-	border: 1px solid black; width : 900px; height :100px; margin-right:10px;
-	margin-top:50px; margin-bottom:50px;
+
+.banner1 {
+	border: 1px solid black;
+	width: 685px;
+	height: 100px;
+	margin-right: 10px;
+	margin-top:0px;
+	margin-bottom: 20px;
 }
+
 .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
 }
 
 .pagination a.active {
-    background-color: dodgerblue;
-    color: white;
+	background-color: dodgerblue;
+	color: white;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
+
+.tbl_dtal tr.tb_info>td {
+	background: #F8F8F8;
+	padding-left: 61px;
+}
+
+.tbl_dtal th, .tbl_dtal td {
+	text-align: left;
+}
+
+.tbl_list th, .tbl_list td, .tbl_dtal th, .tbl_dtal td {
+	border-bottom: 1px solid #EEEEEE;
+	padding: 18px;
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+td {
+	display: table-cell;
+	vertical-align: inherit;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;
+}
+
+table {
+	border-collapse: separate;
+	text-indent: initial;
+	border-spacing: 2px;
+}
+
+li {
+	text-align: -webkit-match-parent;
+}
+
 ul, ol {
-    list-style-type: none; /* Removes default markers */
+	list-style: none;
+}
+
+ul ul {
+	list-style-type: circle;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+li {
+	text-align: -webkit-match-parent;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+body, input, button, select, textarea {
+	font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
+	font-size: 12px;
+	color: #000;
+}
+
+body, textarea {
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+}
+
+.tbl_dtal tr.tb_info>td .tit:after {
+	content: '';
+	display: inline-block;
+	background: #666;
+	width: 1px;
+	height: 14px;
+	margin: 0 20px;
+	vertical-align: middle;
+}
+.btn_col2 {
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #414141;
+    font-size: 14px;
+    color: #ffffff !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #414141;
+}
+.tab_wrap > li > .tab_con {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 0;
+}
+.tbl_dtal tr.tb_info>td .cont+.tit {
+    margin-left: 80px;
+}
+.tbl_dtal tr.tb_link>td a .tb_next{
+	margin-right:4px;
+    background-image: url(assets/img/upwt.png);
+}
+.tbl_dtal tr.tb_link>td a .tb_prev {
+	margin-right:4px;
+    background-image: url(assets/img/downwt.png);
+}
+.tbl_dtal tr.tb_link>td a .tb_next, .tbl_dtal tr.tb_link>td a .tb_prev {
+    background-repeat: no-repeat;
+    background-position: 100% 54%;
+    margin-right: 30px;
+    padding-right: 24px;
+    color: #000;
+}
+.tbl_dtal tr.tb_link>td a .tb_next, .tbl_dtal tr.tb_link>td a .tb_prev {
+    background-repeat: no-repeat;
+    background-position: 100% 54%;
+    margin-right: 30px;
+    padding-right: 24px;
+    color: #000;
+}
+.btn_btm_wrap a, .btn_btm_wrap button {
+    margin: 0 3px;
+    min-width: 160px;
+    /* padding: 0 !important; */
+}
+.btn_btm_wrap {
+    margin: 30px 0;
+    text-align: center;
+}
+.no-markers {
+    list-style-type: none;
+}
+ul, ol {
+    list-style-type: none; /* This removes markers from all unordered and ordered lists */
 }
 </style>
 
@@ -475,9 +610,11 @@ ul, ol {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav me-auto">
-					<li class="nav-item mr-5"><a class="nav-link" href="BoardNotice.html"
+					<li class="nav-item mr-5"><a class="nav-link"
+						href="BoardNotice.html"
 						style="margin-right: 20px; margin-left: 50px;">공지사항</a></li>
-					<li class="nav-item mr-5"><a class="nav-link" href="#!"
+					<li class="nav-item mr-5">
+						<a class="nav-link" href="#!" 
 						style="margin-right: 20px; margin-left: 20px;">전시회</a></li>
 					<li class="nav-item mr-5"><a class="nav-link" href="#!"
 						style="margin-right: 20px; margin-left: 20px;">이용후기</a></li>
@@ -511,159 +648,109 @@ ul, ol {
 	<div id="contents" class="contents_customer area_movingvar litype5">
 
 		<div class="board_title">
-			<h2 style="margin-left:30px;">게시판</h2>
+		    <h2><a href="BoardList.html" style="font-size: 40px;">게시판</a></h2>
 		</div>
-	<div class = "active contentshow" id="totalListContent">
-		<div>
-			<ul class="tap_wrap inner">
-				<fieldset class="search_wrap" id="search_wrap1" style="width: 900px;">
-					<select id="selectArea1" title="지역 선택" style="display: none;"></select>
-					<select id="selectCinema1" title="영화관 선택" style="display: none;"></select>
-					<select class="ty3" title="검색조건 제목 선택" id="selectCondition1">
-						<option value="1" selected>제목</option>
-						<option value="2">내용</option>
-						<option value="3">제목+내용</option>
-					</select> <input type="text" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요"
-						id="searchKeyword1" style="width: 642px;">
-					<button type="button" class="btn_col2" id="btnSearch1">검색</button>
-				</fieldset>
+		<!--  
+	<c:if test="${msg==0 }">
+		<script>
+			alert("수정 시 비밀번호가 일치하지 않습니다")
+		</script>
+	</c:if>
+	<c:if test="${msg==1 }">
+		<script>
+			alert("삭제 시 비밀번호가 일치하지 않습니다")
+		</script>
+	</c:if>
+	-->
+
+
+		<div style="justify-content: center; display: flex; margin: auto;">
+			<ul id="subMenu" class="submenu visible"
+				style="display: flex; align-items: right; list-style-type: none; padding: 0; margin: 0; margin-right: 450px;">
 			</ul>
-			<div>
-				<p />
-				<table class="tbl_list text_c" summary="공지사항에 대한 표입니다">
-					<caption>전체 공지사항 내용</caption>
-					<colgroup>
-						<col style="width: 10%;">
-						<col style="width: 15%;">
-						<col style="width: auto;">
-						<col style="width: 15%;">
-						<col style="width: 15%;">
-					</colgroup>
-					<thead>
-						<tr>
-							<th scope="col">번호</th>
-							<th scope="col">구분</th>
-							<th scope="col">제목</th>
-							<th scope="col">작성자</th>
-							<th scope="col">등록일</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><strong class="ico_imp"><span>중요</span></strong></td>
-							<td>전체</td>
-							<td class="text_l"><a href="BoardPost.html" id="2578"
-								class="txt_color01">아트미 개인정보 처리방침 개정 안내</a></td>
-							<td>관리자</td>
-							<td>2023-09-13</td>
-						</tr>
-						<tr>
-							<td><strong class="ico_imp"><span>중요</span></strong></td>
-							<td>전체</td>
-							<td class="text_l"><a href="BoardPost.html" id="2541"
-								class="txt_color01">아트미 영상정보처리기기 운영 및 관리방침 개정 안내</a></td>
-							<td>관리자</td>
-							<td>2023-06-08</td>
-						</tr>
-						<tr>
-							<td>28</td>
-							<td>전체</td>
-							<td class="text_l"><a href="#none" id="2606" class="">아트미 멤버십에 따른 이용약관 개정 안내</a></td>
-							<td>노래하는라이언</td>
-							<td>2023-12-07</td>
-						</tr>
-						<tr>
-							<td>27</td>
-							<td>전체</td>
-							<td class="text_l"><a href="#none" id="2605" class="">멤버십 종료 안내</a></td>
-							<td>춤추는어피치</td>
-							<td>2023-12-01</td>
-						</tr>
-						<tr>
-							<td>26</td>
-							<td>전체</td>
-							<td class="text_l"><a href="#none" id="2602" class="">아트미 개인정보처리방침 개정 안내 </a></td>
-							<td>망그러진곰</td>
-							<td>2023-12-01</td>
-						</tr>
-						<tr>
-							<td>25</td>
-							<td>전체</td>
-							<td class="text_l"><a href="#none" id="2596" class="">아트미 시스템 작업 안내</a></td>
-							<td>호식이두마리치킨</td>
-							<td>2023-11-16</td>
-						</tr>
-						<tr>
-							<td>24</td>
-							<td>전체</td>
-							<td class="text_l"><a href="#none" id="2594" class="">11/18(토)
-									00:00~18:00 하나카드 서비스 점검으로 인한 일시 중단 안내</a></td>
-							<td>BHC가격내려</td>
-							<td>2023-12-06</td>
-						</tr>
-						<tr>
-							<td>23</td>
-							<td>전시회</td>
-							<td class="text_l"><a href="#none" id="2591" class="">10/25(수)
-									04시 ~ 09시 한국문화진흥원 컬쳐랜드(문화상품권) 시스템 점검으로 인한 일시 중단 안내</a></td>
-							<td>치킨값이비싸다</td>
-							<td>2023-10-13</td>
-						</tr>
-						<tr>
-							<td>22</td>
-							<td>전체</td>
-							<td class="text_l"><a href="#none" id="2590" class="">10/15(일)
-									00:00~12:00 롯데카드 서비스 점검으로 인한 일시 중단 안내</a></td>
-							<td>도깨비</td>
-							<td>2023-10-11</td>
-						</tr>
-						<tr>
-							<td>21</td>
-							<td>전시회</td>
-							<td class="text_l"><a href="#none" id="2587" class="">10/21(토)
-									02시 ~ 06시 네이버페이 서비스 점검으로 인한 일시 중단 안내</a></td>
-							<td>고려거란전쟁</td>
-							<td>2023-10-05</td>
-						</tr>
-					</tbody>
-				</table>
-				
-			</div>
-			<br>
+		</div>
+		<br>
 
-			<!-- 페이징처리 구현 -->
-			<div style="display: flex; justify-content: center; margin-bottom: 30px;">
-				<div id="pagination-container">
-				    <div class="pagination">
-					    <a href="#">&laquo;</a>
-					    <a href="#">&lt;</a>
-					    <a class="active" href="#">1</a>
-					    <a href="#">2</a>
-					    <a href="#">3</a>
-					    <a href="#">4</a>
-					    <a href="#">5</a>
-					    <a href="#">&gt;</a>
-					    <a href="#">&raquo;</a>
+		<div>
+			<div class="active"><button type="button" class="tab_tit"
+					style="width: 900px; left: 20%;"></button>
+				<div class="tab_con">
+					<ul class="tab_wrap inner">
+						<table class="tbl_dtal" summary="공지사항 상세내용에 대한 표입니다">
+							<colgroup>
+								<col style="width: 100%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" style="border:1px solid black; border-bottom:none; padding:6px;" >아트미 개인정보 방침</th>
+								</tr>
+							</thead>
+							<tbody style = "border:1px solid black;">
+								<tr class="tb_info">
+									<td style="background-color: rgb(200,200,200); border:1px solid rgb(200,200,200);">
+										<span class="tit" >전체</span> 
+										<span class="cont unvisible">전체</span>
+										<span class="tit">등록일</span>
+										<span class="cont">2020-09-14</span>
+										<span class="tit">조회수</span><span class="cont">1471</span>
+									</td>
+								</tr>
+								<tr class="tb_content" style="height: 350px;">
+									<td><div id="divNoticeContents">
+											<p>
+												안녕하세요. <br>롯데시네마 구미프라임 1번가입니다.
+											</p>
+											<p>
+												롯데시네마 구미프라임 1번가관이 영업 종료됨에 따라,<br>아래와 같이 일정 안내드리오니 지점
+												이용에 참고 부탁드립니다.
+											</p>
+											<p>ㆍ영업 종료 일시: 2020년 9월 6일 부</p>
+											<p>그 동안 롯데시네마 구미프라임 1번가관을 이용해주신 고객 여러분께 감사의 인사드립니다.</p>
+											<p>
+												*인근 지점<br>- 롯데시네마 구미공단 : 경북 구미시 산호대로 233 (공단동)<br>-
+												롯데시네마 프리미엄 구미센트럴 : 경북 구미시 원평동 구미중앙로 17길 16
+											</p>
+										</div></td>
+								</tr>
+								<tr class="tb_link">
+									
+									<td><a href="#" class="" id="2197">
+									<span class="tb_next">다음글</span>
+									<span>구미프라임1번가 영업 종료 안내</span></a></td>
+								</tr>
+								<tr class="tb_link">
+									<td><a href="#" class="" id="2193">
+									<span class="tb_prev">이전글</span>
+									<span>롯데시네마 황학 영업 종료 안내</span><a></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
+				</li>
+				<div class="btn_btm_wrap">
+					<a href="BoardList.html" class="btn_col2 ty6">목록</a>
 				</div>
-				<div class="boardwritebtn"  style="position: absolute;">
-					<a href="BoardWriteForm.jsp" style="text-decoration: none">글쓰기</a>
+			</ul>
+		</div>
+
+		<!-- 배너부분 -->
+		<section style="margin-top: -8spx;">
+			<div class="container px-1">
+				<div class="d-flex justify-content-center">
+					<img src="assets/img/banner1.png" class="banner1" alt="banner1">
 				</div>
 			</div>
+		</section>
+		</div>
 
-			
-			<!-- 배너부분 -->
-			<section style="margin-top: -8spx;">
-				<div class="container px-1">
-					<div class="d-flex justify-content-center">
-						<img src="assets/img/banner1.png" class="banner1" alt="banner1">
-					</div>
-				</div>
-			</section>
+
+
+
+
+
+		<script>
+		
+		</script>
 	</div>
-	
-<script>
-</script>
-</div>
 </body>
 </html>

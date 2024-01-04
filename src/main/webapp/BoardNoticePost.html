@@ -149,32 +149,13 @@ body {
 }
 
 .board_title {
-	margin-top: 7%;
+	margin-top: 12%;
 	text-align: Left;
 	margin-bottom: 3px;
 	padding-left: 200px;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 }
 
-#totallist {
-	font-size: 16px;
-	margin-bottom: 5px;
-	margin-right: 50px;
-	padding-left: 180px;
-	float: left;
-}
-
-#ExhibitionList {
-	font-size: 16px;
-	margin-bottom: 5px;
-	margin-right: 50px;
-	padding-left: 25%;
-	padding-bottom: 1%;
-}
-
-#ExhibitionList:hover {
-	color: red; /* Change to your preferred hover color */
-}
 
 table {
 	border-collapse: collapse;
@@ -227,7 +208,8 @@ a { /*링크*/
 }
 
 a:hover {
-	text-decoration: underline;
+	text-decoration: none;
+	color: #000000;
 }
 
 #contents {
@@ -257,8 +239,6 @@ body, input, select, textarea {
 	justify-content: center;
 	align-items: center;
 	margin-top: -20px;
-	padding-top: 30px;
-	
 }
 
 .tab_wrap {
@@ -574,27 +554,27 @@ body, textarea {
 .tbl_dtal tr.tb_info>td .cont+.tit {
     margin-left: 80px;
 }
-.tbl_dtal tr.tb_link>td a .tb_next {
+.tbl_dtal tr.tb_link>td a .tb_next{
 	margin-right:4px;
     background-image: url(assets/img/upwt.png);
-}
-.tbl_dtal tr.tb_link>td a .tb_next, .tbl_dtal tr.tb_link>td a .tb_prev {
-    background-repeat: no-repeat;
-    background-position: 100% 54%;
-    margin-right: 30px;
-    padding-right: 24px;
-    color: #000;
-}
-.tbl_dtal tr.tb_link>td a .tb_next, .tbl_dtal tr.tb_link>td a .tb_prev {
-    background-repeat: no-repeat;
-    background-position: 100% 54%;
-    margin-right: 30px;
-    padding-right: 24px;
-    color: #000;
 }
 .tbl_dtal tr.tb_link>td a .tb_prev {
 	margin-right:4px;
     background-image: url(assets/img/downwt.png);
+}
+.tbl_dtal tr.tb_link>td a .tb_next, .tbl_dtal tr.tb_link>td a .tb_prev {
+    background-repeat: no-repeat;
+    background-position: 100% 54%;
+    margin-right: 30px;
+    padding-right: 24px;
+    color: #000;
+}
+.tbl_dtal tr.tb_link>td a .tb_next, .tbl_dtal tr.tb_link>td a .tb_prev {
+    background-repeat: no-repeat;
+    background-position: 100% 54%;
+    margin-right: 30px;
+    padding-right: 24px;
+    color: #000;
 }
 .btn_btm_wrap a, .btn_btm_wrap button {
     margin: 0 3px;
@@ -702,10 +682,10 @@ ul, ol {
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col" style="border:1px solid black; border-bottom:none;" >아트미 개인정보 방침</th>
+									<th scope="col" style="border:1px solid black; border-bottom:none; padding:6px;" >아트미 개인정보 방침</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody style = "border:1px solid black;">
 								<tr class="tb_info">
 									<td style="background-color: rgb(200,200,200); border:1px solid rgb(200,200,200);">
 										<span class="tit" >전체</span> 
@@ -733,17 +713,15 @@ ul, ol {
 										</div></td>
 								</tr>
 								<tr class="tb_link">
+									
 									<td><a href="#" class="" id="2197">
 									<span class="tb_next">다음글</span>
 									<span>구미프라임1번가 영업 종료 안내</span></a></td>
 								</tr>
 								<tr class="tb_link">
-									<td>
-										<a href="#" class="" id="2193">
-										<span class="tb_prev">이전글</span>
-										<span>롯데시네마 황학 영업 종료 안내</span>
-										</a>
-									</td>
+									<td><a href="#" class="" id="2193">
+									<span class="tb_prev">이전글</span>
+									<span>롯데시네마 황학 영업 종료 안내</span><a></td>
 								</tr>
 							</tbody>
 						</table>
