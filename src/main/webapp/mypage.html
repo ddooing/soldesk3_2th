@@ -121,17 +121,24 @@
 		<!-- 상단 -->
 		<div  style="justify-content: center;width: 65%;display: flex; margin: auto;">
 		
+		
+			
+					
 			<!-- 이미지 -->
-			<div style="display: flex;">
+			<div style="display: flex; flex-direction: column;">
 				<img src="./assets/img/profileImg.png" style="width:85px; height:85px; border-radius: 4em; box-shadow: 5px 5px rgb(0, 0, 0, 0.1); margin: auto;"/>
+				<button class="button-2" role="button">프로필 수정</button>
 			</div>
 			
 			<!-- 닉네임, 게이지, 포인트  -->
 			<div style="margin-left: 3em;
 		    display: flex;
 		    flex-direction: column;">
-				<span style="font-size: 2em;margin-bottom: 0.2em;">닉네임
-				</span>
+		    	
+					<span style="font-size: 2em;margin-bottom: 0.2em;">닉네임
+					</span>
+					
+				
 				<div style="display: flex; flex-direction: column; align-items: center;">
 					<div style="display: flex;flex-direction: row;">
 						<div style="display: flex;flex-direction: column;">
@@ -148,11 +155,17 @@
 						</svg>
 					
 					
-						<!-- 툴팁 내용  -->
-						<div class="tooltext">
-							<div id="membertooltip">
-								<div class="tooltip-content">
-									<p style="margin-left: 30px; font-size:28px;font-weight:bold;">회원등급 혜택 안내</p>
+						<div class="tool-modal">
+					       <div class="tool-modal_body">
+								<button class="btn-close-modal">
+									<svg xmlns="http://www.w3.org/2000/svg" width="3.5em" height="3.5em"opacity="0.8" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+								  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+								</svg>
+								
+								
+							</button>
+							
+							<p style="margin-left: 30px; font-size:28px;font-weight:bold;">회원등급 혜택 안내</p>
 									<div
 										style="display: flex; justify-content: center; margin-left: 30px; margin-right: 30px; margin-top: 30px;">
 										<div
@@ -189,33 +202,39 @@
 										</div>
 									</div>
 					
-									<hr
-										style="width: 400px; margin-left: auto; margin-right: auto; border-color: black; border-width: 2px 0 0 0; margin-top: 30px;" />
-					
-					
-									<div style=" margin-top: 30px; ">
-										<h3 style="margin-left: 30px;">경험치 획득방법</h3><br />
-										<b style="margin-top: 50px; margin-left: 50px;">전시회 예매 + 50 exp</b> <br /><br />
-										<b style="margin-top: 30px; margin-left: 50px;">소감문 작성시 최대 + 10 exp</b> <br /><br />
-										<b style="margin-top: 30px; margin-left: 50px;">소감문 공개 허용시 추가 5 exp</b> <br /><br />
+									<hr style="width: 400px; margin-left: auto; margin-right: auto; border-color: black; border-width: 2px 0 0 0; margin-top: 30px;" />
+									
+									<div style=" margin-top: 30px;" >
+										<h3 >경험치 획득방법</h3>
+										<b style="margin-top: 50px;">전시회 예매 + 50 exp</b> <br /><br />
+										<b style="margin-top: 30px; ">소감문 작성시 최대 + 10 exp</b> <br /><br />
+										<b style="margin-top: 30px; ">소감문 공개 허용시 추가 + 5 exp</b> <br /><br />
 					
 									</div>
-					
-									<!--  상하 길이 너무 길어서 없애는게 나을듯?
-										<hr
-											style="width: 400px; margin-left: auto; margin-right: auto; border-color: black; border-width: 2px 0 0 0; margin-top: 30px;" />
+									
 											
-										<div style=" margin-top: 30px; ">
-											<h3 style="margin-left: 30px;">적립 포인트 정책 안내</h3><br />
-											<b style="margin-left: 50px;">기간 내에 구매금액에 구매 확정 시점에 적립 포인트가 지급됩니다. </b>		<br /><br />
-											<b style="margin-left: 50px;">포인트 적립 내역이나  이용내역은 MyPage에서 확인할 수 있습니다.</b>	<br /><br />
-											<b style="margin-left: 50px;">무료 전시회 관련 소감문 작성 시  ??의 포인트만 적립 가능합니다.</b>	<br /><br />
-											<b style="margin-left: 50px;">최초 적립했던 경로를 벗어나 새로운 경로(기기변경, 인터넷 창 변경 등)로</b><br /> <b style="margin-left: 50px;">동일상품 구매시 포인트 적립이 되지 않을 수 있습니다.</b>	<br /><br />
+									<div style=" margin-top: 30px; ">
+										<div style="display: flex;">
+										<svg style="opacity:0.8; " xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+										  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+										</svg>
+										<h2 style="opacity:0.8;font-size: 25px;margin-left: 10px;">적립 포인트 정책 안내</h2>
 										</div>
-										-->
-								</div>
+										 
+										<p > - &nbsp;기간 내에 구매금액에 구매 확정 시점에 적립 포인트가 지급됩니다. </p>		
+										<p >- &nbsp; 포인트 적립/이용 내역은 MyPage의 하위 메뉴에서 확인할 수 있습니다.</p>
+										<p >- &nbsp; 무료 전시회에 대해서는 포인트,경험치가 지급되지 않습니다.</p>	
+											
+									</div>
+									
+									<div style="height:150px;">&nbsp;</div>
 							</div>
 						</div>
+						
+						
+						
+						<!-- 툴팁 내용  -->
+						
 	
 
 					</div>
@@ -504,7 +523,7 @@
 				</div>
 				
 			</div>
-			
+			<!-- 아카이브 -->
 			<div class="archive">
 				<div class="archivegrid" style="
 					grid-auto-rows: minmax(350px, auto);
@@ -559,6 +578,16 @@
 						<textarea class="review"style="width:465px; height:270px; border:none;filter: drop-shadow(1px 1px 4px gray);border-radius:20px;padding:10px;outline: 0;resize: none;"
 						 placeholder="감상문을 작성해주세요"></textarea>
 						<!-- textarea에 대한 팝업 크기 조절 추가하기 -->
+						
+						<div class="checkbox-wrapper-17" style="margin-top: 10px;display: flex;align-items: center;">
+						  <input type="checkbox" id="switch-17" /><label for="switch-17"></label>
+							<span style="margin-left:10px;">공개 여부</span>
+							<!--  공개 여부에 따른 공개, 비공개 표시 하기  -->
+							
+							
+							<button class="button-80" role="button">작성 완료</button>
+							
+						</div>
 				       </div>
 				   </div>
 					
@@ -702,7 +731,10 @@
         const btnOpenModal=document.querySelector('.btn-open-modal');
 		const btnCloseModal=document.querySelector('.btn-close-modal');
        const body =  document.querySelector('#page-top');
-        btnOpenModal.addEventListener("click", ()=>{
+       
+       
+       
+       btnOpenModal.addEventListener("click", ()=>{
             modal.style.display="flex";
             document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         });
@@ -715,13 +747,25 @@
         e.target === modal ?  close() : false
         })
         
-         function close(){
-			  modal.style.display="none";
-			  document.getElementsByTagName('body')[0].style.overflow = 'visible';
-			 }
+        
+        function close(){
+		  modal.style.display="none";
+		  document.getElementsByTagName('body')[0].style.overflow = 'visible';
+		 }
 			 
-			 
-		
+        const toolOpenButton = document.querySelector('.bi.bi-question-circle-fill');
+        const toolModal = document.querySelector('.tool-modal');
+        toolOpenButton.addEventListener("click", ()=>{
+     	   toolModal.style.display="flex";
+            document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+        });	
+        window.addEventListener('click',  (e) => {
+            e.target === toolModal ?  tool_close() : false
+            })
+		 function tool_close(){
+        	toolModal.style.display="none";
+		  document.getElementsByTagName('body')[0].style.overflow = 'visible';
+		 }
         
      
 		
