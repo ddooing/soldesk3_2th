@@ -80,7 +80,7 @@
 	   .reserinfo p{font-size:20px;}
 	   
 	   .reserCancel{	
-	   	position:relative; border: none !important; left:300px; border-radius:30px;
+	   	position:relative; border: none !important; left:317px; border-radius:30px;
 	   	background:lightgray;padding: 10px 15px 10px 15px; top:-5px;
 	   }
 	   .reserCancel:hover{ background:gray; box-shadow: inset 5px 5px rgb(0, 0, 0, 0.1);}
@@ -182,7 +182,7 @@
     .bookmarkgrid >div >img{
         cursor: pointer;
         border-radius:15px;
-        width:240px; height:280px;
+        width:260px; height:290px;
     }
     .bookmarkgrid >div >img:hover{
         box-shadow: 0 5px 5px 0 rgb(34 36 38 / 77%);
@@ -199,7 +199,7 @@
     .archivegrid .archivediv >img{
         cursor: pointer;
         border-radius:15px;
-        width:240px; height:280px;
+         width:260px; height:290px;
     }
     .archivegrid .archivediv >img:hover{
         box-shadow: 0 5px 5px 0 rgb(34 36 38 / 77%);
@@ -215,12 +215,12 @@
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 20px;
   list-style: none;
   margin: 0;
-  padding: 10px 12px;
+  padding: 13px 14px;
   text-align: center;
   transition: all 200ms;
   vertical-align: baseline;
