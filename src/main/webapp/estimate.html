@@ -16,7 +16,7 @@
 
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
-
+<script src="js/order_payment.js"></script>
 <!-- JQuery 자바스크립트-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -118,7 +118,7 @@
 	.totalRow>div {flex-grow: 1;display: flex;justify-content: space-between;padding: 23px 70px;}
 	.totalTD {background-color: #f8f7f7;padding: 0px !important;position: sticky;bottom: 0}
 	#totalAmount {font-size: 26px;	color: #ff6521;}
-	#totalAmount:after {content: "(VAT 포함)";font-size: 16px;}
+	#totalAmount:after {content: "";font-size: 16px;}
 	#orderAmount2 {color: #ff6521;}
 	.direct-Y .name {background-color: rgba(254, 179, 171, 0.21);}
 	td.options {text-align: left !important;	overflow: none;}
@@ -131,8 +131,8 @@
 		transform: rotate(45deg);display: none;}
 	td.options input[type=checkbox]:checked ~ .checkMask {background-color: #2196F3;}
 	td.options input[type=checkbox]:checked ~ .checkMask:after {display: block;}
-	#orderAmount:after {content: "(VAT 별도)"}
-	#allAmount:after {content: "(VAT 별도)"	}
+	#orderAmount:after {content: ""}
+	#allAmount:after {content: ""	}
 	tr.groupStart td {}
 	tr.groupStart:not(:first-child) td {	border-top: 2px solid #c7c7c7;	}
 	.custom-check-container {text-align: left !important;	overflow: none;	}
@@ -179,6 +179,7 @@
 	.carousel ul li:last-child, .carousel1 ul li:last-child {margin-right: 0;}
 	.carousel img, .carousel1 img {max-width: 100%;}
 	section#scroll *, section#scroll *::before, section#scroll *::after {box-sizing: content-box;}
+	
 
 </style>
 </head>
@@ -186,6 +187,7 @@
 	<script src="/js/html2canvas.min.js"></script>
 </head>
 <body id="page-top">
+	<!-- 메뉴바 -->
 	<!-- 메뉴바 -->
 	<nav
 		class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
@@ -233,28 +235,22 @@
 		</div>
 	</nav>
 
-
 	<input type="hidden" id="orderAmount__input" value=0>
 	<input type="hidden" id="allAmount__input" value=0>
-	<input type="hidden" id="ordernum" value=order_F477C81816E55786ED1B>
+	<input type="hidden" id="ordernum" value=order_58F0473EE1BB518D00B5>
 
 	<div class="container">
 		<div class="title">
-			<img src="assets/img/ARTMEE.png">
-			<button type="button" onclick="layer_open('layer');" class="mylist">내 견적 리스트</button>
+			<a href="index.html" ><img src="assets/img/ARTMEE.png" style="margin-top : 100px;"></a>
 			<button type="button" onclick="layer_open('layer');" class="m_mylist">
 				<img src="/img/m_mlist.png">
 			</button>
 		</div>
 		<div class="subTitle">A. 상품 종류</div>
-		<table id="canvas-target-2" border='1' bordercolor=#c7c7c7 cellpadding=0 cellspacing=0>
-			<thead style="background-color: #f8f7f7; color: #464646; border-top: 2px solid #c7c7c7; ">
-				<thead style="display: flex; flex-direction: column; padding: 15px 0 20px 0; background-color : #fff;">
-						<th style="font-weight: bold; font-size: 18px; background-color: #fff; color : #464646;">세트상품</th>
-				</thead>
-				
-			</thead>
-			<thead style="text-align: center";>
+	
+		<table id="canvas-target-2" border='1' bordercolor=#c7c7c7
+			cellpadding=0 cellspacing=0>
+			<thead  style="text-align: center;">
 				<th></th>
 				<th>상품</th>
 				<th>단가(원)</th>
@@ -262,114 +258,8 @@
 				<th>비고</th>
 			</thead>
 			<tbody>
-			
-				<tr id="promotion-36" class=" groupStart direct-N">
-					<td style="width: 80px;" class="gray" rowspan="4">프로모션<br />세트상품<br />(할인가<br />적용상태)
-					</td>
-					<td class="name">베이직 세트 A</td>
-					<td>  250,000</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=36 data-discount="N" data-direct="N" data-price=250000
-						class="count" id="cnt36" data-index="36"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('36');" />
-						<div class="updown__wrap">
-							<button type="button" id="up36" onclick="up_promotion('36')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down36" onclick="down_promotion('36')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">전시회 추천 콘텐츠 1회</td>
-				</tr>
-				<tr id="promotion-37" class="  direct-N">
-					<td class="name">베이직 세트 B</td>
-					<td>  380,000</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=37 data-discount="N" data-direct="N" data-price=380000
-						class="count" id="cnt37" data-index="37"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('37');" />
-						<div class="updown__wrap">
-							<button type="button" id="up37" onclick="up_promotion('37')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down37" onclick="down_promotion('37')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">전시회 추천 콘텐츠 1회 + 푸쉬 1회</td>
-				</tr>
-				<tr id="promotion-38" class="  direct-N">
-					<td class="name">프리미엄 세트 C</td>
-					<td>  550,000</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=38 data-discount="N" data-direct="N" data-price=550000
-						class="count" id="cnt38" data-index="38"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('38');" />
-						<div class="updown__wrap">
-							<button type="button" id="up37" onclick="up_promotion('37')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down38" onclick="down_promotion('38')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">메인 배너 1주 + 전시회 추천 콘텐츠 1회 + 푸쉬 1회</td>
-				</tr>
-				<tr id="promotion-39" class="  direct-N">
-					<td class="name">프리미엄 세트 D</td>
-					<td>  1,100,000</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=39 data-discount="N" data-direct="N" data-price=1100000
-						class="count" id="cnt39" data-index="39"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('39');" />
-						<div class="updown__wrap">
-							<button type="button" id="up39" onclick="up_promotion('39')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down39" onclick="down_promotion('39')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">메인 배너 1주 + 전시회 추천 콘텐츠 1회 + 푸쉬 1회</td>
-				</tr>
-				<tr>
-					<td
-						style="background-color: #f8f7f7; color: #464646; border-top: 2px solid #c7c7c7;"
-						colspan=100>
-						<div style="display: flex; flex-direction: column; padding: 29px 0 20px 0">
-							<div style="width: 100%; display: flex; flex-direction: row; justify-content: left; align-items: center;">
-								<div style="font-weight: bold; font-size: 18px;">개별 상품</div>
-							</div>
-						</div>
-					</td>
-				</tr>
 				<tr id="promotion-40" class=" groupStart direct-N">
-					<td style="width: 80px;" class="gray" rowspan="15">Web/APP<br>광고
+					<td style="width: 80px;" class="gray" rowspan="10">Web<br>광고
 					</td>
 					<td class="name">메인 배너</td>
 					<td>  50,000(1일)</td>
@@ -379,11 +269,13 @@
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
 						onkeyup="checkNum('40');" />
 						<div class="updown__wrap">
-							<button type="button" id="up40" onclick="up_promotion('40')" class="up-button">
+							<button type="button" id="up40" onclick="up_promotion('40')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down40" onclick="down_promotion('40')" class="orderdown-button">
+							<button type="button" id="down40" onclick="down_promotion('40')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -395,6 +287,8 @@
 						경우 기본 포맷 디자인으로 제작되며, 기본 포맷 이외의 디자인을 요청할 시 비용이 추가됩니다.
 					</td>
 				</tr>
+
+
 				<tr id="promotion-41" class="  direct-N">
 					<td class="name">메인 팝업</td>
 					<td>  40,000(1일)</td>
@@ -404,11 +298,13 @@
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
 						onkeyup="checkNum('41');" />
 						<div class="updown__wrap">
-							<button type="button" id="up41" onclick="up_promotion('41')" class="up-button">
+							<button type="button" id="up41" onclick="up_promotion('41')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down41" onclick="down_promotion('41')" class="orderdown-button">
+							<button type="button" id="down41" onclick="down_promotion('41')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -418,43 +314,23 @@
 					<td style="display: none;" class="sample_price"></td>
 					<td class="remarks">팝업 사이즈 600 x 860 (pix)</td>
 				</tr>
+
 				<tr id="promotion-42" class="  direct-N">
-					<td class="name">메인 배너 + 팝업</td>
-					<td>  80,000(1일)</td>
+					<td class="name">추천 배너1</td>
+					<td>  40,000(1일)</td>
 					<td class="updown__list"><input type="text" value="0"
-						data-idx=42 data-discount="N" data-direct="N" data-price=80000
+						data-idx=42 data-discount="N" data-direct="N" data-price=40000
 						class="count" id="cnt42" data-index="42"
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
 						onkeyup="checkNum('42');" />
 						<div class="updown__wrap">
-							<button type="button" id="up42" onclick="up_promotion('42')" class="up-button">
+							<button type="button" id="up42" onclick="up_promotion('42')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down42" onclick="down_promotion('42')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks"></td>
-				</tr>
-				<tr id="promotion-43" class="  direct-N">
-					<td class="name">추천 배너1</td>
-					<td>  40,000(1일)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=43 data-discount="N" data-direct="N" data-price=40000
-						class="count" id="cnt43" data-index="43"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('43');" />
-						<div class="updown__wrap">
-							<button type="button" id="up43" onclick="up_promotion('43')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down43" onclick="down_promotion('43')" class="orderdown-button">
+							<button type="button" id="down42" onclick="down_promotion('42')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -465,20 +341,22 @@
 					<td class="remarks">기본 600 x 900 (pix) / 가로 600 (pix) 기준으로 비율
 						조정 가능</td>
 				</tr>
-				<tr id="promotion-44" class="  direct-N">
+				<tr id="promotion-43" class="  direct-N">
 					<td class="name">추천 배너2</td>
 					<td>  40,000(1일)</td>
 					<td class="updown__list"><input type="text" value="0"
-						data-idx=44 data-discount="N" data-direct="N" data-price=40000
-						class="count" id="cnt44" data-index="44"
+						data-idx=43 data-discount="N" data-direct="N" data-price=40000
+						class="count" id="cnt43" data-index="43"
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('44');" />
+						onkeyup="checkNum('43');" />
 						<div class="updown__wrap">
-							<button type="button" id="up44" onclick="up_promotion('44')" class="up-button">
+							<button type="button" id="up43" onclick="up_promotion('43')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down44" onclick="down_promotion('44')" class="orderdown-button">
+							<button type="button" id="down43" onclick="down_promotion('43')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -488,20 +366,23 @@
 					<td style="display: none;" class="sample_price"></td>
 					<td class="remarks">팝업 사이즈 600 x 860 (pix)</td>
 				</tr>
-				<tr id="promotion-45" class="  direct-N">
-					<td class="name">추천 배너3</td>
-					<td>  40,000(1일)</td>
+
+				<tr id="promotion-44" class="  direct-N">
+					<td class="name">필터링</td>
+					<td>  20,000(1일)</td>
 					<td class="updown__list"><input type="text" value="0"
-						data-idx=45 data-discount="N" data-direct="N" data-price=40000
-						class="count" id="cnt45" data-index="45"
+						data-idx=44 data-discount="N" data-direct="N" data-price=20000
+						class="count" id="cnt44" data-index="44"
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('45');" />
+						onkeyup="checkNum('44');" />
 						<div class="updown__wrap">
-							<button type="button" id="up45" onclick="up_promotion('45')" class="up-button">
+							<button type="button" id="up44" onclick="up_promotion('44')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down45" onclick="down_promotion('45')" class="orderdown-button">
+							<button type="button" id="down44" onclick="down_promotion('44')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -511,20 +392,48 @@
 					<td style="display: none;" class="sample_price"></td>
 					<td class="remarks"></td>
 				</tr>
-				<tr id="promotion-46" class="  direct-N">
-					<td class="name">인기 필터링</td>
-					<td>  20,000(1일)</td>
+
+				<tr id="promotion-45" class="  direct-N">
+					<td class="name">로그인 화면</td>
+					<td>  80,000(1일)</td>
 					<td class="updown__list"><input type="text" value="0"
-						data-idx=46 data-discount="N" data-direct="N" data-price=20000
+						data-idx=45 data-discount="N" data-direct="Y" data-price=80000
+						class="count" id="cnt45" data-index="45"
+						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+						onkeyup="checkNum('45');" />
+						<div class="updown__wrap">
+							<button type="button" id="up45" onclick="up_promotion('45')"
+								class="up-button">
+								<img src="assets/img/orderup.png" id="orderup"
+									class="orderup-image">
+							</button>
+							<button type="button" id="down45" onclick="down_promotion('45')"
+								class="orderdown-button">
+								<img src="assets/img/orderdown.png" id="orderdown"
+									class="orderdown-image">
+							</button>
+						</div></td>
+
+					<td style="display: none;" class="options"></td>
+					<td style="display: none;" class="sample_price"></td>
+					<td class="remarks">로그인 사이즈 780 X 1080</td>
+				</tr>
+				<tr id="promotion-46" class="  direct-N">
+					<td class="name">전시회 조회</td>
+					<td>  30,000(1일)</td>
+					<td class="updown__list"><input type="text" value="0"
+						data-idx=46 data-discount="N" data-direct="Y" data-price=30000
 						class="count" id="cnt46" data-index="46"
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
 						onkeyup="checkNum('46');" />
 						<div class="updown__wrap">
-							<button type="button" id="up46" onclick="up_promotion('46')" class="up-button">
+							<button type="button" id="up46" onclick="up_promotion('46')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down46" onclick="down_promotion('46')" class="orderdown-button">
+							<button type="button" id="down46" onclick="down_promotion('46')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -535,19 +444,21 @@
 					<td class="remarks"></td>
 				</tr>
 				<tr id="promotion-47" class="  direct-N">
-					<td class="name">무료 필터링</td>
-					<td>  20,000(1일)</td>
+					<td class="name">랜덤 추천 화면</td>
+					<td>  30,000(1일)</td>
 					<td class="updown__list"><input type="text" value="0"
-						data-idx=47 data-discount="N" data-direct="N" data-price=20000
-						class="count" id="cnt46" data-index="47"
+						data-idx=47 data-discount="N" data-direct="Y" data-price=30000
+						class="count" id="cnt47" data-index="47"
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
 						onkeyup="checkNum('47');" />
 						<div class="updown__wrap">
-							<button type="button" id="up47" onclick="up_promotion('47')" class="up-button">
+							<button type="button" id="up47" onclick="up_promotion('47')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down47" onclick="down_promotion('47')" class="orderdown-button">
+							<button type="button" id="down47" onclick="down_promotion('47')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -558,42 +469,21 @@
 					<td class="remarks"></td>
 				</tr>
 				<tr id="promotion-48" class="  direct-N">
-					<td class="name">지역별 필터링</td>
-					<td>  20,000 (1일)</td>
+					<td class="name">공지사항</td>
+					<td>  30,000(1일)</td>
 					<td class="updown__list"><input type="text" value="0"
-						data-idx=48 data-discount="N" data-direct="Y" data-price=20000
+						data-idx=48 data-discount="N" data-direct="Y" data-price=80000
 						class="count" id="cnt48" data-index="48"
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
 						onkeyup="checkNum('48');" />
 						<div class="updown__wrap">
-							<button type="button" id="up48" onclick="up_promotion('48')" class="up-button">
+							<button type="button" id="up48" onclick="up_promotion('48')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down48" onclick="down_promotion('48')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks"></td>
-				</tr>
-				<tr id="promotion-49" class="  direct-N">
-					<td class="name">로그인 화면</td>
-					<td>  80,000(1일)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=49 data-discount="N" data-direct="Y" data-price=80000
-						class="count" id="cnt49" data-index="49"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('49');" />
-						<div class="updown__wrap">
-							<button type="button" id="up49" onclick="up_promotion('49')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down49" onclick="down_promotion('49')" class="orderdown-button">
+							<button type="button" id="down48" onclick="down_promotion('48')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -603,112 +493,23 @@
 					<td style="display: none;" class="sample_price"></td>
 					<td class="remarks">로그인 사이즈 780 X 1080</td>
 				</tr>
-				<tr id="promotion-50" class="  direct-N">
-					<td class="name">전시회 조회</td>
-					<td>  30,000(1일)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=50 data-discount="N" data-direct="Y" data-price=30000
-						class="count" id="cnt50" data-index="50"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('50');" />
-						<div class="updown__wrap">
-							<button type="button" id="up50" onclick="up_promotion('50')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down50" onclick="down_promotion('50')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks"></td>
-				</tr>
-				<tr id="promotion-51" class="  direct-N">
-					<td class="name">랜덤 추천 화면</td>
-					<td>  30,000(1일)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=51 data-discount="N" data-direct="Y" data-price=30000
-						class="count" id="cnt50" data-index="51"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('51');" />
-						<div class="updown__wrap">
-							<button type="button" id="up51" onclick="up_promotion('51')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down51" onclick="down_promotion('51')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks"></td>
-				</tr>
-				<tr id="promotion-52" class="  direct-N">
-					<td class="name">공지사항 화면</td>
-					<td>  30,000(1일)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=52 data-discount="N" data-direct="Y" data-price=30000
-						class="count" id="cnt52" data-index="52"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('52');" />
-						<div class="updown__wrap">
-							<button type="button" id="up52" onclick="up_promotion('52')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down52" onclick="down_promotion('52')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks"></td>
-				</tr>
-				<tr id="promotion-53" class="  direct-N">
-					<td class="name">공지사항 게시판 화면</td>
-					<td>  30,000(1일)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=53 data-discount="N" data-direct="Y" data-price=30000
-						class="count" id="cnt53" data-index="53"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('53');" />
-						<div class="updown__wrap">
-							<button type="button" id="up53" onclick="up_promotion('53')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down53" onclick="down_promotion('53')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks"></td>
-				</tr>
-				<tr id="promotion-54" class="  direct-N">
+				
+				<tr id="promotion-49" class="  direct-N">
 					<td class="name">커뮤니티</td>
 					<td>  50,000(1일)</td>
 					<td class="updown__list"><input type="text" value="0"
-						data-idx=54 data-discount="N" data-direct="Y" data-price=30000
-						class="count" id="cnt54" data-index="54"
+						data-idx=49 data-discount="N" data-direct="Y" data-price=80000
+						class="count" id="cnt49" data-index="49"
 						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('54');" />
+						onkeyup="checkNum('49');" />
 						<div class="updown__wrap">
-							<button type="button" id="up54" onclick="up_promotion('54')" class="up-button">
+							<button type="button" id="up49" onclick="up_promotion('49')"
+								class="up-button">
 								<img src="assets/img/orderup.png" id="orderup"
 									class="orderup-image">
 							</button>
-							<button type="button" id="down54" onclick="down_promotion('54')" class="orderdown-button">
+							<button type="button" id="down49" onclick="down_promotion('49')"
+								class="orderdown-button">
 								<img src="assets/img/orderdown.png" id="orderdown"
 									class="orderdown-image">
 							</button>
@@ -716,395 +517,19 @@
 
 					<td style="display: none;" class="options"></td>
 					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks"></td>
+					<td class="remarks">로그인 사이즈 780 X 1080</td>
 				</tr>
-
-				<tr id="promotion-55" class=" groupStart direct-N">
-					<td style="width: 80px;" class="gray" rowspan="8">SNS 광고<br />(전시관,
-						작가, 기획자 등)
-					</td>
-					<td class="name">단순 이미지 게시</td>
-					<td>  180,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=55 data-discount="N" data-direct="N" data-price=180000
-						class="count" id="cnt55" data-index="55"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('55');" />
-						<div class="updown__wrap">
-							<button type="button" id="up55" onclick="up_promotion('55')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down55" onclick="down_promotion('55')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">전시 전경 및 작품 이미지를 전달받아 사이즈 조정, 캡션 및 출처 표기를
-						완료한 뒤 아트미 인스타그램에 게시합니다.</td>
-				</tr>
-				<tr id="promotion-56" class="  direct-N">
-					<td class="name">전시소개 콘텐츠</td>
-					<td>  200,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=55 data-discount="N" data-direct="N" data-price=200000
-						class="count" id="cnt55" data-index="55"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('55');" />
-						<div class="updown__wrap">
-							<button type="button" id="up55" onclick="up_promotion('54')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down55" onclick="down_promotion('55')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">전시 서문 등의 텍스트를 소재로 깔끔하고 세련된 형태의 전시 소개 콘텐츠를
-						제작 · 게시합니다.</td>
-				</tr>
-				<tr id="promotion-56" class="  direct-N">
-					<td class="name">추천코스 콘텐츠</td>
-					<td>  220,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=56 data-discount="N" data-direct="N" data-price=220000
-						class="count" id="cnt56" data-index="56"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('56');" />
-						<div class="updown__wrap">
-							<button type="button" id="up56" onclick="up_promotion('56')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down56" onclick="down_promotion('56')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">해당 전시를 메인으로 한 갤러리 코스를 기획해 콘텐츠로 제작 · 게시하며,
-						높은 도달률을 보이는 콘텐츠입니다.</td>
-				</tr>
-				<tr id="promotion-57" class="  direct-N">
-					<td class="name">초대권 이벤트</td>
-					<td>  250,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=57 data-discount="N" data-direct="N" data-price=250000
-						class="count" id="cnt57" data-index="57"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('57');" />
-						<div class="updown__wrap">
-							<button type="button" id="up57" onclick="up_promotion('57')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down57" onclick="down_promotion('57')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">지류 티켓의 경우 발송 비용이 추가되며, 티켓 바터에 관해서는 별도 문의 바랍니다.</td>
-				</tr>
-				<tr id="promotion-58" class="  direct-N">
-					<td class="name">행사 소개</td>
-					<td>  250,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=58 data-discount="N" data-direct="N" data-price=250000
-						class="count" id="cnt58" data-index="58"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('58');" />
-						<div class="updown__wrap">
-							<button type="button" id="up57" onclick="up_promotion('58')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down58" onclick="down_promotion('58')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">아트페어, 비엔날레 등의 대형 행사에 해당되며, 보도자료 등 텍스트를
-						정제하여 이미지에 삽입합니다.</td>
-				</tr>
-				<tr id="promotion-59" class="  direct-N">
-					<td class="name">행사 리뷰</td>
-					<td>  300,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=59 data-discount="N" data-direct="N" data-price=300000
-						class="count" id="cnt59" data-index="59"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('59');" />
-						<div class="updown__wrap">
-							<button type="button" id="up59" onclick="up_promotion('59')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down59" onclick="down_promotion('59')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">아트미 콘텐츠 에디터가 직접 행사를 방문 후 리뷰 콘텐츠를 제작하며,
-						출입증을 제공해주셔야 합니다. <br>서울 외 지역의 경우 교통비가 추가될 수 있습니다.
-					</td>
-				</tr>
-				<tr id="promotion-68" class="  direct-N">
-					<td class="name">인스타그램 스토리(링크 삽입 가능)</td>
-					<td>  10,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=68 data-discount="N" data-direct="N" data-price=10000
-						class="count" id="cnt68" data-index="68"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('68');" />
-						<div class="updown__wrap">
-							<button type="button" id="up68" onclick="up_promotion('68')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down68" onclick="down_promotion('68')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">아트미 콘텐츠 에디터가 직접 행사를 방문 후 리뷰 콘텐츠를 제작하며,
-						출입증을 제공해주셔야 합니다. <br>서울 외 지역의 경우 교통비가 추가될 수 있습니다.
-					</td>
-				</tr>
-				<tr id="promotion-69" class="  direct-N">
-					<td class="name">기업/기관 전용 업로드</td>
-					<td>  300,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=69 data-discount="N" data-direct="N" data-price=300000
-						class="count" id="cnt69" data-index="69"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('69');" />
-						<div class="updown__wrap">
-							<button type="button" id="up69" onclick="up_promotion('69')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down69" onclick="down_promotion('69')">
-								<img src="assets/img/orderdown.png" width="10" height="20">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">아트미 콘텐츠 에디터가 직접 행사를 방문 후 리뷰 콘텐츠를 제작하며,
-						출입증을 제공해주셔야 합니다. <br>서울 외 지역의 경우 교통비가 추가될 수 있습니다.
-					</td>
-				</tr>
-				<tr id="promotion-66" class=" groupStart direct-N">
-					<td style="width: 80px;" class="gray" rowspan="1">SNS 광고<br />(기업,
-						기관 등)
-					</td>
-					<td class="name">SNS 게시</td>
-					<td>  300,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=66 data-discount="N" data-direct="N" data-price=300000
-						class="count" id="cnt66" data-index="66"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('66');" />
-						<div class="updown__wrap">
-							<button type="button" id="up66" onclick="up_promotion('66')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down66" onclick="down_promotion('66')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">미술계의 활발한 활동을 지원하고 갤러리 및 작가, 기획자와의 상생을 위해<br>
-						할인된 금액의 홍보 상품을 제공하고 있습니다.<br> 이외 기업, 기관, 단체 등의 경우에는 내용에 무관하게
-						기본 금액으로 진행됩니다
-					</td>
-				</tr>
-				<tr id="promotion-60" class=" groupStart direct-N">
-					<td style="width: 80px;" class="gray" rowspan="6">SNS 광고<br />(기타
-						채널)
-					</td>
-					<td class="name">카카오푸시 일반 발송</td>
-					<td>  300,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=60 data-discount="N" data-direct="N" data-price=300000
-						class="count" id="cnt60" data-index="60"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('60');" />
-						<div class="updown__wrap">
-							<button type="button" id="up60" onclick="up_promotion('60')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down60" onclick="down_promotion('60')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">전시회, 아트페어, 공모, 갤러리 등 다양한 분야의 홍보가 가능하며
-						팔로워들에게 100% 도달을 보장합니다.</td>
-				</tr>
-				<tr id="promotion-61" class="  direct-N">
-					<td class="name">네이버 블로그 포스팅</td>
-					<td>  95,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=61 data-discount="N" data-direct="N" data-price=95000
-						class="count" id="cnt61" data-index="61"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('61');" />
-						<div class="updown__wrap">
-							<button type="button" id="up61" onclick="up_promotion('61')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down61" onclick="down_promotion('61')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">작가의 작업관, 작가 노트, 평론 등 보다 많은 내용을 상세하게 담을 수
-						있습니다.</td>
-				</tr>
-				<tr id="promotion-62" class="  direct-N">
-					<td class="name">네이버 포스트 칼럼</td>
-					<td>  200,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=62 data-discount="N" data-direct="N" data-price=200000
-						class="count" id="cnt62" data-index="62"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('62');" />
-						<div class="updown__wrap">
-							<button type="button" id="up62" onclick="up_promotion('62')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down62" onclick="down_promotion('62')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">아트미 에디터가 작성하며, 독립 큐레이터 비평을 원할 경우 별도의 비용
-						협의가 필요하니 문의 바랍니다.</td>
-				</tr>
-				<tr id="promotion-63" class="  direct-N">
-					<td class="name">뉴스레터 단독 아티클</td>
-					<td>  80,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=63 data-discount="N" data-direct="N" data-price=80000
-						class="count" id="cnt63" data-index="63"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('63');" />
-						<div class="updown__wrap">
-							<button type="button" id="up63" onclick="up_promotion('63')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down63" onclick="down_promotion('63')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">뉴스레터는 1주에 한 번 발송되며, 내용에 들어가는 4개의 아티클 중 1개로
-						삽입됩니다.</td>
-				</tr>
-				<tr id="promotion-64" class="  direct-N">
-					<td class="name">뉴스레터 추천 전시 삽입</td>
-					<td>  20,000(1회)</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=64 data-discount="N" data-direct="N" data-price=20000
-						class="count" id="cnt64" data-index="64"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('64');" />
-						<div class="updown__wrap">
-							<button type="button" id="up64" onclick="up_promotion('64')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down64" onclick="down_promotion('64')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">뉴스레터는 1주에 한 번 발송되며, 하단에 들어가는 4개의 추천 전시 중
-						1개로 삽입됩니다.</td>
-				</tr>
-				<tr id="promotion-65" class="  direct-N">
-					<td class="name">영상 광고</td>
-					<td>  별도 문의</td>
-					<td class="updown__list"><input type="text" value="0"
-						data-idx=65 data-discount="N" data-direct="N" data-price=0
-						class="count" id="cnt65" data-index="65"
-						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-						onkeyup="checkNum('65');" />
-						<div class="updown__wrap">
-							<button type="button" id="up65" onclick="up_promotion('65')" class="up-button">
-								<img src="assets/img/orderup.png" id="orderup"
-									class="orderup-image">
-							</button>
-							<button type="button" id="down65" onclick="down_promotion('65')" class="orderdown-button">
-								<img src="assets/img/orderdown.png" id="orderdown"
-									class="orderdown-image">
-							</button>
-						</div></td>
-
-					<td style="display: none;" class="options"></td>
-					<td style="display: none;" class="sample_price"></td>
-					<td class="remarks">유튜브 동시 송출, 전시 아카이빙, 현장스케치, 작가와의 대화 등 다양한
-						형태로 진행 가능하며, <br /> 아트미과 파트너십을 맺은 전문 프로듀서가 제작합니다. 형태에 따라 금액이
-						변화하므로 별도 문의 부탁드립니다.<br /> 영상 제작 시 아트미 유튜브 / 네이버 TV / 카카오 TV에
-						게시됩니다(요청 시 제외 가능).
-					</td>
-				</tr>
+				
 				<tr>
 					<td class="totalTD" colspan=999
 						style="border-top: none; border-bottom: none;">
 
-						<div
-							style="border-top: 2px solid #c7c7c7; border-bottom: 2px solid #c7c7c7; margin-top: -1px;" class="totalRow">
-						</div>
-						<div class="totalRow" style="border-bottom: 2px solid #c7c7c7; margin-bottom: -1px;">
+						<div style="border-top: 2px solid #c7c7c7; border-bottom: 2px solid #c7c7c7; margin-top: -1px;" class="totalRow"></div>
+						<div class="totalRow"
+							style="border-bottom: 2px solid #c7c7c7; margin-bottom: -1px; font-size: 26px; color: #ff6521;">
 							<div style="justify-content: center;">
-								<div style="display: block; width: 800px; display: flex; justify-content: space-between;">
-									<span>예상 총 견적</span> <span id="totalAmount" class="amount">0원</span>
+								<div style="display: block; width: 500px;  display: flex; justify-content: space-between; margin:10px;">
+									<span>소계</span> <span id="allAmount" class="amount">0원</span>
 								</div>
 							</div>
 						</div>
@@ -1142,7 +567,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="input__title">문의 내용</div>
+								<div class="input__title">문의내용</div>
 								<div class="input__wrap">
 									<textarea placeholder="전시회(행사)명 / 전시관 명 / 전시기간 필수 기재" id="info"></textarea>
 								</div>
@@ -1163,7 +588,7 @@
 										style="white-space: nowrap; text-align: left;">*전시회
 										텍스트, 포스터, 전시 전경 및 작품 이미지 등 첨부바랍니다.<br />
 									<br />자료 미전달 시 답변이 어려우며, 아직 확정된 자료가 없다면 문의란에 꼭 기재 부탁드립니다.<br />50MB
-										이상일 시 arte@art-mee.co.kr로 전송 부탁드립니다
+										이상일 시 biz@art-map.co.kr로 전송 부탁드립니다
 									</span>
 								</div>
 							</div>
@@ -1172,13 +597,45 @@
 							<button type="button" onclick="saveEstimate()">견적서 저장</button>
 							<button style="position: relative;" type="button"
 								onclick="estimateLayerOpen()">
-								아트미에 보내기
+								아트맵에 보내기
 								<div
 									style="position: absolute; font-size: 14px; letter-spacing: -0.5px; color: #9f9f9f; font-weight: normal; white-space: nowrap; bottom: -8px; transform: translateY(100%); left: 0px;">답변은
 									영업일 기준 1-3일 이내, 이메일로 완료됩니다.</div>
 							</button>
 						</div>
 					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="info" style = "display: none; border-right: 2px solid #c7c7c7; box-sizing: border-box;">
+			<div class="info__ttl" style='margin-bottom: 10px;'>C.바로 결제 하기</div>
+			<div class="order__form">
+				<div class="order__wrap">
+					<div class="row" style="margin-bottom: 50px;">
+						<div class="text__center sub">바로 결제는 선택 사항 입니다.</div>
+					</div>
+					<div class="row">
+						<div class="pay__wrap"></div>
+						<!--
+						<div>바로 결제 수단</div>
+						<div class="pay__wrap">
+							  <input type="radio" id="SC0010" name="paymethod" value="card" class="option" checked>
+							  <label for="SC0010" style="padding: 15px 50px; font-size: 16px; border-radius: 3px; margin-right: 8px;">카드</label>
+							  <input type="radio" id="SC0060" name="paymethod" value="hp" class="option">
+							  <label for="SC0060" style="padding: 15px 50px; font-size: 16px; border-radius: 3px;">휴대폰</label>
+						</div>
+						-->
+						<div class="amount__wrap">
+							<span style="font-size: 16px;">바로결제 가능 견적</span> <span
+								id="orderAmount2" class="amount" style="font-size: 26px;">0원</span>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 30px;">
+						<div class="pay__submit">
+							<button type="button" onclick="on_order();">결제하기</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1226,80 +683,76 @@
 		</div>
 	</div>
 </body>
-<script src="/js/order_payment.js"></script>
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script>
-	function setPro(list, name, hp, email, info) {
-		for (var i = 0; list.length > i; i++) {
-			var idx = list[i].idx;
-			var cnt = list[i].cnt;
-			var options = list[i].options;
-			document.getElementById("cnt" + idx).value = cnt;
+<script src="./js/order_payment.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+		<script>
+			function setPro(list,name,hp,email,info){
+				for(var i = 0; list.length > i; i++){
+					var idx = list[i].idx;
+					var cnt = list[i].cnt;
+					var options = list[i].options;
+					document.getElementById("cnt"+idx).value = cnt;
 
-			for (var j = 0; i < options.length; i++) {
-				var tr = document.querySelector("#promotion-" + idx);
-				var optionCheck = tr
-						.querySelector(".options input[type=checkbox]:nth-child("
-								+ (parseInt(options[i].index) + 1) + ")");
-				optionCheck.checked = true;
+					for(var j = 0; i < options.length; i++){
+						var tr = document.querySelector("#promotion-"+ idx);
+						var optionCheck = tr.querySelector(".options input[type=checkbox]:nth-child("+ (parseInt(options[i].index) + 1) +")");
+						optionCheck.checked = true;
+					}
+
+				}
+				document.getElementById("name").value = name;
+				document.getElementById("hp").value = hp;
+				document.getElementById("email").value = email;
+				document.getElementById("info").value = info;
+				amount();
+				$('.layer').fadeOut();
+			};
+			function deletePro(idx){
+				var formData = new FormData();
+				formData.append('idx', idx);
+				formData.append('type', 'delete');
+				artmap_post("/order/artmap_pro.php",formData);
 			}
 
-		}
-		document.getElementById("name").value = name;
-		document.getElementById("hp").value = hp;
-		document.getElementById("email").value = email;
-		document.getElementById("info").value = info;
-		amount();
-		$('.layer').fadeOut();
-	};
-	function deletePro(idx) {
-		var formData = new FormData();
-		formData.append('idx', idx);
-		formData.append('type', 'delete');
-		artmap_post("/order/artmap_pro.php", formData);
-	}
-
-	function estimateLayerOpen() {
-		var estimateLayer = document.querySelector("#estimate-layer");
-		estimateLayer.style.display = "flex";
-		estimateLayer.classList.add("active");
-	}
-	function estimateLayerOnClick() {
-		var estimateLayer = document.querySelector("#estimate-layer");
-		estimateLayer.style.display = "none";
-		estimateLayer.classList.remove("active");
-		send_artmap('send');
-	}
-
-	// window.onbeforeunload = function() {
-	// 	// if (isDirty) {
-	// 		return '데이터를 저장했는지 확인해주세요';
-	// 	// }
-	// 	// return undefined;
-	// }
-
-	(function($) {
-		$(function() {
-			layerListEstimate();
-			$(".file-label").on("click", function() {
-
-				$("#file").trigger("click");
-			});
-			$("#file").on('change', function() {
-				var fileName = $("#file").val();
-				console.log("fileName", fileName)
-				$("#file-name").text(fileName);
-			});
-
-			$(".layer-container").on("click", function(ev) {
-				ev.stopPropagation()
-			});
-			$("#estimate-layer").on("click", function(ev) {
+			function estimateLayerOpen(){
+				var estimateLayer = document.querySelector("#estimate-layer");
+				estimateLayer.style.display = "flex";
+				estimateLayer.classList.add("active");
+			}
+			function estimateLayerOnClick(){
 				var estimateLayer = document.querySelector("#estimate-layer");
 				estimateLayer.style.display = "none";
 				estimateLayer.classList.remove("active");
-			});
-		});
-	})(jQuery);
-</script>
+				send_artmap('send');
+			}
+
+			// window.onbeforeunload = function() {
+			// 	// if (isDirty) {
+			// 		return '데이터를 저장했는지 확인해주세요';
+			// 	// }
+			// 	// return undefined;
+			// }
+
+			(function($){
+				$(function(){
+					layerListEstimate();
+					$(".file-label").on("click", function(){
+
+						$("#file").trigger("click");
+					});
+					$("#file").on('change',function(){
+						var fileName = $("#file").val();
+						console.log("fileName", fileName)
+						$("#file-name").text(fileName);
+					});
+
+					$(".layer-container").on("click", function(ev){ev.stopPropagation()});
+					$("#estimate-layer").on("click", function(ev){
+						var estimateLayer = document.querySelector("#estimate-layer");
+						estimateLayer.style.display = "none";
+						estimateLayer.classList.remove("active");
+					});
+				});
+			})(jQuery);
+		</script>
 </html>
