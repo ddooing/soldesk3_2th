@@ -246,7 +246,7 @@
 		        
 			    <ul id="crmMenu" class="submenu " >
 					<li id="faq" >자주 묻는 질문</li>
-	                <li id="qna" >Q&A</li>
+	                <li id="qna" data-bs-toggle="modal" data-bs-target="#qnaModal">Q&A</li>
 		        </ul>
 		 		
 		 	</div>
@@ -437,10 +437,101 @@
 				</div>
 			</div>
 			
-			<div class="faq"> e</div>
+			<!-- 자주 묻는 질문 -->
+			<div class="faq">
+				<div style=" width:860px;height:40vh; display: flex;  padding: 30px; " >
+					<table class="post-table" style="width:100%;">
+						<thead >
+						
+						    <tr >
+						        <th>번호</th>
+						        <th>제목</th>
+						        <th>날짜</th>
+						    </tr>
+						 </thead>
+						 
+						 <tbody >
+						    <tr >
+						        <td >1</td>
+						        <td >게시글 1 입니다.</td>
+						        <td >2022-05-18</td>   
+						    </tr>
+						  </tbody>
+						  <tbody >
+						    <tr >
+						        <td >2</td>
+						        <td >게시글 2 입니다.</td>
+						        <td >2022-05-18</td>    
+						    </tr>
+						  </tbody>
+						  <tbody >
+						    <tr >
+						        <td >3</td>
+						        <td >게시글 3 입니다.</td>
+						        <td >2022-05-18</td>   
+						    </tr>
+						  </tbody>
+						   <tbody >
+						    <tr >
+						        <td >4</td>
+						        <td >게시글 4 입니다.</td>
+						        <td >2022-05-18</td>    
+						    </tr>
+						  </tbody>
+						   <tbody >
+						    <tr >
+						        <td >5</td>
+						        <td >게시글 5 입니다.</td>
+						        <td >2022-05-18</td>    
+						    </tr>
+						  </tbody>
+					</table>
+				</div>
+			</div>
 			
-			<div class="qna"> f</div>
-			
+			<!-- 문의사항 -->
+			<div class="modal fade" id="qnaModal" tabindex="-1" aria-labelledby="qnaModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+    				<div class="modal-content" style="width: 950px;">
+        				<div class="modal-header">
+            				<h5 class="modal-title" id="qnaModalLabel">Q&A</h5>
+            				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        				</div>
+        			<div class="modal-body">
+            			<form action="#"> <!-- 폼 시작 -->
+                			<div class="container h-100 align-items-center justify-content-center">
+                    
+                    			<!-- 제목 입력란 -->
+                    			<div class="d-flex align-items-center" style="margin-top: 50px;">
+                        			<div style="width: 150px; text-align: left;">
+                            			<label for="QnAtitle" style="font-size: 18px;">제목</label>
+                       				</div>
+                        			<div style="margin-left: 20px;">
+                            			<input type="text" name="QnAtitle" placeholder="" style="width: 700px;" />
+                        			</div>
+                    			</div>
+
+                    			<!-- 문의 내용 입력란 -->
+                    			<div class="d-flex align-items-center" style="margin-top: 50px;">
+                        			<div style="width: 150px; text-align: left;">
+                            			<label for="QnAcontent" style="font-size: 18px;">문의 내용</label>
+                        			</div>
+                        			<div style="margin-left: 20px;">
+                            			<textarea name="QnAcontent" placeholder="정확한 상담을 위해 문의 내용을 자세히 작성해 주세요."
+                                			style="width: 700px; height: 400px; resize: none;"></textarea>
+                        			</div>
+                    			</div>
+
+                			</div>
+            			</form> <!-- 폼 종료 -->
+        			</div>
+        		<div class="modal-footer">
+            		<button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+            		<button type="button" class="btn btn-dark">확인</button>
+        		</div>
+    		</div>
+				</div>
+			</div>
 			<!-- 북마크 -->
 			<div class="bookmark"> 
 				<div class="bookmarkgrid" style="
@@ -666,6 +757,7 @@
 	    {
 	        divElement.addEventListener("click", function () {  
 	            
+	           
 	        	divElements.forEach(function (otherItem) {
 	                otherItem.classList.remove("selected");
 	            });
@@ -713,7 +805,10 @@
 	     
 	    
 	    liElements.forEach(function (liElement) {
-	    	//console.log("liElement : "+ liElement.id);
+		    	// "QnA" 버튼을 눌렀을 경우 이벤트 처리를 하지 않음
+	            if (liElement.id === 'qna') {
+	                return;
+	            }
 	    	liElement.addEventListener("click", function () {
 	    		liElements.forEach(function (otherItem) {
 	                otherItem.classList.remove("sel");  
