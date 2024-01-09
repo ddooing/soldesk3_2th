@@ -1,0 +1,329 @@
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8">
+
+	<script type="text/javascript">
+nhn=window.nhn||{};mug=nhn.mug=window.mug||{};mug.$=mug.$||{};mug.$.User={isLoggedIn:true,id:"13051",memberNo:10474466,type:"AUTHOR",blockType:""};mug.$.UserAgent={isInapp:false,isMobile:false,isTablet:false,isLolipopNaverApp:false,isInNaverApp:false,osName:"Etc",osVersion:"0",isEditProfileSupport:false,appSVC:"",appVer:"",isInBlogApp:false,isRos:false,urlExtension:"naver"};mug.$.Props={jsDir:"https://ssl.pstatic.net/static.post/static/m/202401021602/js/min",cssDir:"https://ssl.pstatic.net/static.post/static/m/202401021602/css/min",ugcEditorUrl:"https://post.editor.naver.com",ugcEditorFlag:"true"==="true"};window.__jsLoad__=window.__jsLoad__||{};document.documentElement.setAttribute("data-useragent",navigator.userAgent);window.__mugFnList__=[];if(!window.location.origin){window.location.origin=window.location.protocol+"//"+window.location.hostname+(window.location.port?":"+window.location.port:"")};</script><script type="text/javascript" src="https://ssl.pstatic.net/static.post/static/m/202401021602/js/min/post_m_base.js"></script>
+	<script type="text/javascript" src="https://ssl.pstatic.net/static.post/static/m/202401021602/js/min/prismplayer-pc-0.4.5.min.js"></script>
+	<script type="text/javascript">
+function __fnExecMugFnList__() {
+	if (!!window.__mugFnList__ && __mugFnList__.length > 0) {
+		for (var i = 0, len = __mugFnList__.length; i < len; i++) {
+			if (typeof __mugFnList__[i] == "function") {
+				__mugFnList__[i]();
+				__mugFnList__[i] = null;
+			}
+		}
+	}
+}
+__fnExecMugFnList__();
+</script>
+</head>
+
+<body class="pc chrome post_cmt">
+
+<div class="blind" aria-hidden="true"><a href="#cont">본문 바로가기</a></div>
+
+<div id="wrap">
+	<div class="cont_header">
+		<div class="cont_header_inner">
+			<!--
+                [D] 15글자 이상시 폰트사이즈 13px로 변경
+                       15글자 이상 일 경우 class="s_size" 추가
+            -->
+			<a href="http://www.naver.com" target="_blank" class="naver_logo_sub"><i class="blind">네이버</i></a>
+			<h1><a href="/" class="logo2"><span class="blind">포스트 beta</span></a></h1>
+			<span class="pipe"></span>
+			<h2>
+				댓글 <span id="comment_count"></span></h2>
+			<a href="#" class="btn_back" onclick="mug.common.util.goBack();return false;"><span class="sp">이전</span></a>
+			<div class="btn_right">
+					<a href="/viewer/postView.naver?volumeNo=37024512&memberNo=29742322" class="btn_g4" onclick="mug.common.nclick(this, 'cmt.pview')">본문보기</a>
+				</div>
+			</div>
+	</div>
+<!-- 댓글 목록 start -->
+	<div id="more_loading_img" class="loading_t1" style="display:none;padding-top:80px">
+		<img src="https://ssl.pstatic.net/static.post/image/m/im/loader.gif" width="24" height="24" alt="로딩중">
+	</div>
+	<div id="cont" class="post_cmt_lst " role="main">
+		<div id="cbox_module"></div>
+	</div>
+</div>
+
+<!-- <footer> -->
+    <div id="footer" role="contentinfo">
+        <button type="button" class="btn_pg_top"
+                onclick="window._nsc=window.nsc;window.nsc='m.post.all';mug.common.nclick(this, 'fot.top');window.nsc=window._nsc;window.scrollTo(0,0)">
+            TOP
+        </button>
+        <div class="btn_area">
+            <div class="set">
+                <a class="btn_t1"
+                       onclick="window._nsc=window.nsc;window.nsc='m.post.all';mug.common.nclick(this, 'fot.logout');window.nsc=window._nsc;mug.common.logout();return false;"
+                       href="#">로그아웃</a>
+                <a class="btn_t1" href="http://m.naver.com/services.html"
+                   onclick="window._nsc=window.nsc;window.nsc='m.post.all';mug.common.nclick(this, 'fot.sitemap');window.nsc=window._nsc;">전체서비스</a>
+            </div>
+            <div class="set">
+                <a class="btn_t2" href="https://help.naver.com/alias/post/postm/npost00.naver"
+                   onclick="window._nsc=window.nsc;window.nsc='m.post.all';mug.common.nclick(this, 'fot.help');window.nsc=window._nsc;"><span>포스트 고객센터</span></a><a
+                    class="btn_t2" href="https://help.naver.com/alias/post/postm/npost01.naver"
+                    onclick="window._nsc=window.nsc;window.nsc='m.post.all';mug.common.nclick(this, 'fot.report');window.nsc=window._nsc;"><span>오류신고</span></a>
+            </div>
+            <a href="http://www.navercorp.com/ko/index.nhn"
+               onclick="window._nsc=window.nsc;window.nsc='m.post.all';mug.common.nclick(this, 'fot.nhncorp');window.nsc=window._nsc;">ⓒ
+                NAVER Corp.</a>
+        </div>
+    </div>
+    <!-- </footer> -->
+<script type="text/javascript">
+(function($, window, document) {
+	var $elLoading = $("#more_loading_img");
+	$elLoading.show(); 
+	setTimeout(function() {
+		$elLoading.hide();
+	}, 1500);
+	
+	var isInPostApp = "false" === "true";
+	var isAuthorComment = "" === "true";
+	var sPageType = "default";
+	
+	function updateCommentCountPost(oEvent) {
+		var oJson = oEvent.oJson;
+		if (!!oJson && !!oJson.success && !!oJson.result && !!oJson.result.count
+				&& isNaN(oJson.result.count.total) == false) {
+			var cnt = oJson.result.count.total;
+			!!isInPostApp && (location.href = "postapp://commentCountPost?count=" + cnt);
+			
+			if (!!$("comment_count")) {
+				if (cnt > 0) {
+					$("#comment_count").html(cnt);
+				} else {
+					$("#comment_count").html("");
+				}
+			}
+		}
+	}
+
+	var landingCommentNo = '';
+	function firstLanding() {
+		if (!!landingCommentNo) {
+			var wel = $(".cbox_module__comment_" + landingCommentNo);
+			if (wel.length < 1) {
+				return;
+			}
+			
+			var $doc = $(document);
+			var elHeader = $("div.cont_header");
+			var additionalHeight = elHeader.length > 0 ? elHeader.height() : 0;
+
+			var wt = $doc.scrollTop() + additionalHeight;
+			var wb = wt + $(document.body).height();
+			var et = wel.offset().top;
+			var eb = et + wel.height();
+			if (et < wt || wb < eb) {
+				window.scrollTo(0, et - additionalHeight);
+			}
+			
+			landingCommentNo = null;
+			isFirstList = false;
+		}
+	}
+	
+	var isFirstList = true;
+	var wasSortInsideWindow = false;
+
+	var beforeSort = null;
+	var currentSort = null;
+	
+	function workaroundHeaderMoreScroll(oEvent) {
+		if (!oEvent || !oEvent.oJson || !oEvent.oJson.result || !oEvent.oJson.result.sort) {
+			return;
+		}
+		
+		
+		currentSort = oEvent.oJson.result.sort.toString().toLowerCase();
+		if (sPageType == "more" &&
+			(isAuthorComment
+				|| (beforeSort === currentSort && currentSort === "all"))) {
+			return;
+		}
+		
+		if (isFirstList) {
+			isFirstList = false; // 처음 표시됐을 때는 댓글 입력창이 나올 수 있도록 동작하지 않음
+		} else {
+			var elHeader = $("div.cont_header");
+			var additionalHeight = elHeader.length > 0 ? elHeader.height() : 0; 
+			
+			if (wasSortInsideWindow) { 
+				return;
+			} else {
+				var wel = $("li.u_cbox_comment"); // 첫 코멘트
+				wel.length > 0 && window.scrollTo(0, wel.offset().top - additionalHeight);
+			}
+		}
+		
+		beforeSort = currentSort;
+	}
+	
+	function adjustScrollForRemove(oEvent) {
+		if (sPageType == "more") {
+			return;
+		}
+		
+		if (!!oEvent && !!oEvent.oJson && !!oEvent.oJson.result && !!oEvent.oJson.result.parent) {
+			return; // 답글 삭제한 경우엔 스크롤하지 않음
+		}
+		
+		var $elHeader = $("div.cont_header");
+		var additionalHeight = $elHeader.length > 0 ? $elHeader.height() : 0;
+		if (!!additionalHeight) {
+			var wel = $("li.u_cbox_comment"); // 첫 코멘트
+			wel.length > 0 && window.scrollTo(0, wel.offset().top - additionalHeight);
+		}
+	}
+	
+	function adjustScroll(oEvent) {
+		
+		!!landingCommentNo ? setTimeout(firstLanding, 500) : workaroundHeaderMoreScroll(oEvent);
+	}
+	
+	function afterTask(oEvent) {
+		updateCommentCountPost(oEvent);
+	}
+	
+	(function(htOption) {
+		window.__htCboxOption = htOption;
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.charset = 'utf-8';
+		s.src = htOption.sDomain + '/js/cbox.core.js?v=' + Math.floor(new Date().getTime() / 1200000);
+		(document.head || document.getElementsByTagName('head')[0]).appendChild(s);
+	})({
+		
+		sDomain : 'https://ssl.pstatic.net/static.cbox',
+		sApiDomain : 'https://apis.naver.com/commentBox/cbox',
+		bLogin : 'true' === 'true',
+		sTicket : 'post02',
+        sTemplateId : 'default',
+		sObjectId : '37024512_29742322',
+		sCssId : 'post',
+		
+		aFormation : ['write', 'list', 'page', 'view'],
+		sLanguage : 'ko',
+		sPageType : sPageType,
+		sGroupId : '29742322'
+		, bManager : false
+		,bUseAgo : false
+		
+		, bInApp : false
+		, bNaverApp : false
+		, bSupportAppUploadImageScheme : false
+		, sAppUploadImageCancelCallback : "naverapp_photoUpload_response"
+		
+		, sManagerToolUrl : '/viewer/commentsAdmin.naver'
+		, sLikeItId : '37024512_29742322'
+		
+		, sHelp : "down" // best 댓글 선정기준 안내 표시 옵션
+		, htEventHandler : {
+			afterCreate : function(oEvent) {
+				afterTask(oEvent);
+			}
+			, afterRemove : function(oEvent) {
+				adjustScrollForRemove(oEvent);
+				afterTask(oEvent);
+			}
+			, afterList : function(oEvent) {
+				$elLoading.hide();
+				adjustScroll(oEvent);
+				updateCommentCountPost(oEvent);
+			}
+		}
+		, htMessage : { 
+			template : {
+				write_placeholder : '댓글을 입력해주세요.'
+				, list_empty : '댓글이 없습니다.<br>첫번째 댓글을 남겨주세요.'
+                
+			}
+			, alert : {
+				upload_image_slow_progress : '아직 업로드 진행 중인 이미지가 있습니다.',
+                not_support_upload_image : 'IE 9 이하 브라우저에서는 이미지 댓글을 업로드 할 수 없습니다.',
+                exceed_comment :'IE 9 이하 브라우저에서는 댓글 300자(한글 기준)를 초과할 수 없습니다.'
+			}
+		}
+		, vProfileHandler : function(obj) { 
+            var nick = obj.name;
+            var length = nick.length;
+            var substr = nick.substring(length-4, length);
+            return substr == "****" ? null :'/my.naver?memberNo=' + obj.id + '&navigationType=modal';
+		}
+        , sProfileActionType: 'CURRENT_WINDOW'
+		, htErrorHandler : {
+			'3010' : '작성자에 의해 댓글 작성이 차단되었습니다.'
+			
+			, '2004' : '댓글 작성자 정보를 얻지 못하여, 댓글을 작성하지 못했습니다.'
+		}
+	});
+	
+	if (isInPostApp && isAuthorComment) { 
+		location.href = "postapp://setHeaderTitle?title=" + encodeURIComponent("님의 게시판");
+	}
+	
+	
+	window.__isTextareaInputExist = function() {
+		var aEltextarea = $("textarea.u_cbox_text");
+		var i;
+		for (i = 0; i < aEltextarea.length; ++i) {
+			if (!!aEltextarea[i].value) {
+				return true;
+			}
+		}
+		return false;
+	};
+	
+	window.onbeforeunload = function() {
+		if (isInPostApp == false && window.__isTextareaInputExist()) {
+			return "작성중인 댓글이나 답글 내용이 사라집니다.";
+		}
+	};
+	
+	function adjustFooterPosition() {
+		var welFooter = $("#footer");
+		if (welFooter.length < 1) {
+			return;
+		}
+		var clientHeight = $(document.body).height();
+		var footerHeight = welFooter.height(); 
+		
+		$("#wrap").css("min-height", (clientHeight - footerHeight - 51) + "px");
+	}
+	adjustFooterPosition();
+	$(window).on("resize", adjustFooterPosition);
+})(jQuery, window, document);
+</script>
+<!-- Naver Tag Manager (NTM) -->
+<script type="text/javascript">
+	!function(t,n){n=n||"ntm";window["ntm_"+t]=n,window[n]=window[n]||[],window[n].push({"ntm.start":+new Date});t=document.getElementsByTagName("script")[0],n=document.createElement("script");n.async=!0,n.src="https://ntm.pstatic.net/scripts/ntm_ecf1d8db24b7.js",t.parentNode.insertBefore(n,t)}("ecf1d8db24b7","ntm");
+</script>
+<!-- End Naver Tag Manager (NTM) -->
+<script type="text/javascript">
+	mug.common._nilSendInfo = {
+		"channelId" : '29742322',
+		"gdid" : '00055f7ca0_000234f300',
+		"volumeNo" : '37024512',
+		"isAuthorSelf" : 'false',
+		"isFollowingAuthor" :  'false',
+		"eventCategory" : 'comment_list',
+		"seriesNo" : '720559'
+	};
+
+    lcs_do();
+</script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.post/static/m/202401021602/js/min/renewal/mug.common.nil.js"></script>
+</body>
+
+</html>

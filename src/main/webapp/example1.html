@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>댓글 기능</title>
+<style>
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .comment-box {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-box h3 {
+    margin-bottom: 15px;
+    color: #495057;
+    font-size: 1.5rem;
+  }
+
+  .comment-box textarea {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+    font-size: 1rem;
+  }
+
+  .comment-box button {
+    float: right;
+    padding: 10px 20px;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .comment-box button:hover {
+    background: #218838;
+  }
+
+  .comment-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .comment-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px 0;
+  }
+
+  .comment-item:last-child {
+    border-bottom: none;
+  }
+
+  .comment-meta {
+    font-size: 0.9rem;
+    color: #868e96;
+    margin-bottom: 5px;
+  }
+
+  .comment-content {
+    font-size: 1rem;
+    color: #343a40;
+    margin-bottom: 10px;
+  }
+
+  .comment-author {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .comment-timestamp {
+    color: #adb5bd;
+  }
+
+  /* Best Comment Style */
+  .comment-best {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffeeba;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .comment-best .comment-author {
+    font-weight: bold;
+    color: #856404;
+  }
+
+  .comment-best .comment-content {
+    font-weight: bold;
+    color: #856404;
+  }
+
+  .comment-best .comment-timestamp {
+    color: #856404;
+  }
+</style>
+</head>
+<body>
+
+<div class="comment-box">
+  <h3>댓글 704</h3>
+  <textarea id="comment-input" rows="3" placeholder="댓글을 입력하세요..."></textarea>
+  <button onclick="addComment()">등록</button>
+  <ul id="comments-list">
+    
+    <!-- 여기에 동적으로 댓글이 추가됩니다 -->
+  </ul>
+</div>
+<script>
+function addComment() {
+    var commentInput = document.getElementById("comment-input");
+    var commentText = commentInput.value.trim();
+    if (commentText) {
+        var now = new Date();
+        var timestamp = now.toLocaleString('ko-KR', { hour12: true }); // 현재 시간을 한국 시간으로 표시합니다.
+
+        var li = document.createElement('li');
+        li.classList.add('comment-item');
+
+        var meta = document.createElement('div');
+        meta.classList.add('comment-meta');
+
+        var author = document.createElement('span');
+        author.classList.add('comment-author');
+        author.textContent = '익명사용자'; // 여기에 실제 사용자 이름을 삽입합니다.
+
+        var timestampSpan = document.createElement('span');
+        timestampSpan.classList.add('comment-timestamp');
+        timestampSpan.textContent = timestamp;
+
+        var content = document.createElement('div');
+        content.classList.add('comment-content');
+        content.textContent = commentText;
+
+        meta.appendChild(author);
+        meta.appendChild(timestampSpan);
+
+        li.appendChild(meta);
+        li.appendChild(content);
+
+        var commentList = document.getElementById("comments-list");
+        commentList.appendChild(li);
+
+        commentInput.value = ''; // 입력란을 비웁니다.
+    } else {
+        alert('댓글 내용을 입력해주세요.');
+    }
+}
+</script>
+
+</body>
+</html>
